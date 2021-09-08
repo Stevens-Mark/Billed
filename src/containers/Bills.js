@@ -28,6 +28,7 @@ export default class {
   }
 
   // not need to cover this function by tests
+   /* istanbul ignore next */
   getBills = () => {
     const userEmail = localStorage.getItem('user') ?
       JSON.parse(localStorage.getItem('user')).email : ""
@@ -40,11 +41,11 @@ export default class {
           .map(doc => {
             try {
               return {
-                ...doc.data(),
-                date: formatDate(doc.data().date),
+                ...doc.data(),          // part of BUG FIX: (see BillsUI.js lines. 13 & 26-33 for rest): removed 
+                date: doc.data().date,  // formatDate(doc.data().date), so date not changed to french format before sorting
                 status: formatStatus(doc.data().status)
               }
-            } catch(e) {
+            } catch(e) {  // THE CATCH BECOMES REDUNDANT AS ERROR HANDLED BY FORMATDATE FUNCTION
               // if for some reason, corrupted data was introduced, we manage here failing formatDate function
               // log the error and return unformatted date in that case
               console.log(e,'for',doc.data())
@@ -57,6 +58,7 @@ export default class {
           })
           .filter(bill => bill.email === userEmail)
           console.log('length', bills.length)
+          
         return bills
       })
       .catch(error => error)

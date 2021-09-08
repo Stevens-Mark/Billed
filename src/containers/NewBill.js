@@ -15,20 +15,41 @@ export default class NewBill {
     this.fileName = null
     new Logout({ document, localStorage, onNavigate })
   }
+
   handleChangeFile = e => {
+    // if error message previiously displayed, remove it
+    document.getElementById("wrongFileTypeError").classList.add("hidden") 
+
     const file = this.document.querySelector(`input[data-testid="file"]`).files[0]
     const filePath = e.target.value.split(/\\/g)
-    const fileName = filePath[filePath.length-1]
-    this.firestore
-      .storage
-      .ref(`justificatifs/${fileName}`)
-      .put(file)
-      .then(snapshot => snapshot.ref.getDownloadURL())
-      .then(url => {
-        this.fileUrl = url
-        this.fileName = fileName
-      })
+    let fileName = filePath[filePath.length-1]
+
+    // Allowed file types to upload (CODE ADDED)
+    let allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+    // check chosen file is acccepted format & upload (to backend) if ok
+     /* istanbul ignore next */
+    if (allowedExtensions.exec(filePath)) {
+    // The exec() method executes a search for a match in a specified string. 
+      this.firestore
+        .storage
+        .ref(`justificatifs/${fileName}`)
+        .put(file)
+        .then(snapshot => snapshot.ref.getDownloadURL())
+        .then(url => {
+          this.fileUrl = url
+          this.fileName = fileName
+         // console check filled added
+          console.log('file added: ' +fileName)
+        })
+    } else {
+      //otherwise reset file input value & display error message (CODE ADDED)   
+      document.getElementById("wrongFileTypeError").classList.remove("hidden") 
+      this.document.querySelector(`input[data-testid="file"]`).value = null;
+      fileName = ""
+      console.log('file not added: ' +fileName)
+    }
   }
+
   handleSubmit = e => {
     e.preventDefault()
     console.log('e.target.querySelector(`input[data-testid="datepicker"]`).value', e.target.querySelector(`input[data-testid="datepicker"]`).value)
@@ -51,6 +72,7 @@ export default class NewBill {
   }
 
   // not need to cover this function by tests
+   /* istanbul ignore next */
   createBill = (bill) => {
     if (this.firestore) {
       this.firestore

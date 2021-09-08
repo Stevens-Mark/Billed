@@ -43,7 +43,7 @@ export default () => {
                       <input type="number" class="form-control blue-border" data-testid="vat" placeholder="70" />
                     </div>
                     <div class="flex-col">
-                      <label for="pct" class="white-text">%</label>
+                      <label for="pct" class="text-dark">%</label>
                       <input required type="number" class="form-control blue-border" data-testid="pct" placeholder="20" />
                     </div>
                   </div>
@@ -56,6 +56,7 @@ export default () => {
                   <div class="col-half">
                     <label for="file" class="bold-label">Justificatif</label>
                     <input required type="file" class="form-control blue-border" data-testid="file" />
+                    <div id="wrongFileTypeError" class="hidden text-danger" m-1>Veuillez choisir le format de fichier jpg, jpg ou png.</div>
                   </div>
                 </div>
             </div>

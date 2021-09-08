@@ -1,15 +1,16 @@
 import VerticalLayout from './VerticalLayout.js'
 import ErrorPage from "./ErrorPage.js"
 import LoadingPage from "./LoadingPage.js"
-
 import Actions from './Actions.js'
+import { formatDate } from '../app/format.js'
 
 const row = (bill) => {
+  // final part of BUG FIX: change bill.date to french format with formatDate function
   return (`
     <tr>
       <td>${bill.type}</td>
       <td>${bill.name}</td>
-      <td>${bill.date}</td>
+      <td>${formatDate(bill.date)}</td>  
       <td>${bill.amount} €</td>
       <td>${bill.status}</td>
       <td>
@@ -20,6 +21,13 @@ const row = (bill) => {
   }
 
 const rows = (data) => {
+  // part of BUG FIX: code ADDED to sort the bills into order by date
+  // note: whilst not in french format can sort array easily (see Bills.js line.45 previously)
+  let sortDataByDate = [];
+  if (data) {
+     sortDataByDate = data.sort((a,b) =>  new Date(b.date) - new Date(a.date))
+  }
+ 
   return (data && data.length) ? data.map(bill => row(bill)).join("") : ""
 }
 
@@ -40,6 +48,7 @@ export default ({ data: bills, loading, error }) => {
         </div>
       </div>
     </div>
+    
   `)
 
   if (loading) {
