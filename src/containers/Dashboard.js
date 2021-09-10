@@ -89,9 +89,10 @@ export default class {
     
     if (this.counter === undefined || this.id !== bill.id) this.counter = 0
     if (this.id === undefined || this.id !== bill.id) this.id = bill.id
-    console.log(bill.id)
+    // console.log(bill.id)
+    // console.log('handleEditTicket counter: ' +this.counter)
      if (this.counter % 2 === 0) {
-      //  console.log('Hello')
+      // console.log('open ticket')
       bills.forEach(b => {
         $(`#open-bill${b.id}`).css({ background: '#0D5AE5' })
       })
@@ -100,6 +101,7 @@ export default class {
       $('.vertical-navbar').css({ height: '150vh' })
       this.counter ++
     } else {
+      // console.log('close ticket')
       $(`#open-bill${bill.id}`).css({ background: '#0D5AE5' })
 
       $('.dashboard-right-container div').html(`
@@ -137,16 +139,19 @@ export default class {
     
     if (this.counter === undefined || this.index !== index) this.counter = 0;
     if (this.index === undefined || this.index !== index) this.index = index;
-
+    // console.log('handleShowTickets index: ' +this.index)
+    // console.log('handleShowTickets counter: ' +this.counter)
     if (this.counter % 2 === 0) {
+      // console.log('open list')
       $(`#arrow-icon${this.index}`).css({ transform: 'rotate(0deg)'})
       $(`#status-bills-container${this.index}`)
         .html(cards(filteredBills(bills, getStatus(this.index)))) // **filteredBills
       this.counter ++
     } else {
+      // console.log('close list')
       $(`#arrow-icon${this.index}`).css({ transform: 'rotate(90deg)'})
       $(`#status-bills-container${this.index}`)
-        .html("")
+        .html("")  // when list closed it removes filteredBills, therefore each corresponding handleEditTicket removed also
       this.counter ++
     }
 
@@ -155,7 +160,7 @@ export default class {
     // })
 
     // BUG FIX:
-    // Put handleEditTicket function on filteredbills ONLY & not on ALL bills each time
+    // Put handleEditTicket function on filteredbills ONLY when list opens & NOT on ALL bills each time
     filteredBills(bills, getStatus(this.index)).forEach(bill => {
       $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills));
     })

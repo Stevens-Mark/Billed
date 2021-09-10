@@ -41,12 +41,13 @@ export default class {
           .map(doc => {
             try {
               return {
-                ...doc.data(),          // part of BUG FIX: (see BillsUI.js lines. 13 & 26-33 for rest): removed 
-                date: doc.data().date,  // formatDate(doc.data().date), so date not changed to french format before sorting
+                ...doc.data(),          // part of BUG FIX: (see BillsUI.js lines. 13 & 26-33 for rest): 
+                date: doc.data().date,  // removed  formatDate(doc.data().date), so date not changed to french format before sorting
                 status: formatStatus(doc.data().status)
               }
-            } catch(e) {  // THE CATCH BECOMES REDUNDANT AS ERROR HANDLED BY FORMATDATE FUNCTION
-              // if for some reason, corrupted data was introduced, we manage here failing formatDate function
+            } catch(e) {  // THE CATCH BECOMES REDUNDANT HERE for managing possible failing formatDate function as no longer called above, but called elsewhere. If corrupted data, then error handled within the formatdate function instead.
+
+              // OLD COMMENT, NO LONGER RELEVANT: if for some reason, corrupted data was introduced, we manage here failing formatDate function
               // log the error and return unformatted date in that case
               console.log(e,'for',doc.data())
               return {
