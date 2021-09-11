@@ -12,7 +12,7 @@ describe("Given I am connected as an employee", () => {
       test("Then mail icon in vertical layout should be highlighted", () => {
         const html = NewBillUI();
         document.body.innerHTML = html;
-        //get colour of mail icon background
+        // get colour of mail icon background
         const divIcon2 = $("#layout-icon2").css("background-color");
         // get colour of verticalLayout background
         const verticalLayout = $(".vertical-navbar").css("background-color");
@@ -21,7 +21,8 @@ describe("Given I am connected as an employee", () => {
       })
     })
 
-    // Check handleChangeFile function
+    // Check handleChangeFile methode
+
     describe("When I choose the correct file format to upload", () => {
       test("Then it should be saved", () => {
         // set localstorage to mockstorage & user to employee
@@ -43,7 +44,7 @@ describe("Given I am connected as an employee", () => {
         })
         // find 'file' INPUT in DOM
         const chooseFile  = screen.getByTestId("file")
-        // mock function handleChangeFile
+        // mock methode handleChangeFile
         const handleChangeFile = jest.fn(newBill.handleChangeFile)
         chooseFile.addEventListener('change', handleChangeFile)
         // mimic user interaction: choosing a png file.
@@ -52,7 +53,7 @@ describe("Given I am connected as an employee", () => {
             files: [new File(['invoice.png'], 'invoice.png', {type: 'image/png'})],
           },
         })
-        // check function is called & file added
+        // check methode is called & file added
         expect(handleChangeFile).toHaveBeenCalled()
         expect(chooseFile.files[0].name).toBe("invoice.png")
       })
@@ -84,7 +85,7 @@ describe("Given I am connected as an employee", () => {
             files: [new File(['invoice.bmp'], 'invoice.bmp', {type: 'image/bmp'})],
           },
         })
-        // check function is called
+        // check methode is called
         expect(handleChangeFile).toHaveBeenCalled()
         // check error message displayed
         expect(screen.getByText('Veuillez choisir le format de fichier jpg, jpg ou png.')).toBeTruthy() 
@@ -93,7 +94,8 @@ describe("Given I am connected as an employee", () => {
       })
     })
 
-    // Check handleSubmit function
+    // Check handleSubmit methode
+
     describe("When I fill in the fields/add a file and I click on submit button NewBill", () => {
       test("Then It should be submiited & I am redirected to the Bills page", () => {
         Object.defineProperty(window, 'localStorage', { value: localStorageMock })
@@ -154,7 +156,7 @@ describe("Given I am connected as an employee", () => {
         // expect(inputfile.files).toHaveLength(1)
 
         const form = screen.getByTestId("form-new-bill")
-        // mock handleSubmit function
+        // mock handleSubmit methode
         const handleSubmit = jest.fn(newBill.handleSubmit)  
     
         form.addEventListener("submit", handleSubmit)
@@ -189,30 +191,37 @@ describe("Given I am a user connected as Employee", () => {
         "email": "a@a",
         "pct": 20
         }
-        // watch mock "post" method in firebase module
+        // SpyOn/watch "post" method in mock firebase module
        const postSpy = jest.spyOn(firebase, "post")
-       // Get bills and the new bill
+       // Get bills and the new bill (returned after firebase called)
        const bills = await firebase.post(billItem)
+       // check firebase post called
        expect(postSpy).toHaveBeenCalledTimes(1)
        // new bill item added to previous 4 bills in mock thus now equals 5
-       expect(bills.data.length).toBe(5)
-      //  expect(bills).toBe(PostTest: billToTest has been received)
+      //  expect(bills.data.length).toBe(5)
+      expect(bills.data.length).toBe(1)
     })
     test("it sends a bill to an API and fails with 404 message error", async () => {
+       // make firebase mock return promise with error 404 (once)
       firebase.post.mockImplementationOnce(() =>
         Promise.reject(new Error("Erreur 404"))
       )
+      // pass error param to BillsUI 404 not found
       const html = BillsUI({ error: "Erreur 404" })
       document.body.innerHTML = html
+      // check error displayed on page
       const message = await screen.getByText(/Erreur 404/)
       expect(message).toBeTruthy()
     })
     test("it sends a bill to an API and fails with 500 message error", async () => {
+      // make firebase mock return promise with error 500 (once)
       firebase.post.mockImplementationOnce(() =>
         Promise.reject(new Error("Erreur 500"))
       )
+      // pass error param to BillsUI 500 internal server error
       const html = BillsUI({ error: "Erreur 500" })
       document.body.innerHTML = html
+      // check error displayed on page
       const message = await screen.getByText(/Erreur 500/)
       expect(message).toBeTruthy()
     })

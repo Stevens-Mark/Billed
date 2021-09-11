@@ -1,4 +1,4 @@
-import firebase from './firebase'
+// import firebase from './firebase'
 
 export default {
   get: () => {
@@ -65,16 +65,36 @@ export default {
       }]
     })
   },
-  // post: (request) => {
-  //   return Promise.resolve('PostTest: '+request.name+' has been received')
-  // }
-  post: async (request) => { 
-    // retrieve previous bills    
-      const getData = await firebase.get();  
+
+  // post: async (request) => { 
+  //   // retrieve previous bills    
+  //     const getData = await firebase.get();  
        
+  //   return Promise.resolve({
+  //   // add new (request)  bill item  to previous bills  
+  //     data: [...getData.data,         
+  //             {           
+  //               id: request.id,           
+  //               status: request.status,           
+  //               pct: request.pct,           
+  //               amount: request.amount,          
+  //               email: request.email,          
+  //               name: request.name,           
+  //               vat: request.vat,           
+  //               fileName: request.filename,           
+  //               date: request.date,           
+  //               commentAdmin: request.commentAdmin,           
+  //               commentary: request.commentary,           
+  //               type: request.type,           
+  //               fileUrl: request.fileUrl,         
+  //             }     
+  //           ]
+  //       })
+  // }
+
+    post: (request) => { 
     return Promise.resolve({
-    // add new (request)  bill item  to previous bills  
-      data: [...getData.data,         
+      data: [        
               {           
                 id: request.id,           
                 status: request.status,           
@@ -92,5 +112,5 @@ export default {
               }     
             ]
         })
-  }
+    }
 }

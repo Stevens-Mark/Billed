@@ -4,7 +4,7 @@ import BillsUI from "../views/BillsUI.js"
 import { bills } from "../fixtures/bills.js"
 import firebase from "../__mocks__/firebase"
 import { localStorageMock } from '../__mocks__/localStorage.js';
-import { ROUTES, ROUTES_PATH } from '../constants/routes';
+import { ROUTES } from '../constants/routes';
 import Bills from '../containers/Bills.js'
 // import Firestore from "../app/Firestore";
 // import Router from "../app/Router";
@@ -24,7 +24,8 @@ describe("Given I am connected as an employee", () => {
       expect(divIcon1 === verticalLayout).toBeFalsy();
     })
 
-    // this test failed, so code added to rectify test (date sort error bug)
+    // this test failed previously, so code added to rectify test (date sort error bug)
+
     test("Then bills should be ordered from earliest to latest", () => {
       const html = BillsUI({ data: bills })
       document.body.innerHTML = html
@@ -36,6 +37,7 @@ describe("Given I am connected as an employee", () => {
     })
 
     // next two tests basically the same as on dashboard tests
+    // replace DashboardUI for BillsUI
 
     describe('When I am on Bills page but it is loading', () => {
       test('Then, Loading page should be rendered', () => {
@@ -52,7 +54,7 @@ describe("Given I am connected as an employee", () => {
       })
     })
 
-    // check handleClickIconEye function
+    // check handleClickIconEye methode
 
     describe('When Im on a bill & I click on the icon eye', () => {
       test('Then A modal should open', () => {
@@ -74,7 +76,7 @@ describe("Given I am connected as an employee", () => {
         })
         // mock bootstrap modal function (see P9 sources folder)
         $.fn.modal = jest.fn()
-        // mock function handleClickIconEye 
+        // mock methode handleClickIconEye 
         const handleClickIconEye = jest.fn(billItem.handleClickIconEye)
         // find eye icon buttons in DOM
         const iconEye = screen.getAllByTestId('icon-eye')
@@ -84,7 +86,7 @@ describe("Given I am connected as an employee", () => {
         // mimic user interaction
         userEvent.click(icon)
         })
-        // check function is called
+        // check methode is called
         expect(handleClickIconEye).toHaveBeenCalled()
         // check Modal opened by searching for its ID
         const modale = document.getElementById('modaleFile')
@@ -92,7 +94,7 @@ describe("Given I am connected as an employee", () => {
       })
     })
 
-    // check handleClickNewBill function
+    // check handleClickNewBill methode
 
     describe('When I click on the New bill button', () => {
       test("Then A new Bill Page is displayed", () => {
@@ -110,14 +112,14 @@ describe("Given I am connected as an employee", () => {
         const billItem = new Bills({
           document, onNavigate, firestore, localStorage: window.localStorage
         })
-        // mock function handleClickNewBill when button clicked
+        // mock methode handleClickNewBill when button clicked
         const handleClickNewBill = jest.fn(billItem.handleClickNewBill);
         // access button & add eventlistener
         const buttonNewBill = screen.getByTestId('btn-new-bill')
         buttonNewBill.addEventListener('click', handleClickNewBill)
         // mimic user interaction
         fireEvent.click(buttonNewBill)
-        // check function is called 
+        // check methode is called 
         expect(handleClickNewBill).toHaveBeenCalled()
         // title & form diplayed (ie, NewBillUI is loaded)
         expect(screen.getByTestId("form-new-bill")).toBeTruthy()
@@ -134,11 +136,13 @@ describe("Given I am connected as an employee", () => {
 describe("Given I am a user connected as Employee", () => {
   describe("When I navigate to Bills", () => {
     test("Then it fetches bills from mock API GET", async () => {
-      // watch mock "get" method in firebase module
+      // SpyOn/watch "get" method in mock firebase module
        const getSpy = jest.spyOn(firebase, "get")
-       // Get bills 
+       // Get bills (returned after firebase called)
        const bills = await firebase.get()
+       // check firebase get called
        expect(getSpy).toHaveBeenCalledTimes(1)
+       // length should equal data in mock
        expect(bills.data.length).toBe(4)
     })
     test("Then it fetches bills from an API and fails with 404 message error", async () => {
