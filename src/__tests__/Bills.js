@@ -6,9 +6,6 @@ import firebase from "../__mocks__/firebase"
 import { localStorageMock } from '../__mocks__/localStorage.js';
 import { ROUTES } from '../constants/routes';
 import Bills from '../containers/Bills.js'
-// import Firestore from "../app/Firestore";
-// import Router from "../app/Router";
-
 
 describe("Given I am connected as an employee", () => {
   describe("When I am on Bills Page", () => {
@@ -112,7 +109,7 @@ describe("Given I am connected as an employee", () => {
         const billItem = new Bills({
           document, onNavigate, firestore, localStorage: window.localStorage
         })
-        // mock methode handleClickNewBill when button clicked
+        // mock methode handleClickNewBill 
         const handleClickNewBill = jest.fn(billItem.handleClickNewBill);
         // access button & add eventlistener
         const buttonNewBill = screen.getByTestId('btn-new-bill')
@@ -138,7 +135,7 @@ describe("Given I am a user connected as Employee", () => {
     test("Then it fetches bills from mock API GET", async () => {
       // SpyOn/watch "get" method in mock firebase module
        const getSpy = jest.spyOn(firebase, "get")
-       // Get bills (returned after firebase called)
+       // Get bills (returned by promise after firebase called)
        const bills = await firebase.get()
        // check firebase get called
        expect(getSpy).toHaveBeenCalledTimes(1)
@@ -167,30 +164,4 @@ describe("Given I am a user connected as Employee", () => {
     })
   })
 })
-
-
-// describe("Given I am connected as an employee", () => {
-//   describe("When I am on Bills Page", () => {
-//     test("Then bill icon in vertical layout should be highlighted", () => {
-//       // set localstorage to mockstorage & user to employee
-//       Object.defineProperty(window, 'localStorage', { value: localStorageMock })
-//       window.localStorage.setItem('user', JSON.stringify({type: 'Employee'}))
-//       // sets hash to #employee/bills
-//       Object.defineProperty(window, "location", { value: { hash: ROUTES_PATH["Bills"] } })
-//       // Mock Firestore
-//       jest.mock("../app/Firestore");
-//       Firestore.bills = () => ({ bills, get: jest.fn().mockResolvedValue() });
-//       // place UI in DOM
-//       const html = BillsUI({ data: [] })
-//       document.body.innerHTML = html   
-//       document.body.innerHTML = `<div id="root"></div>`;
-//       // call router (sets CSS class to active-icon) 
-//       Router();
-//       expect(
-//         screen.getByTestId("icon-window").classList.contains("active-icon")
-//       ).toBe(true);
-
-//     })
-//   })
-// })
 

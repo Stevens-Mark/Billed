@@ -1,0 +1,3638 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)https://dirask.com/posts/JavaScript-detecting-invalid-date-13G391 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=0.75, user-scalable=yes">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>❤ 💻 JavaScript - detecting invalid date - Dirask</title>
+
+<meta name="description" content="In this article, we&#39;re going to have a look at how to check if data is invalid in JavaScript. Date correctness can be checked basing on internal state of Date o...">
+<meta name="keywords" content="programming, js, javascript, date, invalid, text, check, correct">
+
+<link rel="canonical" href="https://dirask.com/posts/JavaScript-detecting-invalid-date-13G391">
+
+
+
+<link rel="icon" href="https://dirask.com/resources/gfx/logo/favicon/da_logo_v6-48x48.png?v=20" type="image/png" sizes="48x48">
+<link rel="icon" href="https://dirask.com/resources/gfx/logo/favicon/da_logo_v6-72x72.png?v=20" type="image/png" sizes="72x72">
+<link rel="icon" href="https://dirask.com/resources/gfx/logo/favicon/da_logo_v6-96x96.png?v=20" type="image/png" sizes="96x96">
+<link rel="icon" href="https://dirask.com/resources/gfx/logo/favicon/da_logo_v6-144x144.png?v=20" type="image/png" sizes="144x144">
+<link rel="icon" href="https://dirask.com/resources/gfx/logo/favicon/da_logo_v6-192x192.png?v=20" type="image/png" sizes="192x192">
+<link rel="icon" href="https://dirask.com/resources/gfx/logo/favicon/da_logo_v6-256x256.png?v=20" type="image/png" sizes="256x256">
+<link rel="icon" href="https://dirask.com/resources/gfx/logo/favicon/da_logo_v6-384x384.png?v=20" type="image/png" sizes="384x384">
+<link rel="icon" href="https://dirask.com/resources/gfx/logo/favicon/da_logo_v6-512x512.png?v=20" type="image/png" sizes="512x512">
+
+
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAtQAAALUBOdDOnwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANDSURBVGiB7ZpLTBNRFIa/e1soZSwDCEgVRSAoDxPxEY2GSHShElYa3bDUuNKdOzCaGElMfIS4JO5cGXdqNG6U+Iqa0BCJLJD4KIoIjUgphRZKXWCIpMO0M7UMTfotz+3c8//T03PvnakA2H7lQ6MQogPYBSisbqaAHoRs622reSX+iu8GbBYLM0oEIZvk3zufbuIBbETnb0gWyiZd2SFZ/TWvR7a0WkGyZAxYTdobsK9UIsUhKXDGduvQXJSxwJzpeVfMQHOdSntzaUzcMxTk9J2vpudN+xLKGLCajAGryRiwmrQ38F8Wsn0VCkfrVXaX51Kk2LFJ+BWM4PEGuecZp8cb/B9pNEnKQInLzqUWN/sr18SMFa+xc6Quj8N1edx+6WN00vx2QQ/TBtxqFl2tmygryNb9nADONBbx7suU2VS6mPoN2KTg+vGyuOL/Zc/m1Bz8TH0Dp/avpc6ds+z4t/Ew3vFZVKekttSJFKb1xcWwgWy7oHV3oeZYMDxP+/1hugcmF2MVRQ6uHdtAVbHDvEodDJfQwS0u8nO1n8JcfvRjiXiAz74Q5+4OMRWaN6cwDoYN7NqUqxkfHAvxpN+vOTbin+VB34TRVAlh2EC926kZf/4xoHvd+++pWQsMGyhUtMvnky+ke51/ZpWUkMuhbSCQohqPh2EDkWhUM55l0++VSoqeoRmedXKZUlivZuleV7428UXPCIYNjPhnNeP7KvVX2kNbXUZTJYRhA33D05rxvRUKOzdqt9iWbSo165ZfuZPBsIEXg9rtUgA3T5TRVO1a3DrYpeB4Qz4XW9zJaNTF8FbC4w3ycTREdUns1kB12ug8WcbvYISxwByleXZcOal9d2KqNVx9MsK8djMCID/XRnWJY4l4/0zETKq4mDLgGQrS+fQnOh6W0P9jhq6XPjOp4mK6Od95+4uLD4aZmNa/s90Dk5y96yU0m6hdYyR1pHzYN8GLwQDN9SqNVQrr1SwUhw1fYI6B0Rkef/AvnsT6hqe59Ww0Zo6fSR41RUNHf2puzQqR9o9VMgasRrLw34N0JSyBHqtVmCUKHomQbUBqlsnUEhFRcV72ttW8Qsgm4C0QtlpVAoSj8IaoONB7ofb1H8jS23b840a0AAAAAElFTkSuQmCC" type="image/png" sizes="48x48">
+
+
+
+
+
+
+
+
+
+
+<script>
+
+    window.DEFAULT_PAGE_TITLE = '❤ 💻 JavaScript - detecting invalid date - Dirask';
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:site_name" content="Dirask.com, IT Community">
+<meta property="og:title" content="JavaScript - detecting invalid date">
+<meta property="og:description" content="In this article, we&#39;re going to have a look at how to check if data is invalid in JavaScript. Date correctness can be checked basing on internal state of Date o...">
+<meta property="og:url" content="https://dirask.com/posts/JavaScript-detecting-invalid-date-13G391">
+<meta property="og:image" content="">
+<meta property="og:image:width" content="0">
+<meta property="og:image:height" content="0">
+
+<meta property="og:type" content="article">
+
+<meta property="og:tag" content="programming">
+<meta property="og:tag" content="js">
+<meta property="og:tag" content="javascript">
+<meta property="og:tag" content="date">
+<meta property="og:tag" content="invalid">
+<meta property="og:tag" content="text">
+<meta property="og:tag" content="check">
+<meta property="og:tag" content="correct">
+ 
+<meta property="og:article:tag" content="programming">
+<meta property="og:article:tag" content="js">
+<meta property="og:article:tag" content="javascript">
+<meta property="og:article:tag" content="date">
+<meta property="og:article:tag" content="invalid">
+<meta property="og:article:tag" content="text">
+<meta property="og:article:tag" content="check">
+<meta property="og:article:tag" content="correct">
+ 
+<meta property="article:tag" content="programming">
+<meta property="article:tag" content="js">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="date">
+<meta property="article:tag" content="invalid">
+<meta property="article:tag" content="text">
+<meta property="article:tag" content="check">
+<meta property="article:tag" content="correct">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://dirask.com/posts/JavaScript-detecting-invalid-date-13G391">
+<meta name="twitter:title" content="JavaScript - detecting invalid date">
+<meta name="twitter:description" content="In this article, we&#39;re going to have a look at how to check if data is invalid in JavaScript. Date correctness can be checked basing on internal state of Date o...">
+<meta name="twitter:image" content="">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- bing.com  -->
+<meta name="msvalidate.01" content="07B7398825A91D17BC7870C81562C8F4">
+<!-- yandex.com  -->
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="./JavaScript - detecting invalid date_files/dirask_merged_css_libs__wiki__.min.css">
+<style>@media print {#ghostery-tracker-tally {display:none !important}}</style><script src="./JavaScript - detecting invalid date_files/wiki_single_view_out.gen.min.js.download"></script>
+
+
+
+
+
+
+
+
+<style>
+
+    .navbar {
+        min-width: 450px;
+    }
+
+    .custom-nav-bar-1597872958 {
+        z-index: 10000000;
+        padding: 5px 20px;
+        max-width: 1920px;
+    }
+
+    @media (max-width: 600px) {
+        .custom-nav-bar-1597872958 {
+            padding-left: 10px;
+            padding-right: 3px;
+        }
+    }
+
+    .nav-bar-main-logo {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+        .nav-bar-main-logo {
+            font-size: 16px;
+        }
+    }
+
+    a.left-menu-button-1597872958
+    {
+        margin: -10px 10px -10px -6px;
+        border-right: 1px solid #c5c0c0;
+        width: 45px; height: 45px;
+        display: flex;
+    }
+
+    .nav-bar-custom-icon-1597872958 {
+        width: 1em; height: 1em;
+        font-size: 19px;
+    }
+
+    span.site-languages-used-language
+    {
+        padding: 0px 4px;
+        border-radius: 2px;
+        font-size: 16px;
+        color: white;
+    }
+
+    .nav-bar-username-1597872958 {
+        display: inline-block;
+        max-width: 100px;
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        color: black;
+    }
+
+    .nav-bar-log-in-button-1597872958 {
+        margin-right: 6px;
+        color: #0579d0 !important; /* !important because bootstrap will try to override with color: #000000e6; */
+        background: white;
+    }
+
+    span.site-languages-used-count-1597872958
+    {
+        margin: -5px 0 11px 4px;
+        padding: 2px 5px;
+        border-radius: 50%;
+        line-height: 12px;
+        font-size: 12px;
+    }
+
+</style>
+
+
+
+
+
+<style>
+
+    
+
+    .custom-nav-bar-light-1597872958 {
+        background-color: #2f4155 !important;
+    }
+
+    .nav-bar-main-logo-light-1597872958 {
+        color: white;
+    }
+
+    a.left-menu-button-light-1597872958 {
+
+
+    }
+
+    .nav-bar-custom-icon-light-1597872958 {
+        color: #a1a4a7;
+    }
+
+    span.site-languages-used-language-light {
+        background: #707d8a;
+    }
+
+    .nav-bar-username-light-1597872958 {
+        color: #cecece;
+        font-weight: 400;
+    }
+
+    .nav-bar-link-light-1597872958 {
+        color: #cecece !important;
+    }
+
+    .nav-bar-log-in-button-light-1597872958 {
+        border: 1px solid #f7f7f7;
+    }
+
+    span.site-languages-used-count-light-1597872958 {
+        border: 1px solid #707d8a;
+        background: #707d8a;
+        color: #fff;
+    }
+
+    .search_loupe_btn_border {
+        border: none;
+    }
+
+    .search_input_nav_bar_border {
+        border: none;
+    }
+
+    .nav_bar_search_input_dropdown_arrow_border {
+        border: none;
+    }
+
+
+</style>
+
+
+
+
+<meta name="google-signin-client_id" content="1025873588304-hcg8t7btlbbnm6lv2tv7uoaul9fctn21.apps.googleusercontent.com">
+
+
+
+<script type="text/javascript">
+    window.RELEASE_VERSON = '20';
+    window.RELEASE_DATETIME = 'null';
+    console.log("Dirask js init");
+    console.log("release.version: " + window.RELEASE_VERSON);
+    console.log("release.datetime: " + window.RELEASE_DATETIME);
+    // analitics on / off?
+
+    window.adBlock = true;
+</script>
+
+
+
+</head><body cz-shortcut-listen="true"><svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+    <symbol viewBox="0 0 576 512" id="fas.fa-home">
+        <path fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path>
+    </symbol>
+    <symbol viewBox="0 0 352 512" id="far.fa-lightbulb">
+        <path fill="currentColor" d="M176 80c-52.94 0-96 43.06-96 96 0 8.84 7.16 16 16 16s16-7.16 16-16c0-35.3 28.72-64 64-64 8.84 0 16-7.16 16-16s-7.16-16-16-16zM96.06 459.17c0 3.15.93 6.22 2.68 8.84l24.51 36.84c2.97 4.46 7.97 7.14 13.32 7.14h78.85c5.36 0 10.36-2.68 13.32-7.14l24.51-36.84c1.74-2.62 2.67-5.7 2.68-8.84l.05-43.18H96.02l.04 43.18zM176 0C73.72 0 0 82.97 0 176c0 44.37 16.45 84.85 43.56 115.78 16.64 18.99 42.74 58.8 52.42 92.16v.06h48v-.12c-.01-4.77-.72-9.51-2.15-14.07-5.59-17.81-22.82-64.77-62.17-109.67-20.54-23.43-31.52-53.15-31.61-84.14-.2-73.64 59.67-128 127.95-128 70.58 0 128 57.42 128 128 0 30.97-11.24 60.85-31.65 84.14-39.11 44.61-56.42 91.47-62.1 109.46a47.507 47.507 0 0 0-2.22 14.3v.1h48v-.05c9.68-33.37 35.78-73.18 52.42-92.16C335.55 260.85 352 220.37 352 176 352 78.8 273.2 0 176 0z"></path>
+    </symbol>
+    <symbol viewBox="0 0 576 512" id="far.fa-comments">
+        <path fill="currentColor" d="M532 386.2c27.5-27.1 44-61.1 44-98.2 0-80-76.5-146.1-176.2-157.9C368.3 72.5 294.3 32 208 32 93.1 32 0 103.6 0 192c0 37 16.5 71 44 98.2-15.3 30.7-37.3 54.5-37.7 54.9-6.3 6.7-8.1 16.5-4.4 25 3.6 8.5 12 14 21.2 14 53.5 0 96.7-20.2 125.2-38.8 9.2 2.1 18.7 3.7 28.4 4.9C208.1 407.6 281.8 448 368 448c20.8 0 40.8-2.4 59.8-6.8C456.3 459.7 499.4 480 553 480c9.2 0 17.5-5.5 21.2-14 3.6-8.5 1.9-18.3-4.4-25-.4-.3-22.5-24.1-37.8-54.8zm-392.8-92.3L122.1 305c-14.1 9.1-28.5 16.3-43.1 21.4 2.7-4.7 5.4-9.7 8-14.8l15.5-31.1L77.7 256C64.2 242.6 48 220.7 48 192c0-60.7 73.3-112 160-112s160 51.3 160 112-73.3 112-160 112c-16.5 0-33-1.9-49-5.6l-19.8-4.5zM498.3 352l-24.7 24.4 15.5 31.1c2.6 5.1 5.3 10.1 8 14.8-14.6-5.1-29-12.3-43.1-21.4l-17.1-11.1-19.9 4.6c-16 3.7-32.5 5.6-49 5.6-54 0-102.2-20.1-131.3-49.7C338 339.5 416 272.9 416 192c0-3.4-.4-6.7-.7-10C479.7 196.5 528 238.8 528 288c0 28.7-16.2 50.6-29.7 64z"></path>
+    </symbol>
+    <symbol viewBox="0 0 640 512" id="fas.fa-users">
+        <path fill="currentColor" d="M96 224c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm448 0c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm32 32h-64c-17.6 0-33.5 7.1-45.1 18.6 40.3 22.1 68.9 62 75.1 109.4h66c17.7 0 32-14.3 32-32v-32c0-35.3-28.7-64-64-64zm-256 0c61.9 0 112-50.1 112-112S381.9 32 320 32 208 82.1 208 144s50.1 112 112 112zm76.8 32h-8.3c-20.8 10-43.9 16-68.5 16s-47.6-6-68.5-16h-8.3C179.6 288 128 339.6 128 403.2V432c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48v-28.8c0-63.6-51.6-115.2-115.2-115.2zm-223.7-13.4C161.5 263.1 145.6 256 128 256H64c-35.3 0-64 28.7-64 64v32c0 17.7 14.3 32 32 32h65.9c6.3-47.4 34.9-87.3 75.2-109.4z"></path>
+    </symbol>
+    <symbol viewBox="0 0 512 512" id="fas.fa-briefcase">
+        <path fill="currentColor" d="M320 336c0 8.84-7.16 16-16 16h-96c-8.84 0-16-7.16-16-16v-48H0v144c0 25.6 22.4 48 48 48h416c25.6 0 48-22.4 48-48V288H320v48zm144-208h-80V80c0-25.6-22.4-48-48-48H176c-25.6 0-48 22.4-48 48v48H48c-25.6 0-48 22.4-48 48v80h512v-80c0-25.6-22.4-48-48-48zm-144 0H192V96h128v32z"></path>
+    </symbol>
+    <symbol viewBox="0 0 576 512" id="fas.fa-edit">
+        <path fill="currentColor" d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"></path>
+    </symbol>
+    <symbol viewBox="0 0 512 512" id="far.fa-paper-plane">
+        <path fill="currentColor" d="M440 6.5L24 246.4c-34.4 19.9-31.1 70.8 5.7 85.9L144 379.6V464c0 46.4 59.2 65.5 86.6 28.6l43.8-59.1 111.9 46.2c5.9 2.4 12.1 3.6 18.3 3.6 8.2 0 16.3-2.1 23.6-6.2 12.8-7.2 21.6-20 23.9-34.5l59.4-387.2c6.1-40.1-36.9-68.8-71.5-48.9zM192 464v-64.6l36.6 15.1L192 464zm212.6-28.7l-153.8-63.5L391 169.5c10.7-15.5-9.5-33.5-23.7-21.2L155.8 332.6 48 288 464 48l-59.4 387.3z"></path>
+    </symbol>
+    <symbol viewBox="0 0 512 512" id="fas.fa-random">
+        <path fill="currentColor" d="M504.971 359.029c9.373 9.373 9.373 24.569 0 33.941l-80 79.984c-15.01 15.01-40.971 4.49-40.971-16.971V416h-58.785a12.004 12.004 0 0 1-8.773-3.812l-70.556-75.596 53.333-57.143L352 336h32v-39.981c0-21.438 25.943-31.998 40.971-16.971l80 79.981zM12 176h84l52.781 56.551 53.333-57.143-70.556-75.596A11.999 11.999 0 0 0 122.785 96H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12zm372 0v39.984c0 21.46 25.961 31.98 40.971 16.971l80-79.984c9.373-9.373 9.373-24.569 0-33.941l-80-79.981C409.943 24.021 384 34.582 384 56.019V96h-58.785a12.004 12.004 0 0 0-8.773 3.812L96 336H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h110.785c3.326 0 6.503-1.381 8.773-3.812L352 176h32z"></path>
+    </symbol>
+    <symbol viewBox="0 0 512 512" id="far.fa-envelope">
+        <path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"></path>
+    </symbol>
+    <symbol viewBox="0 0 448 512" id="far.fa-bell">
+        <path fill="currentColor" d="M439.39 362.29c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71zM67.53 368c21.22-27.97 44.42-74.33 44.53-159.42 0-.2-.06-.38-.06-.58 0-61.86 50.14-112 112-112s112 50.14 112 112c0 .2-.06.38-.06.58.11 85.1 23.31 131.46 44.53 159.42H67.53zM224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64z"></path>
+    </symbol>
+    <symbol viewBox="0 0 320 512" id="fas.fa-chevron-right">
+        <path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path>
+    </symbol>
+    <symbol viewBox="0 0 384 512" id="fas.fa-map-marker-alt">
+        <path fill="currentColor" d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path>
+    </symbol>
+    <symbol viewBox="0 0 576 512" id="far.fa-star">
+        <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+    </symbol>
+    <symbol viewBox="0 0 512 512" id="fas.fa-highlighter">
+        <path d="M0 481.907L93.908 512l33.317-33.317-63.006-63.006zm117.112-225.57a34.39 34.39 0 0 0-10.14 35.808l12.264 40.253-47.865 47.875 90.44 90.44 47.8-47.8 40.168 12.293a34.39 34.39 0 0 0 35.854-10.13l33.411-39.135-162.91-162.91zm379.043-151.03L436.758 45.91c-19.257-19.257-50.168-20.225-70.6-2.209L179.085 203.435 338.64 362.999l159.724-187.082c18.026-20.432 17.058-51.343-2.209-70.61z" fill="currentColor"></path>
+    </symbol>
+    <symbol viewBox="0 0 512 512" id="far.fa-comment">
+        <path fill="currentColor" d="M256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z"></path>
+    </symbol>
+    <symbol viewBox="0 0 576 512" id="far.fa-star">
+        <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+    </symbol>
+    <symbol viewBox="0 0 512 512" id="far.fa-thumbs-up">
+        <path fill="currentColor" d="M466.27 286.69C475.04 271.84 480 256 480 236.85c0-44.015-37.218-85.58-85.82-85.58H357.7c4.92-12.81 8.85-28.13 8.85-46.54C366.55 31.936 328.86 0 271.28 0c-61.607 0-58.093 94.933-71.76 108.6-22.747 22.747-49.615 66.447-68.76 83.4H32c-17.673 0-32 14.327-32 32v240c0 17.673 14.327 32 32 32h64c14.893 0 27.408-10.174 30.978-23.95 44.509 1.001 75.06 39.94 177.802 39.94 7.22 0 15.22.01 22.22.01 77.117 0 111.986-39.423 112.94-95.33 13.319-18.425 20.299-43.122 17.34-66.99 9.854-18.452 13.664-40.343 8.99-62.99zm-61.75 53.83c12.56 21.13 1.26 49.41-13.94 57.57 7.7 48.78-17.608 65.9-53.12 65.9h-37.82c-71.639 0-118.029-37.82-171.64-37.82V240h10.92c28.36 0 67.98-70.89 94.54-97.46 28.36-28.36 18.91-75.63 37.82-94.54 47.27 0 47.27 32.98 47.27 56.73 0 39.17-28.36 56.72-28.36 94.54h103.99c21.11 0 37.73 18.91 37.82 37.82.09 18.9-12.82 37.81-22.27 37.81 13.489 14.555 16.371 45.236-5.21 65.62zM88 432c0 13.255-10.745 24-24 24s-24-10.745-24-24 10.745-24 24-24 24 10.745 24 24z"></path>
+    </symbol>
+    <symbol viewBox="0 0 512 512" id="far.fa-heart">
+        <path fill="currentColor" d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z"></path>
+    </symbol>
+    <symbol viewBox="0 0 512 512" id="fas.fa-share">
+        <path fill="currentColor" d="M503.691 189.836L327.687 37.851C312.281 24.546 288 35.347 288 56.015v80.053C127.371 137.907 0 170.1 0 322.326c0 61.441 39.581 122.309 83.333 154.132 13.653 9.931 33.111-2.533 28.077-18.631C66.066 312.814 132.917 274.316 288 272.085V360c0 20.7 24.3 31.453 39.687 18.164l176.004-152c11.071-9.562 11.086-26.753 0-36.328z"></path>
+    </symbol>
+    <symbol viewBox="0 0 512 512" id="far.fa-bookmark">
+        <path d="M400 0H112C85.49 0 64 21.49 64 48v464l192-112 192 112V48c0-26.51-21.49-48-48-48zm0 428.43l-144-84-144 84V54a6 6 0 0 1 6-6h276c3.314 0 6 2.683 6 5.996z" fill="currentColor"></path>
+    </symbol>
+    <symbol viewBox="0 0 512 512" id="fas.fa-map-marker-alt">
+        <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+    </symbol>
+    <symbol viewBox="0 0 512 512" id="fas.fa-search">
+        <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+    </symbol>
+    <symbol viewBox="0 0 320 512" id="fas.fa-angle-down">
+        <path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
+    </symbol>
+    <symbol viewBox="0 0 576 512" id="fas.fa-star">
+        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+    </symbol>
+</svg>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav id="web_page_main_header" class="navbar navbar-expand-lg navbar-light bg-light fixed-top custom-nav-bar-1597872958 custom-nav-bar-light-1597872958">
+
+    
+    <div class="container" style="">
+
+        <a id="left-menu-button-1597872958" class="left-menu-button-1597872958 left-menu-button-light-1597872958" href="javascript: void(0)" onclick="window.daToggleLeftMenu();" title="Left menu.">
+            <svg style="margin: auto; width: 30px; height: 30px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 271 271"><rect ry="10.093" y="62.626" x="47.216" height="20.186" width="176.997" fill="#fff" fill-opacity=".988" fill-rule="evenodd"></rect><rect width="176.997" height="20.186" x="47.216" y="125.622" ry="10.093" fill="#fff" fill-opacity=".988" fill-rule="evenodd"></rect><rect ry="10.093" y="188.617" x="47.216" height="20.186" width="176.997" fill="#fff" fill-opacity=".988" fill-rule="evenodd"></rect></svg>
+        </a>
+        <a href="https://dirask.com/" class="navbar-brand">
+            
+                
+                
+
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="26" height="26" viewBox="0 0 6.8791663 6.8791662" version="1.1" id="svg959" sodipodi:docname="da_logo_v6_export_26px.svg" inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+    <defs id="defs953"></defs>
+    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="15.839192" inkscape:cx="24.083929" inkscape:cy="11.431012" inkscape:document-units="mm" inkscape:current-layer="layer1" showgrid="false" fit-margin-top="0" fit-margin-left="0" fit-margin-right="0" fit-margin-bottom="0" inkscape:window-width="1858" inkscape:window-height="1057" inkscape:window-x="54" inkscape:window-y="-8" inkscape:window-maximized="1" units="px"></sodipodi:namedview>
+    <metadata id="metadata956">
+        <rdf:rdf>
+            <cc:work rdf:about="">
+                <dc:format>image/svg+xml</dc:format>
+                <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+                <dc:title></dc:title>
+            </cc:work>
+        </rdf:rdf>
+    </metadata>
+    <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-0.39595711,-286.94232)">
+        <rect style="opacity:1;fill:#3085d6;fill-opacity:1;stroke:none;stroke-width:0.97401077;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="rect819-0" width="6.8791666" height="6.8791666" x="0.39595711" y="286.94232" ry="0.52396488"></rect>
+        <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.72542858px;line-height:1.25;font-family:&#39;Segoe UI&#39;;-inkscape-font-specification:&#39;Segoe UI&#39;;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.1431357" x="1.918119" y="292.59387" id="text823-0"><tspan sodipodi:role="line" id="tspan821-4" x="1.918119" y="292.59387" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:&#39;Segoe UI&#39;;-inkscape-font-specification:&#39;Segoe UI Bold&#39;;fill:#ffffff;stroke-width:0.1431357">d</tspan></text>
+    </g>
+</svg>
+
+
+
+
+                <span style="" id="nav-bar-main-logo-1597872958" class="nav-bar-main-logo nav-bar-main-logo-light-1597872958">dirask</span>
+        </a>
+
+        <div class="d-flex flex-row order-2 order-lg-3" style="margin-left: auto;">
+            <ul class="navbar-nav flex-row">
+
+                
+
+                <style>
+
+
+                </style>
+
+
+
+
+
+
+
+
+                    
+
+                <li>
+
+                    <a href="https://dirask.com/wiki/random-post" class="navbar-brand ek_nav_bar_a_custom da_navbar_random_btn" style="margin-left: 10px" role="button" aria-haspopup="true" aria-expanded="false" title="Find random knowledge post.">
+                        
+                       <svg class="nav-bar-custom-icon-1597872958 nav-bar-custom-icon-light-1597872958 fas fa-random">
+                           <use handle="item-icon" href="#fas.fa-random"></use>
+                       </svg>
+                    </a>
+                </li>
+
+
+
+                <li>
+                    
+                    <a href="javascript: window.fireComingSoonInfo()" class="navbar-brand ek_nav_bar_a_custom da_navbar_search" role="button" aria-haspopup="true" aria-expanded="false">
+                        
+                        <svg class="nav-bar-custom-icon-1597872958 nav-bar-custom-icon-light-1597872958 fas fa-search">
+                            <use handle="item-icon" href="#fas.fa-search"></use>
+                        </svg>
+                    </a>
+                </li>
+
+                <li>
+                    
+                    <a href="javascript: window.fireComingSoonInfo()" class="navbar-brand ek_nav_bar_a_custom da_navbar_envelope" role="button" aria-haspopup="true" aria-expanded="false" title="Show received messages.">
+                        
+                        <svg class="nav-bar-custom-icon-1597872958 nav-bar-custom-icon-light-1597872958 far fa-envelope">
+                            <use handle="item-icon" href="#far.fa-envelope"></use>
+                        </svg>
+                    </a>
+                </li>
+
+                <li>
+                    
+                    <a href="javascript: window.fireComingSoonInfo()" class="navbar-brand ek_nav_bar_a_custom da_navbar_notifications" role="button" aria-haspopup="true" aria-expanded="false" title="Show received notifications.">
+                        
+                        <svg class="nav-bar-custom-icon-1597872958 nav-bar-custom-icon-light-1597872958 far fa-bell">
+                            <use handle="item-icon" href="#far.fa-bell"></use>
+                        </svg>
+                    </a>
+                </li>
+
+                <li style="margin-top: 4px;">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+    function applyLanguages()
+    {
+        var selectedLanguages = [];
+
+        var hInputs = document.querySelectorAll('input.site-languages-label-1597181398');
+
+        for (var i = 0; i < hInputs.length; ++i)
+        {
+            var hInput = hInputs[i];
+
+            if (hInput.checked)
+                selectedLanguages.push(hInput.value);
+        }
+
+        var selectedLanguagesText = selectedLanguages.join(",");
+
+        var jsonRequestData = {
+            contentLanguages: selectedLanguagesText
+        };
+
+        $.ajax({
+            type: "POST",
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            data: JSON.stringify(jsonRequestData),
+            url: '/languages/set-content-language/submit',
+            success: function (response) {
+                console.log('Submission was successful.');
+                console.log(response);
+                if (response.success) {
+                    location.reload();
+                    // window.location.href = response.redirectUrl;
+                } else {
+                    Swal.fire({
+                        type: 'info',
+                        title: 'Info',
+                        text: JSON.stringify(response.errorMessage)
+                    });
+                }
+            },
+            error: function (response) {
+                console.error('An error occurred.');
+                console.error(response);
+                Swal.fire({
+                    type: 'info',
+                    title: 'Info',
+                    text: 'Something went wrong.'
+                });
+            }
+        });
+    }
+
+</script>
+
+<style>
+
+    /* --- button with selected languages --- */
+
+    div.site-languages-selection-activator
+    {
+        margin: 0;
+        padding: 3px 0 0 0;
+        display: flex;
+        cursor: pointer;
+    }
+
+
+        span.site-languages-used-language + span.site-languages-used-language
+        {
+            margin: 0 0 0 3px;
+        }
+
+    /* --- menu with languages to select --- */
+
+    div.site-languages-options-1597181398
+    {
+        padding: 10px 10px 0 10px;
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        display: flex;
+    }
+
+        div.site-languages-separator-1597181398
+        {
+            margin: 40px 25px 0 25px;
+            border-left: #eaeaea 1px solid;
+        }
+
+        div.site-languages-block-1597181398
+        {
+            width: 160px;
+        }
+
+            div.site-languages-header-1597181398
+            {
+                color: #1978b3;
+            }
+
+            div.site-languages-content-1597181398
+            {
+                margin: 13px 0 0 0;
+            }
+
+                label.site-languages-label-1597181398
+                {
+                    padding: 3px 23px;
+                    display: block;
+                    cursor: pointer;
+                }
+
+                    span.site-languages-text-1597181398
+                    {
+                        margin: 0 0 0 5px;
+                    }
+
+    div.site-languages-navigator-1597181398
+    {
+        margin: 30px 0 0 0;
+        display: flex;
+    }
+
+        div.site-languages-spacer-1597181398
+        {
+            flex: 1;
+        }
+
+        div.site-languages-action-1597181398
+        {
+            flex: 0;
+        }
+
+            button.apply-site-languages
+            {
+                padding: 7px 20px;
+                border: 1px solid #b4bac0;
+                border-radius: 4px;
+                background: white;
+                text-decoration: none;
+                line-height: 22px;
+                letter-spacing: 1px;
+                white-space: nowrap;
+                font-weight: 500;
+                font-size: 14px;
+                color: #495057;
+                cursor: pointer;
+            }
+
+    @media (max-width: 750px)
+    {
+        div.site-languages-options-1597181398
+        {
+            display: block;
+        }
+    }
+
+</style>
+
+
+<div id="da_navbar_languages" style="" class="da_navbar_languages">
+    
+    <div id="site-languages-selection-activator" class="site-languages-selection-activator">
+
+            <span class="site-languages-used-language site-languages-used-language-light">
+                EN
+            </span>
+
+    </div>
+</div>
+
+<!-- absolute positioning with negative position is used only to avid UI jumping -->
+
+
+<script>
+
+    window.SITE_LANGUAGES_SELECTION = new Popper2({
+        popperVisible: false,
+        hContainer: document.querySelector('#da_navbar_languages'),
+        hActivator: document.querySelector('#site-languages-selection-activator'),
+        hPopper: document.querySelector('#site-languages-selection-popper'),
+        calculateOffset: function(hContainer, hActivator, hPopper)
+        {
+            var offset = ElementUtils.calculateOffset(hActivator);
+
+            var result = {
+                left: Math.round(offset.x + 0.5 * hActivator.offsetWidth - hPopper.offsetWidth + 43),
+                top: Math.round(offset.y + hActivator.offsetHeight + 16)
+            };
+
+            return result;
+        }
+    });
+
+</script>
+
+
+                </li>
+
+
+                
+
+
+
+
+                
+
+
+
+                <style>
+
+                    .nav-bar-account-button-1597872958 {
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        padding-top: 3px;
+                        padding-bottom: 3px;
+                        border-radius: 4px;
+                        font-size: 12px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        letter-spacing: 1px;
+                    }
+
+                    .nav-bar-sign-up-button-1597872958 {
+                        background: #3085d6;
+                        border: 1px solid #0579d0;
+                        margin-right: 5px;
+                        padding-left: 18px;
+                        padding-right: 18px;
+                    }
+
+                </style>
+
+                <li class="nav-item" style="margin-top: 3px;">
+                    <a href="https://dirask.com/users/login" id="nav-bar-log-in-button-1597872958" class="navbar-brand nav-bar-account-button-1597872958 nav-bar-log-in-button-1597872958 nav-bar-log-in-button-light-1597872958" role="button" aria-haspopup="true" aria-expanded="false" style=" ">Log in</a>
+                    
+                </li>
+
+                <li class="nav-item main_page_menu_sign_up_nav_item_expanded" style="margin-top: 3px;">
+                    <a href="https://dirask.com/users/sign-up" class="navbar-brand nav-bar-account-button-1597872958 nav-bar-sign-up-button-1597872958" role="button" aria-haspopup="true" aria-expanded="false" style="color: white">Join</a>
+                </li>
+
+                
+            </ul>
+
+        </div>
+
+        <div class="collapse navbar-collapse order-3 order-lg-2" id="navbarNavDropdown" style="display: block;">
+            
+
+            <script>
+                window.suggestionsPlaced = true;
+            </script>
+            
+
+<script>
+    var hMainNavigator = document.querySelector('#navbarNavDropdown');
+    hMainNavigator.style.display = 'block';
+</script>
+
+<style>
+    .home_page_search_height {
+        height: 36px;
+    }
+
+    .navbar-collapse {
+        flex-basis: auto;
+    }
+
+    .search-container {
+        margin: 0 auto;
+    }
+
+    #navbarNavDropdown.order-3 {
+        order: 1;
+    }
+
+    @media (min-width: 992px) {
+        .navbar-expand-lg .navbar-collapse {
+            display: block !important;
+        }
+    }
+
+    @media (max-width: 850px) {
+        .search-container {
+            display: none;
+        }
+    }
+
+    @media (min-width: 1500px) {
+        .search-container {
+            max-width: 757px;
+            padding: 0;
+            /*
+               Warning: used in home page, wiki, qa, findings
+               after changing check features + type something in search
+            */
+            margin-left: 290px;
+        }
+    }
+
+    @media (max-width: 1500px) {
+        .search-container {
+            max-width: 750px;
+            padding: 0 70px;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .search-container {
+            max-width: 500px;
+            padding: 0;
+        }
+    }
+
+</style>
+
+<div id="page-header-search" class="search-container input-group" style="width: auto;">
+    <div class="input-group-append home_page_search_height">
+        <div class="search_loupe_btn search_loupe_btn_border nav_bar_search_buttons da_nav_search_common_background" style="width: 38px; padding-left: 16px; display: flex;" onclick="window.fireComingSoonInfo()">
+            
+            <svg class="fas fa-search" style="margin: auto; color: #a2a0a0; font-size: 15px; height: 1em; max-width: 1em;">
+                <use href="#fas.fa-search"></use>
+            </svg>
+        </div>
+    </div>
+    <input id="search-input" type="text" class="form-control search_input_nav_bar home_page_search_height da_nav_search_common_background search_input_nav_bar_border" maxlength="200" placeholder="Search..." title="Search for resources" style="background: white;">
+    <div class="input-group-append home_page_search_height">
+        <div class="nav_bar_search_input_dropdown_arrow nav_bar_search_buttons da_nav_search_common_background nav_bar_search_input_dropdown_arrow_border" style="width: 38px; padding-left: 14px; display: flex;" onclick="window.fireComingSoonInfo()">
+            
+            <svg class="fas fa-angle-down" style="margin: auto; color: #a2a0a0; font-size: 15px; height: 1em; max-width: 1em;">
+                <use href="#fas.fa-angle-down"></use>
+            </svg>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+            
+
+        </div>
+    </div>
+</nav>
+
+
+
+<main role="main" class="page_main_area" style="">
+
+    
+            
+
+
+
+
+
+
+
+
+<div class="qa_main_box">
+
+    
+
+
+
+
+<div id="left-menu-cover" class="left-menu-cover" onclick="hideLeftMenu();"></div>
+<div id="left-menu-content" class="left-menu-content">
+
+    <div class="da_main_page_left_column" style="">
+
+
+        
+
+
+
+
+
+
+
+
+<script>
+
+    window.fireComingSoonInfo = function() {
+        Swal.fire({
+            type: 'info',
+            title: 'Info',
+            text: "Available only for beta testers."
+        });
+    }
+
+</script>
+
+
+
+
+<div style="margin: 33px 20px 25px 20px" class="left_menu_column_item">
+
+    
+    
+    
+
+    <style>
+
+        #left-menu-items-container
+        {
+
+        }
+
+        div.left-menu-group
+        {
+            margin: 25px 0 0 0;
+        }
+
+            div.left-menu-title
+            {
+                margin: 0 0 0 -10px;
+                font-size: 12px;
+                color: #1978b3;
+            }
+
+            div.left-menu-items
+            {
+                margin: 10px 0 0 0;
+            }
+
+                a.left-menu-item
+                {
+                    margin: -4px -20px;
+                    padding: 4px 20px;
+                    max-height: 30px;
+                    text-decoration: none;
+                    white-space: nowrap;
+                    display: flex;
+                }
+
+                a.left-menu-item + a.left-menu-item
+                {
+                    margin-top: 10px;
+                }
+
+                    svg.left-menu-item-icon
+                    {
+                        margin: auto;
+                        flex: 0 0 20px;
+                        height: 1em;
+                        font-size: 18px;
+                        color: #3085d6;
+                        display: flex;
+                    }
+
+                    a.left-menu-item > svg.fas.fa-home
+                    {
+                        font-size: 16px;
+                    }
+
+                    a.left-menu-item > svg.far.fa-lightbulb
+                    {
+                        font-size: 20px;
+                    }
+
+                    a.left-menu-item > svg.far.fa-comments
+                    {
+                        font-size: 16px;
+                    }
+
+                    a.left-menu-item > svg.fas.fa-briefcase
+                    {
+                        font-size: 16px;
+                    }
+
+
+                    a.left-menu-item > svg.fas.fa-edit
+                    {
+                        font-size: 16px;
+                    }
+
+                    a.left-menu-item > svg.far.fa-paper-plane
+                    {
+                        font-size: 16px;
+                    }
+
+                    span.left-menu-item-name
+                    {
+                        margin-left: 18px;
+                        flex: 1;
+                        align-items: center;
+                        line-height: 22px;
+                        display: flex;
+                        font-size: 15px;
+                    }
+
+                    span.left-menu-item-text
+                    {
+                        /* nothing here ... */
+                    }
+
+                    span.left-menu-item-stamp
+                    {
+                        margin: 0 10px;
+                        padding: 0 5px;
+                        border-radius: 6px;
+                        background: #a7cfe8;
+                        line-height: 15px;
+                        font-size: 12px;
+                        color: white;
+                    }
+
+                a.left-menu-item-default
+                {
+                    /* nothing here ... */
+                }
+
+                    a.left-menu-item-default span.left-menu-item-text
+                    {
+                        font-weight: 400;
+                        font-size: 15px;
+                    }
+
+                a.left-menu-item-selected
+                {
+                    background: #dcf0fd;
+                }
+
+                    a.left-menu-item-selected span.left-menu-item-name
+                    {
+                        font-weight: 600;
+                        font-size: 16px;
+                        color: #3085d6;
+                    }
+
+    </style>
+
+    
+    <div id="left-menu-items-container"><a class="left-menu-item left-menu-item-default" href="https://dirask.com/home" title="Home"><svg class="left-menu-item-icon fas fa-home"><use handle="item-icon" href="#fas.fa-home"></use></svg><span handle="item-name" class="left-menu-item-name">Home</span></a><div class="left-menu-group"><div handle="group-name" class="left-menu-title">IT Knowledge</div><div handle="group-items" class="left-menu-items"><a class="left-menu-item left-menu-item-selected" href="https://dirask.com/posts" title="Wiki for Code"><svg class="left-menu-item-icon far fa-lightbulb"><use handle="item-icon" href="#far.fa-lightbulb"></use></svg><span handle="item-name" class="left-menu-item-name"><span class="left-menu-item-text">Wiki </span><span class="left-menu-item-stamp">for Code</span></span></a><a class="left-menu-item left-menu-item-default" href="https://dirask.com/questions" title="Questions"><svg class="left-menu-item-icon far fa-comments"><use handle="item-icon" href="#far.fa-comments"></use></svg><span handle="item-name" class="left-menu-item-name">Questions</span></a><a class="left-menu-item left-menu-item-default" href="javascript: window.fireComingSoonInfo()" title="Communities"><svg class="left-menu-item-icon fas fa-users"><use handle="item-icon" href="#fas.fa-users"></use></svg><span handle="item-name" class="left-menu-item-name">Communities</span></a></div></div><div class="left-menu-group"><div handle="group-name" class="left-menu-title">Inspiration</div><div handle="group-items" class="left-menu-items"><a class="left-menu-item left-menu-item-default" href="https://dirask.com/findings" title="Findings &amp; News"><svg class="left-menu-item-icon far fa-paper-plane"><use handle="item-icon" href="#far.fa-paper-plane"></use></svg><span handle="item-name" class="left-menu-item-name">Findings &amp; News</span></a></div></div></div>
+    
+    <script>
+
+        
+
+        createScope(function()
+        {
+            var counter = 0;
+
+            window.PageKey = {
+                HOME: ++counter,
+                BLOGS: ++counter,
+                WIKI: ++counter,
+                QUESTIONS: ++counter,
+                COMMUNITIES: ++counter,
+                JOB_OFFERS: ++counter,
+                POST_JOB: ++counter,
+                //RECRUITMENT_TOOLS: ++counter,
+                FINDINGS: ++counter,
+                MEETUPS: ++counter
+            };
+
+            window.PageName = {
+                HOME: 'Home',
+                BLOGS: 'Blog Posts',
+                WIKI: 'Wiki **for Code**',
+                //QUESTIONS: 'Q & A',
+                QUESTIONS: 'Questions',
+                COMMUNITIES: 'Communities',
+                YOUR_NETWORK: 'Your Network',
+                JOB_OFFERS: 'Job Offers',
+                POST_JOB: 'Post a Job **for Free**',
+                //RECRUITMENT_TOOLS: 'Recruitment tools',
+                //FINDINGS: 'Sharing',
+                FINDINGS: 'Findings & News',
+                // FINDINGS: 'Findings',
+                MEETUPS: 'Meetups & Events'
+                // MEETUPS: 'Meetups'
+            };
+
+            window.PageLink = {
+                HOME: '/home',
+                BLOGS: '/blogs',
+                WIKI: '/posts',
+                QUESTIONS: '/questions',
+                COMMUNITIES: '/communities',
+                //JOB_OFFERS: '/jobs',
+                JOB_OFFERS: 'https://dev-task.com/',
+                //POST_JOB: '/business-account/jobs#section=post-job',
+                POST_JOB: 'https://dev-task.com/business-account/jobs#section=post-offer',
+                //RECRUITMENT_TOOLS: '/business-account/jobs#section=published-offers',
+                FINDINGS: '/findings',
+                MEETUPS: '/meetups'
+            };
+
+            var pages = [
+                {
+                    name: '',
+                    items: [
+                        { key: PageKey.HOME,               icon: 'fas.fa-home',          name: PageName.HOME,               link: PageLink.HOME,               expressions: [ /^\/home(\/|\?|#|$)/,  /^(\/?$|[?#])/                           ] },
+                        //{ key: PageKey.COMMUNITIES,        icon: 'fas.fa-users',         name: PageName.COMMUNITIES,        link: PageLink.COMMUNITIES,        expressions: [ /^\/communities(\/|\?|#|$)/,  /^\/c(\/|\?|#|$)/                 ] },
+                        //{ key: PageKey.YOUR_NETWORK,        icon: 'fas.fa-share-alt',     name: PageName.YOUR_NETWORK,        link: PageLink.YOUR_NETWORK,        expressions: [ /^\/communities(\/|\?|#|$)/,  /^\/c(\/|\?|#|$)/                 ] },
+                    ]
+                },
+                {
+                    name: 'IT Knowledge',
+                    items: [
+                        { key: PageKey.WIKI,               icon: 'far.fa-lightbulb',     name: PageName.WIKI,               link: PageLink.WIKI,               expressions: [ /^\/posts(\/|\?|#|$)/,  /^\/p(\/|\?|#|$)/,  /^\/q(\/|\?|#|$)/   ] },
+                        { key: PageKey.QUESTIONS,          icon: 'far.fa-comments',      name: PageName.QUESTIONS,          link: PageLink.QUESTIONS,          expressions: [ /^\/questions(\/|\?|#|$)/                                       ] }, // /^\/q(\/|\?|#|$)/
+                        { key: PageKey.COMMUNITIES,        icon: 'fas.fa-users',         name: PageName.COMMUNITIES,        link: PageLink.COMMUNITIES,        expressions: [ /^\/communities(\/|\?|#|$)/,  /^\/c(\/|\?|#|$)/                 ] }
+//                        { key: PageKey.BLOGS,              icon: 'fas.fa-blog',          name: PageName.BLOGS,              link: PageLink.BLOGS,              expressions: [ /^\/blogs(\/|\?|#|$)/ ] }, // /^\/q(\/|\?|#|$)/
+                        // far fa-question-circle
+                    ]
+                },
+                // {
+                //     name: 'IT Career',
+                //     items: [
+                //         { key: PageKey.JOB_OFFERS,         icon: 'fas.fa-briefcase',     name: PageName.JOB_OFFERS,         link: PageLink.JOB_OFFERS,         expressions: [ /^\/jobs(\/|\?|#|$)/,  /^\/j(\/|\?|#|$)/                        ] },
+                //         { key: PageKey.POST_JOB,           icon: 'fas.fa-edit',          name: PageName.POST_JOB,           link: PageLink.POST_JOB,           expressions: [ /^\/business-account\/jobs[^#]*#(.*&)?section=post-job/         ] },
+                //        // { key: PageKey.RECRUITMENT_TOOLS,  icon: 'fas.fa-tasks',         name: PageName.RECRUITMENT_TOOLS,  link: PageLink.RECRUITMENT_TOOLS,  expressions: [ /^\/business-account\/jobs(\/|\?|#|$)/                          ] } // this one is marked when POST_JOB is not detected
+                //     ]
+                // },
+                {
+                    // name: 'Meantime',
+                    name: 'Inspiration',
+                    items: [
+                        { key: PageKey.FINDINGS,           icon: 'far.fa-paper-plane',   name: PageName.FINDINGS,           link: PageLink.FINDINGS,           expressions: [ /^\/findings(\/|\?|#|$)/,  /^\/f(\/|\?|#|$)/                    ] },
+                        // { key: PageKey.MEETUPS,            icon: 'fas.fa-calendar-day',  name: PageName.MEETUPS,            link: PageLink.MEETUPS,            expressions: [ /^\/meetups(\/|\?|#|$)/,  /^\/m(\/|\?|#|$)/                     ] }
+                    ]
+                }
+                // {
+                //     name: 'Comming soon',
+                //     items: [
+                //         { key: PageKey.BLOGS,              icon: 'fas.fa-blog',          name: PageName.BLOGS,              link: PageLink.BLOGS,              expressions: [ /^\/blogs(\/|\?|#|$)/                                           ] }, // /^\/q(\/|\?|#|$)/
+                //         { key: PageKey.COMMUNITIES,        icon: 'fas.fa-users',         name: PageName.COMMUNITIES,        link: PageLink.COMMUNITIES,        expressions: [ /^\/communities(\/|\?|#|$)/,  /^\/c(\/|\?|#|$)/                 ] },
+                //         { key: PageKey.MEETUPS,            icon: 'fas.fa-calendar-day',  name: PageName.MEETUPS,            link: PageLink.MEETUPS,            expressions: [ /^\/meetups(\/|\?|#|$)/,  /^\/m(\/|\?|#|$)/                     ] }
+                //     ]
+                // }
+            ];
+
+            function checkExpressions(expressions, path)
+            {
+                for (var i = 0; i < expressions.length; ++i)
+                {
+                    var expression = expressions[i];
+
+                    if (expression.test(path))
+                        return true;
+                }
+
+                return false;
+            }
+
+            function detectPage(pages, path)
+            {
+                for (var i = 0; i < pages.length; ++i)
+                {
+                    var page = pages[i];
+                    var items = page.items;
+
+                    for (var j = 0; j < items.length; ++j)
+                    {
+                        var item = items[j];
+
+                        if (path == item.link || checkExpressions(item.expressions, path))
+                            return item;
+                    }
+                }
+
+                return null;
+            }
+
+            window.PageDetector = new function()
+            {
+                // logic
+
+                var path = location.pathname + location.hash;
+                var page = detectPage(pages, path);
+
+                window.addEventListener('locationchange', onChange); // this event uses custom event trigger
+                window.addEventListener('hashchange', onChange);
+
+                // private methods
+
+                function onChange()
+                {
+                    path = location.pathname + location.hash;
+                    page = detectPage(pages, path);
+                }
+
+                // public methods
+
+                this.checkPageKey = function(key)
+                {
+                    return page && page.key == key;
+                };
+
+                this.checkPageName = function(name)
+                {
+                    return page && page.name == name;
+                };
+
+                this.checkPageLink = function(link)
+                {
+                    return page && page.link == link;
+                };
+
+                this.checkPagePath = function(path)
+                {
+                    return page && checkExpressions(page.expressions, path);
+                };
+            };
+
+            var hContainer = document.querySelector('#left-menu-items-container');
+
+            function createClass(name)
+            {
+                if (PageDetector.checkPageName(name))
+                    return 'left-menu-item-selected';
+
+                return 'left-menu-item-default';
+            }
+
+            function prepareIcon(hIcon, icon)
+            {
+                var parts = icon.split('.');
+
+                var hParent = hIcon.parentNode;
+
+                for (var i = 0; i < parts.length; ++i)
+                    hParent.classList.add(parts[i]);
+
+                hIcon.setAttribute('href', '#' + icon);
+            }
+
+            function prepareName(hItem, hName, name)
+            {
+                var parts = name.split('**');
+
+                if (parts.length > 1)
+                {
+                    hItem.title = parts.join('');
+
+                    for (var i = 0; i < parts.length; ++i)
+                    {
+                        var part = parts[i];
+
+                        if (part)
+                        {
+                            var hPart = document.createElement('span');
+
+                            hPart.className = i % 2 == 0 ? 'left-menu-item-text' : 'left-menu-item-stamp';
+                            hPart.innerText = part;
+
+                            hName.appendChild(hPart);
+                        }
+                    }
+                }
+                else
+                {
+                    hItem.title = name;
+                    hName.innerText = name;
+                }
+            }
+
+            function appendItem(hContainer, data)
+            {
+                var hItem = document.createElement('a');
+
+                hItem.className = 'left-menu-item ' + createClass(data.name);
+                hItem.innerHTML = '' +
+                    // '<i handle="item-icon" class="left-menu-item-icon"></i>' +
+                    '<svg class="left-menu-item-icon"><use handle="item-icon" href="#" /></svg>' +
+                    '<span handle="item-name" class="left-menu-item-name"></span>';
+
+                var hItemIcon = hItem.querySelector('[handle="item-icon"]');
+                var hItemName = hItem.querySelector('[handle="item-name"]');
+
+                hItem.href = data.link;
+
+                prepareIcon(hItemIcon, data.icon);
+                prepareName(hItem, hItemName, data.name);
+
+                hContainer.appendChild(hItem);
+            }
+
+            function appendGroup(hContainer, data)
+            {
+                var name = data.name;
+                var items = data.items;
+
+                if (name)
+                {
+                    var hGroup = document.createElement('div');
+
+                    hGroup.className = 'left-menu-group';
+                    hGroup.innerHTML += '' +
+                        '<div handle="group-name" class="left-menu-title"></div>' +
+                        '<div handle="group-items" class="left-menu-items"></div>';
+
+                    var hGroupName = hGroup.querySelector('[handle="group-name"]');
+                    var hGroupItems = hGroup.querySelector('[handle="group-items"]');
+
+                    hGroupName.innerText = name;
+
+                    for (var i = 0; i < items.length; ++i)
+                        appendItem(hGroupItems, items[i]);
+
+                    hContainer.appendChild(hGroup);
+                }
+                else
+                {
+                    for (var i = 0; i < items.length; ++i)
+                        appendItem(hContainer, items[i]);
+                }
+            }
+
+            function appendGroups(hContainer, data)
+            {
+                for (var i = 0; i < data.length; ++i)
+                    appendGroup(hContainer, data[i]);
+            }
+
+            function bindGroups(hContainer, data)
+            {
+                emptyElement(hContainer);
+                appendGroups(hContainer, data);
+
+
+
+
+
+
+
+
+
+
+
+                //TODO: remove it later
+
+                var comingSoonSelectors = [
+                    'a[title="Blogs"]',
+                    'a[title="Communities"]',
+                    'a[title="Meetups & Events"]'
+                ];
+
+
+                for (var i = 0; i < comingSoonSelectors.length; i++) {
+                    var element = document.querySelector(comingSoonSelectors[i]);
+                    if (element)
+                    {
+                        element.href = 'javascript: window.fireComingSoonInfo()';
+                        // element.querySelector('i').style.color = '#bfbbbb';
+                        // element.querySelector('span').style.color = '#bfbbbb';
+                    }
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+
+            function onChange()
+            {
+                bindGroups(hContainer, pages);
+            }
+
+            window.addEventListener('locationchange', onChange); // this event uses custom event trigger
+            window.addEventListener('hashchange', onChange);
+
+            bindGroups(hContainer, pages);
+        });
+
+        
+
+    </script>
+
+    
+    
+    
+
+
+</div>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+<style>
+
+    a.current-post {
+        font-weight: 600;
+        font-size: 16px;
+        color: #3085d6;
+    }
+
+    a.post-translated {
+        font-size: 15px;
+    }
+
+    a.post-not-translated {
+        color: #c50400;
+        font-size: 15px;
+    }
+
+    div.languages-header
+    {
+        font-weight: 400;
+        color: #22262a;
+        font-size: 16px;
+    }
+
+</style>
+
+
+
+<div style="margin-top: 80px; margin-left: 12px;" class="">
+    <div class="languages-header">Languages</div>
+    <div class="left_menu_column_item_container" id="left_menu_column_item_container" style="padding-left: 15px;">
+
+    <div class="post-translation">  <a handle="post-translation-link" href="https://dirask.com/post/create?translation-src-post-hashid=13G391&amp;translation-language-code=de" class="post-not-translated">Deutsch (Translate)</a></div><div class="post-translation">  <a handle="post-translation-link" href="https://dirask.com/posts/13G391" class="current-post">English</a></div><div class="post-translation">  <a handle="post-translation-link" href="https://dirask.com/post/create?translation-src-post-hashid=13G391&amp;translation-language-code=pl" class="post-not-translated">Polski (Translate)</a></div><div class="post-translation">  <a handle="post-translation-link" href="https://dirask.com/post/create?translation-src-post-hashid=13G391&amp;translation-language-code=pt" class="post-not-translated">Português (Translate)</a></div></div>
+</div>
+
+
+<script>
+
+    function createLanguageLinks() {
+
+        var selectedPostHashid = '13G391';
+        var languagesMap = {"de":{"hashid":null},"en":{"hashid":"13G391"},"pl":{"hashid":null},"pt":{"hashid":null}};
+        var postType = 'WIKI';
+
+        // var languagesMap = {
+        //     de: {hashid: null},
+        //     en: {hashid: 'v10d81'},
+        //     pl: {hashid: null},
+        //     pt: {hashid: 'BDd3n1'}
+        // };
+
+        var Languages = new function() {
+
+            //TODO: unify it with common list
+            var list = [
+                { name: 'Deutsch',       code: 'de'},
+                { name: 'English',       code: 'en'},
+                { name: 'Polski',        code: 'pl'},
+                { name: 'Português',     code: 'pt'}
+            ];
+
+            var codes = {};
+
+            for (var i = 0; i < list.length; ++i) {
+                var entry = list[i];
+                codes[entry.code] = entry;
+            }
+
+            // public methods
+
+            this.getList= function() {
+                return list;
+            };
+
+            this.getEntry = function(code) {
+                return codes[code] || null;
+            };
+        };
+
+        var handle = $('#left_menu_column_item_container');
+
+        for (var languageCode in languagesMap) {
+
+            var $hElement = $('' +
+                '<div class="post-translation">' +
+                '  <a handle="post-translation-link" href=""></a>' +
+                '</div>');
+
+            var value = languagesMap[languageCode];
+            var postHashid = value.hashid;
+            var translationLink = null;
+
+            var languageName = Languages.getEntry(languageCode).name;
+            var translationLinkClass = '';
+
+            if (postHashid) {
+
+                if (postType === 'WIKI') {
+                    translationLink = '/posts/' + value.hashid;
+                } else if (postType === 'QUESTION') {
+                    translationLink = '/questions/' + value.hashid;
+                } else {
+                    Swal.fire({
+                        type: 'error',
+                        html: 'Error'
+                    });
+                }
+
+                if (selectedPostHashid === postHashid) {
+                    // currently viewed post
+                    translationLinkClass = 'current-post';
+                } else {
+                    translationLinkClass = 'post-translated';
+                }
+
+            } else {
+                // create new post - link
+
+                if (postType === 'WIKI') {
+                    translationLink = '/post/create';
+                } else if (postType === 'QUESTION') {
+                    translationLink = '/questions/create';
+                } else {
+                    Swal.fire({
+                        type: 'error',
+                        html: 'Error'
+                    });
+                }
+
+                translationLink
+                    += '?translation-src-post-hashid=' + selectedPostHashid
+                    +  "&translation-language-code=" + languageCode;
+
+                translationLinkClass = 'post-not-translated';
+                languageName += ' (Translate)';
+            }
+
+            var $hPostTranslationLink = $hElement.find('[handle="post-translation-link"]');
+            $hPostTranslationLink.attr('href', translationLink);
+            $hPostTranslationLink.attr('class', translationLinkClass);
+            $hPostTranslationLink.text(languageName);
+
+            handle.append($hElement);
+        }
+    }
+
+    createLanguageLinks();
+
+</script>
+
+
+
+
+
+
+
+
+
+
+        
+
+    </div>
+
+    
+  
+    
+
+</div>
+
+<script>
+
+    var leftMenuCover = document.getElementById('left-menu-cover');
+    var leftMenuContent = document.getElementById('left-menu-content');
+
+    var menuContentStyle = getDisplayStyle(leftMenuContent);
+
+    leftMenuContent.addEventListener("animationend", function()
+    {
+        var hidden = leftMenuContent.classList.contains('left-menu-content-animated-hidden');
+
+        if(hidden)
+        {
+            leftMenuContent.classList.remove('left-menu-content-animated-hidden');
+            leftMenuContent.classList.add('left-menu-content-hidden');
+        }
+        else
+        {
+            leftMenuContent.classList.remove('left-menu-content-animated-visible');
+            leftMenuContent.classList.add('left-menu-content-visible');
+        }
+    });
+
+    function showLeftMenu()
+    {
+        leftMenuCover.classList.remove('left-menu-cover-hidden');
+        leftMenuCover.classList.add('left-menu-cover-visible');
+
+        leftMenuContent.classList.remove('left-menu-content-hidden');
+        leftMenuContent.classList.add('left-menu-content-animated-visible');
+    }
+
+    function hideLeftMenu()
+    {
+        leftMenuCover.classList.remove('left-menu-cover-visible');
+        leftMenuCover.classList.add('left-menu-cover-hidden');
+
+        leftMenuContent.classList.remove('left-menu-content-visible');
+        leftMenuContent.classList.add('left-menu-content-animated-hidden');
+    }
+
+    function getDisplayStyle(element)
+    {
+        var style = element.currentStyle || window.getComputedStyle(element);
+
+        return {
+            isHidden: function()
+            {
+                return style.display == 'none';
+            }
+        };
+    }
+
+    window.daToggleLeftMenu = function()
+    {
+        if(menuContentStyle.isHidden())
+            showLeftMenu();
+
+        else
+            hideLeftMenu();
+    }
+
+</script>
+
+    <div class="main-layout-left-column-spacer" style="width: 350px;"></div>
+
+    <div class="question_list_cls" style="">
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+    window.RELEASE_VERSION = 20;
+
+</script>
+
+
+
+
+
+<style>
+
+    .question_list_cls
+    {
+        max-width: 935px;
+    }
+
+</style>
+
+
+
+
+
+<style>
+
+    div.post-viewer-answers-count span
+    {
+        display: none;
+    }
+
+    div.post-viewer-answers-count:after
+    {
+        font-size: 13px;
+        color: #2f2e35;
+        content: '1 contribution';
+    }
+
+</style>
+
+
+
+
+
+
+
+
+
+<script>
+
+    var modificationNotAllowed = window.SearchLocation.getParameter('modification-not-allowed');
+
+    if (modificationNotAllowed === 'true') {
+        Swal.fire({
+            type: 'info',
+            title: 'Who can modify posts?',
+            text: 'Only owner of the post and Admins can modify posts. You can suggest edit in comments.'
+        });
+    }
+
+</script>
+
+<div class="single_question_cls_outer">
+
+    <style>
+
+        .single_question_cls
+        {
+            width: 760px;
+        }
+
+
+        div.page-header
+        {
+            margin: 15px 0 0 0;
+            padding: 0 15px 0 96px;
+            display: flex;
+        }
+
+            div.page-header *
+            {
+                line-height: 28px;
+            }
+
+            div.post-header-spacer
+            {
+                flex: 1;
+            }
+
+            a.page-header-link
+            {
+                font-size: 14px;
+                color: #5f5f5f;
+                display: flex;
+            }
+
+            div.page-header-post-status
+            {
+                margin: 0 0 0 10px;
+                padding: 0 10px;
+                border: 1px solid #c5ce00;
+                border-radius: 5px;
+                background: #f1ff14;
+                min-width: 70px;
+                text-align: center;
+                font-weight: 600;
+                font-size: 15px;
+                color: #656565;
+            }
+
+            div.post-header-post-path
+            {
+                display: flex;
+            }
+
+                div.post-header-post-path a.page-header-link
+                {
+                    text-decoration: none;
+                    font-size: 20px;
+                }
+
+                div.post-header-post-path span.page-header-label
+                {
+                    padding: 0 10px;
+                    font-size: 20px;
+                }
+
+                div.post-header-post-path svg.page-header-icon
+                {
+                    margin: auto;
+                    width: 1em; height: 1em;
+                    font-size: 21px;
+                    color: #c1c1c0;
+                }
+
+            div.page-header-navigator
+            {
+                display: flex;
+            }
+
+                div.page-header-navigator > * + *
+                {
+                    margin-left: 15px;
+                }
+
+        @media (max-width: 750px)
+        {
+            div.page-header
+            {
+                padding: 0 15px;
+            }
+        }
+
+    </style>
+
+
+    <div class="single_question_cls" style="text-align: left;">
+        
+
+<style>
+
+    div.search-container-logic
+    {
+        margin: 0 0 0 80px;
+    }
+
+    div.suggestions-1547456397
+    {
+        position: relative;
+        z-index: 10000000000;
+    }
+
+</style>
+
+
+<div class="search-container-logic" style="">
+    
+    <div class="suggestions-1547456397 hidden-1547456397"></div>
+    <div id="search-suggestions-speed" style="display: none;">
+        ( keywords in <span id="search-keywords-speed">0</span> s, posts in <span id="search-posts-speed">0</span> s )
+    </div>
+    <ol id="search-post-suggestions" style="display: none;"></ol>
+    <div id="search-suggestions-message" style="display: none;">No result...</div>
+</div>
+<script>
+
+
+    window.addEventListener('load', function()
+    {
+        var hSearchInput = document.querySelector('#search-input');
+
+        var hSearchKeywordSuggestions = document.querySelector('#search-keyword-suggestions');
+        var hSearchPostSuggestions = document.querySelector('#search-post-suggestions');
+        var hSearchSuggestionsMessage = document.querySelector('#search-suggestions-message');
+
+        var hSearchSuggestionsSpeed = document.querySelector('#search-suggestions-speed');
+        var hSearchKeywordsSpeed = document.querySelector('#search-keywords-speed');
+        var hSearchPostsSpeed = document.querySelector('#search-posts-speed');
+
+        function loadPostSuggestions(requestData1, requestData2)
+        {
+            $.ajax({
+                type: 'GET',
+                url: '/suggestions/search-posts',
+                data: requestData2,
+                // success: function(test)
+                success: function(responseData)
+                {
+                    var suggestions = responseData.suggestions;
+
+                    if(suggestions.length > 0)
+                    {
+                        hideElement(hSearchSuggestionsMessage);
+
+                        hSearchPostSuggestions.innerHTML = '';
+
+                        for(var i = 0; i < suggestions.length; ++i)
+                        {
+                            var suggestion = suggestions[i];
+
+                            hSearchPostSuggestions.innerHTML += '<li class="suggestion"><a href="/posts/' + suggestion.post_hash + '">' + MarkerUtils.markText(suggestion.post_name, requestData1.query, requestData1.criteria) + '</a></li>';
+                        }
+
+                        hSearchPostSuggestions.style.display = 'block';
+
+                        hSearchPostsSpeed.innerText = roundPrecised(responseData.speed, 3);
+                        hSearchSuggestionsSpeed.style.display = 'block';
+                    }
+                    else
+                    {
+                        resetElement(hSearchPostSuggestions);
+                        showElement(hSearchSuggestionsMessage);
+                    }
+                },
+                error: function (error)
+                {
+                    resetElement(hSearchPostSuggestions);
+                }
+            });
+        }
+
+        var autocomplete = Autocomplete.create( hSearchInput, {
+            permanent: true,
+            hSuggestionsPlaceholder: window.suggestionsPlaced ? hSearchKeywordSuggestions : null,
+            getName : function( item, query )
+            {
+                return item;
+            },
+            getInput : function( name, item, query )
+            {
+                var expression1 = /(?:"([^"])+"|([^"\s]+)|)$/;
+
+                if(/\s/.test(name))
+                    return query.replace(expression1, '"' + name + '"');
+
+                return query.replace(expression1, name);
+            },
+            onQuery : function( query, bind )
+            {
+                var requestData1 = createData(query);
+
+                if(requestData1)
+                {
+                    var requestData2 = encodeData(requestData1);
+
+                    $.ajax({
+                        type: 'GET',
+                        url: '/suggestions/search-keywords',
+                        data: requestData2,
+                        success: function(responseData)
+                        {
+                            bind(responseData.suggestions);
+
+                            hSearchKeywordsSpeed.innerText = roundPrecised(responseData.speed, 3);
+                            hSearchSuggestionsSpeed.style.display = 'block';
+                        },
+                        error: function (error)
+                        {
+                            bind();
+                        }
+                    });
+
+                    loadPostSuggestions(requestData1, requestData2);
+                }
+                else
+                {
+                    bind();
+
+                    resetElement(hSearchPostSuggestions);
+                    hideElement(hSearchSuggestionsMessage);
+                }
+            },
+            onSelect : function( name, item, query )
+            {
+                var requestData1 = createData(query);
+
+                if(requestData1)
+                {
+                    var requestData2 = encodeData(requestData1);
+
+                    loadPostSuggestions(requestData1, requestData2);
+                }
+                else
+                {
+                    resetElement(hSearchPostSuggestions);
+                    hideElement(hSearchSuggestionsMessage);
+                }
+            },
+            onEmpty : function()
+            {
+                resetElement(hSearchPostSuggestions);
+                hideElement(hSearchSuggestionsMessage);
+            }
+        } );
+
+        function resetElement(handle)
+        {
+            hideElement(handle);
+
+            handle.innerHTML = '';
+        }
+    });
+
+</script>
+
+        
+
+<style>
+
+    div.suggestions-1547456397
+    {
+        position: relative;
+        top: -16px;
+        z-index: 10000000000;
+    }
+
+</style>
+
+    </div>
+
+    
+
+    <div class="page-header">
+        <div class="post-header-post-path">
+            <a class="page-header-link" href="https://dirask.com/posts" title="Wiki Articles">
+                
+                <svg class="page-header-icon">
+                    <use handle="item-icon" href="#far.fa-lightbulb"></use>
+                </svg>
+                <span class="page-header-label">Wiki</span>
+            </a>
+            
+            
+        </div>
+        <div class="page-header-post-status" style="visibility: hidden">Draft</div>
+        <div class="post-header-spacer"></div>
+        <div class="page-header-navigator">
+            <a class="page-header-link" href="https://dirask.com/posts">All Wiki Articles</a>
+            <a class="page-header-link" href="https://dirask.com/post/create">Create Wiki Article</a>
+        </div>
+    </div>
+
+
+
+
+
+
+    
+    
+    
+
+
+    
+
+    
+    
+    
+
+
+    
+
+    <script>
+
+        var postData = {"postHashId":"13G391","postLanguage":"en","postTitle":"JavaScript - detecting invalid date","postTitles":["JavaScript - how to check if date is invalid?","JavaScript - how to check if date is correct?","JavaScript - checking date correctness"],"postHashtags":["programming","js","javascript","date","invalid","text","check","correct"],"postStatus":"accepted","postImageFilename":null,"postContent":"<p>In this article, we&#39;re going to have a look at how to check if data is invalid in JavaScript.</p>\n\n<p>Date correctness can be checked basing on internal state of <code class=\"inline-code\">Date</code> object.</p>\n\n<p>Incorrect date object returns:</p>\n\n<ul><li><code class=\"inline-code\">false</code> for call <code class=\"inline-code\">isFinite(myDate)</code>,</li><li><code class=\"inline-code\">true</code> for call <code class=\"inline-code\">isNaN(myDate)</code>,</li><li><code class=\"inline-code\">NaN</code> from <code class=\"inline-code\">myDate.getTime()</code> method,</li><li>&#34;<code class=\"inline-code\">Invalid Date</code>&#34; string for <code class=\"inline-code\">toString()</code> method call.</li></ul>\n\n<p>Quick solution:</p>\n\n<pre>\n<code class=\"language-javascript\">// ONLINE-RUNNER:browser;\n\nvar correctDate   &#61; new Date(2020, 10, 15);\nvar incorrectDate &#61; new Date(NaN);\n\nconsole.log( isFinite( correctDate   ) ); // true\nconsole.log(   !isNaN( correctDate   ) ); // true\nconsole.log( isFinite( incorrectDate ) ); // false\nconsole.log(   !isNaN( incorrectDate ) ); // false</code></pre>\n\n<p>Look below to see different practical examples:</p>\n\n<h2>1. <code class=\"inline-code\">Date</code> object test example</h2>\n\n<p>This approach bases on fact: <code class=\"inline-code\">isFinite</code> method returns <code class=\"inline-code\">false</code> for incorrect dates.</p>\n\n<pre>\n<code class=\"language-javascript\">// ONLINE-RUNNER:browser;\n\nfunction isCorrectDate(date) {\n    return date instanceof Date &amp;&amp; isFinite(date);\n\n    // return date instanceof Date &amp;&amp; !isNaN(date);\n}\n\n// Usage example:\n\nvar correctDate   &#61; new Date(2020, 10, 15);\nvar incorrectDate &#61; new Date(NaN);\n\nconsole.log( isCorrectDate( correctDate   ) ); // true\nconsole.log( isCorrectDate( incorrectDate ) ); // false</code></pre>\n\n<h2>2. <code class=\"inline-code\">getTime()</code> or other getter test example</h2>\n\n<p>This approach bases on fact: incorrect date returns <code class=\"inline-code\">NaN</code> values from getters. So we can make simple test for example with <code class=\"inline-code\">getTime()</code> method.</p>\n\n<pre>\n<code class=\"language-javascript\">// ONLINE-RUNNER:browser;\n\nfunction isCorrectDate(date) {\n    return date instanceof Date &amp;&amp; isFinite(date.getTime());\n\n    // return date instanceof Date &amp;&amp; !isNaN(date.getTime());\n}\n\n// Usage example:\n\nvar correctDate   &#61; new Date(2020, 10, 15);\nvar incorrectDate &#61; new Date(NaN);\n\nconsole.log( isCorrectDate( correctDate   ) ); // true\nconsole.log( isCorrectDate( incorrectDate ) ); // false</code></pre>\n\n<h2>3. <code class=\"inline-code\">toString()</code> method test example</h2>\n\n<p>This approach is based on fact: incorrect date object returns &#34;<code class=\"inline-code\">Invalid Date</code>&#34; string for <code class=\"inline-code\">toString()</code> method call. It is good to call to string method with <code class=\"inline-code\">protoype</code> API that prevents for methods overriding.</p>\n\n<pre>\n<code class=\"language-javascript\">// ONLINE-RUNNER:browser;\n\nfunction isCorrectDate(date) {\n    if (date instanceof Date) {\n        var text &#61; Date.prototype.toString.call(date);\n        return text !&#61;&#61; &#39;Invalid Date&#39;;\n    }\n    return false;\n}\n\n// Usage example:\n\nvar correctDate   &#61; new Date(2020, 10, 15);\nvar incorrectDate &#61; new Date(NaN);\n\nconsole.log( isCorrectDate( correctDate   ) ); // true\nconsole.log( isCorrectDate( incorrectDate ) ); // false</code></pre>\n\n<h2>4. Detecting correct date string or date object example</h2>\n\n<p>Example presented in this section allows to check correctness of date provided as string or object. String date should be formatetd according to one of the standards:</p>\n\n<ul><li>IETF-compliant RFC 2822 timestamps,</li><li>ISO 8601.</li></ul>\n\n<p>Run following code to see effect:</p>\n\n<pre>\n<code class=\"language-javascript\">// ONLINE-RUNNER:browser;\n\nfunction isCorrectDate(date) {\n    return isFinite(date instanceof Date ? date : new Date(date));\n\n    // return isFinite(date instanceof Date ? date : Date.parse(date));\n    // return !isNaN(date instanceof Date ? date : new Date(date));\n    // return !isNaN(date instanceof Date ? date : Date.parse(date));\n}\n\n// Usage example:\n\nvar date1 &#61; &#39;2020-10-15&#39;;\nvar date2 &#61; &#39;2020-10-x5&#39;; // &lt;-------- incorrect date\nvar date3 &#61; &#39;This is not date&#39;; // &lt;-- incorrect date\nvar date4 &#61; new Date(2020, 10, 15);\nvar date5 &#61; new Date(NaN); // &lt;------- incorrect date\n\nconsole.log( isCorrectDate( date1 ) ); // true\nconsole.log( isCorrectDate( date2 ) ); // false\nconsole.log( isCorrectDate( date3 ) ); // false\nconsole.log( isCorrectDate( date4 ) ); // true\nconsole.log( isCorrectDate( date5 ) ); // false</code></pre>\n\n<p> </p>\n","postAuthor":{"userHashId":"xaOmA0","userName":"Lily","userAvatarFilename":"1629130172536__xaOmA0__w40px_h40px.jpg","userPointsCount":208,"userRole":"BASIC"},"postPointsCount":8,"userReactionType":null,"postCreationTime":1588933034000,"postUpdateTime":1589214910000,"postRemovalTime":null,"postComments":[],"postSubposts":[],"blogPost":false};
+
+    </script>
+
+    <style>
+
+        article.post-composition
+        {
+            margin: 35px 0 0 0;
+        }
+
+    </style>
+
+    
+    
+    
+    <div><article class="post-composition"><div handle="post-content" class="post-composition-question-content"><div class="post-container post-question-container"><header class="post-viewer-header post-question-viewer-header">  <div class="wiki-post-viewer-line-1596137742">    <div class="expandable-hashtags-component-1595127034"><div class="marked-hashtags-list-component-1590873156"><a class="hashtag-1590873156 marked-hashtag-1590873156" title="Programming" href="https://dirask.com/posts?hashtags=programming" style="background: rgb(255, 100, 61); color: white;">Programming</a><a class="hashtag-1590873156 marked-hashtag-1590873156" title="JavaScript" href="https://dirask.com/posts?hashtags=javascript" style="background: rgb(247, 223, 30); color: black;">JavaScript</a></div><div class="normal-hashtags-list-component-1590873156"><div class="hashtag-1590873156 normal-hashtag-1590873156"><a handle="hashtag-name" class="hashtag-name-1590873156" href="https://dirask.com/posts?hashtags=js" title="js">js</a></div><div class="hashtag-1590873156 normal-hashtag-1590873156"><a handle="hashtag-name" class="hashtag-name-1590873156" href="https://dirask.com/posts?hashtags=date" title="date">date</a></div><div class="hashtag-1590873156 normal-hashtag-1590873156"><a handle="hashtag-name" class="hashtag-name-1590873156" href="https://dirask.com/posts?hashtags=invalid" title="invalid">invalid</a></div><div class="hashtag-1590873156 normal-hashtag-1590873156"><a handle="hashtag-name" class="hashtag-name-1590873156" href="https://dirask.com/posts?hashtags=text" title="text">text</a></div></div><a handle="show-more" class="show-more-1595127034" href="javascript: void 0" style="">2 more ...</a></div>    <div class="wiki-post-viewer-edit-1596137742">      <a handle="edit-post" class="wiki-post-viewer-edit-1596137742" href="javascript: void 0">[Edit]</a>    </div>    <div class="wiki-post-viewer-language-1596137742">      <span handle="post-language" class="wiki-post-viewer-language-1596137742" title="English">EN</span>    </div>  </div>  <h1 class="post-viewer-title post-question-viewer-title">    <a handle="post-title" class="post-viewer-title post-question-viewer-title" href="https://dirask.com/posts/13G391" title="JavaScript - detecting invalid date">JavaScript - detecting invalid date</a>  </h1>  <div class="wiki-line-statistics-component-1595974744"><div class="wiki-line-statistics-spacer-1595974744"></div><div class="wiki-line-statistics-items-1595974744">  <div class="wiki-line-statistics-item-1595974744">    <svg class="wiki-line-statistics-icon-1595974744 fas fa-users">      <use href="#fas.fa-users"></use>    </svg>    <span handle="contributors-count" class="wiki-line-statistics-count-1595974744">1</span>    <a handle="show-contributors" class="wiki-line-statistics-link-1595974744" href="javascript: void 0">contributors</a>  </div>  <div class="wiki-line-statistics-item-1595974744">    <svg class="wiki-line-statistics-icon-1595974744 fas fa-highlighter">      <use href="#fas.fa-highlighter"></use>    </svg>    <span handle="contributions-count" class="wiki-line-statistics-count-1595974744">2</span>    <a handle="show-contributions" class="wiki-line-statistics-link-1595974744" href="javascript: void 0">contributions</a>  </div>  <div class="wiki-line-statistics-item-1595974744">    <svg class="wiki-line-statistics-icon-1595974744 far fa-comment">      <use href="#far.fa-comment"></use>    </svg>    <span handle="discussions-count" class="wiki-line-statistics-count-1595974744">0</span>    <a handle="show-discussions" class="wiki-line-statistics-link-1595974744" href="javascript: void 0">discussions</a>  </div></div></div></header><div class="post-viewer post-question-viewer">  <div handle="post-side" class="post-viewer-side-1596137742"><div class="post-viewer-reactions"><div class="reactions-points-box">  <span class="reactions-points-count">    <svg handle="points-star" class="reactions-points-star points-level-3">      <use href="#fas.fa-star"></use>    </svg>    <span handle="points-count">8</span>  </span>  <span handle="points-text" class="reactions-points-text">points</span></div><div handle="like-post" class="reactions-emoji-box reactions-emoji-box-default">  <svg class="reactions-emoji-icon far fa-thumbs-up">    <use href="#far.fa-thumbs-up"></use>  </svg></div> <div handle="love-post" class="reactions-emoji-box reactions-emoji-box-default">  <svg class="reactions-emoji-icon far fa-heart">    <use href="#far.fa-heart"></use>  </svg></div><div handle="share-post" class="reactions-emoji-box reactions-emoji-box-default">  <svg class="reactions-emoji-icon fas fa-share">    <use href="#fas.fa-share"></use>  </svg></div><div handle="bookmark-post" class="reactions-emoji-box reactions-emoji-box-default">  <svg class="reactions-emoji-icon far fa-bookmark">    <use href="#far.fa-bookmark"></use>  </svg></div></div></div>  <div handle="post-body" class="post-viewer-body post-question-viewer-body">    <div class="wiki-post-viewer-author-1596137742">      <div class="wiki-post-viewer-spacer-1596137742"></div>      <div class="post-inline-author-component-1596737615"><div handle="author-label" class="post-inline-author-label-1596737615">Created by:</div><div class="post-simple-author-component-1598801654"><img handle="author-avatar" class="post-simple-author-avatar-1598801654" src="./JavaScript - detecting invalid date_files/1629130172536__xaOmA0__w40px_h40px.jpg" title="Lily"><a handle="author-name" class="post-simple-author-name-1598801654" href="https://dirask.com/users/xaOmA0" title="Lily">Lily</a></div><div class="post-inline-author-points-1596737615">  <svg class="post-inline-author-icon-1596737615 far fa-star">    <use href="#far.fa-star"></use>  </svg>  <span handle="author-points" class="post-inline-author-points-1596737615">208</span></div></div>    </div>    <div handle="post-section" class="post-viewer-section post-question-viewer-section">      <section handle="post-content" class="post-viewer-content-1596457116 post-question-viewer-content"><p>In this article, we're going to have a look at how to check if data is invalid&nbsp;in JavaScript.</p>
+
+<p>Date correctness can be checked basing on internal state of <code class="inline-code">Date</code>&nbsp;object.</p>
+
+<p>Incorrect date object&nbsp;returns:</p>
+
+<ul><li><code class="inline-code">false</code> for call <code class="inline-code">isFinite(myDate)</code>,</li><li><code class="inline-code">true</code>&nbsp;for call <code class="inline-code">isNaN(myDate)</code>,</li><li><code class="inline-code">NaN</code> from <code class="inline-code">myDate.getTime()</code> method,</li><li>"<code class="inline-code">Invalid Date</code>" string for <code class="inline-code">toString()</code> method call.</li></ul>
+
+<p>Quick solution:</p>
+
+<div class="code-runner"><div class="code-runner-options" data-nosnippet="">  <button class="code-runner-copy">Copy</button></div><div class="code-runner-code"><div class="CodeMirror cm-s-default"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 10px; left: 45px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 30px; margin-bottom: -12px; border-right-width: 18px; min-height: 154px; min-width: 389.05px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure" data-nosnippet=""><pre class="CodeMirror-line-like"><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 15px; top: 0px; height: 19.2px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">var</span> <span class="cm-def">correctDate</span>   <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-number">2020</span>, <span class="cm-number">10</span>, <span class="cm-number">15</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">var</span> <span class="cm-def">incorrectDate</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-atom">NaN</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">console</span>.<span class="cm-property">log</span>( <span class="cm-variable">isFinite</span>( <span class="cm-variable">correctDate</span>   ) ); <span class="cm-comment">// true</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">console</span>.<span class="cm-property">log</span>(   <span class="cm-operator">!</span><span class="cm-variable">isNaN</span>( <span class="cm-variable">correctDate</span>   ) ); <span class="cm-comment">// true</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">console</span>.<span class="cm-property">log</span>( <span class="cm-variable">isFinite</span>( <span class="cm-variable">incorrectDate</span> ) ); <span class="cm-comment">// false</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">console</span>.<span class="cm-property">log</span>(   <span class="cm-operator">!</span><span class="cm-variable">isNaN</span>( <span class="cm-variable">incorrectDate</span> ) ); <span class="cm-comment">// false</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 18px; width: 1px; border-bottom: 0px solid transparent; top: 154px;"></div><div class="CodeMirror-gutters" style="height: 172px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div></div><div class="code-runner-output" data-nosnippet="">  <div class="code-runner-navigator">    <button class="code-runner-run btn btn-success">Run</button>    <div class="code-runner-item custom-control custom-checkbox">      <input type="checkbox" class="code-runner-auto custom-control-input" id="custom-checkbox-0.7672860908024852">      <label class="code-runner-auto custom-control-label" for="custom-checkbox-0.7672860908024852">Auto running</label>    </div>    <div class="code-runner-spacer"></div>    <button class="code-runner-reset btn btn-link">Reset</button>  </div>  <div class="code-runner-preview code-runner-hidden"></div>  <div class="code-runner-console code-runner-hidden"><div class="code-runner-content"></div></div></div></div>
+
+<p>Look below to see different practical examples:</p>
+
+<div class="post-viewer-section-header-1596457116"><h2>1. <code class="inline-code">Date</code> object test example</h2><a handle="edit-section" class="post-viewer-edit-section-1596457116" href="javascript: void 0">Edit</a><a handle="section-link" class="post-viewer-section-link-1596457116" href="javascript: void 0">  <i handle="section-link" class="post-viewer-section-icon-1596457116 fas fa-link"></i></a></div>
+
+<p>This approach bases on fact:&nbsp;<code class="inline-code">isFinite</code>&nbsp;method returns <code class="inline-code">false</code> for incorrect dates.</p>
+
+<div class="code-runner"><div class="code-runner-options" data-nosnippet="">  <button class="code-runner-copy">Copy</button></div><div class="code-runner-code"><div class="CodeMirror cm-s-default"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 29.2px; left: 304.775px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="bottom: 0px;"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 30px; margin-bottom: -12px; border-right-width: 18px; min-height: 270px; min-width: 426.15px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure" data-nosnippet=""><pre class="CodeMirror-line-like">x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"><div class="CodeMirror-selected" style="position: absolute; left: 274.775px; top: 19px; width: 59.3625px; height: 19px;"></div></div><div class="CodeMirror-cursors" style=""></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">function</span> <span class="cm-def">isCorrectDate</span>(<span class="cm-def">date</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-keyword">return</span> <span class="cm-variable-2">date</span> <span class="cm-keyword">instanceof</span> <span class="cm-variable">Date</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">isFinite</span>(<span class="cm-variable-2">date</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-comment">// return date instanceof Date &amp;&amp; !isNaN(date);</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// Usage example:</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">var</span> <span class="cm-def">correctDate</span>   <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-number">2020</span>, <span class="cm-number">10</span>, <span class="cm-number">15</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">var</span> <span class="cm-def">incorrectDate</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-atom">NaN</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">console</span>.<span class="cm-property">log</span>( <span class="cm-variable">isCorrectDate</span>( <span class="cm-variable">correctDate</span>   ) ); <span class="cm-comment">// true</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">console</span>.<span class="cm-property">log</span>( <span class="cm-variable">isCorrectDate</span>( <span class="cm-variable">incorrectDate</span> ) ); <span class="cm-comment">// false</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 18px; width: 1px; border-bottom: 0px solid transparent; top: 270px;"></div><div class="CodeMirror-gutters" style="height: 288px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div></div><div class="code-runner-output" data-nosnippet="">  <div class="code-runner-navigator">    <button class="code-runner-run btn btn-success">Run</button>    <div class="code-runner-item custom-control custom-checkbox">      <input type="checkbox" class="code-runner-auto custom-control-input" id="custom-checkbox-0.1460514301138769">      <label class="code-runner-auto custom-control-label" for="custom-checkbox-0.1460514301138769">Auto running</label>    </div>    <div class="code-runner-spacer"></div>    <button class="code-runner-reset btn btn-link">Reset</button>  </div>  <div class="code-runner-preview code-runner-hidden"></div>  <div class="code-runner-console code-runner-hidden"><div class="code-runner-content"></div></div></div></div>
+
+<div class="post-viewer-section-header-1596457116"><h2>2. <code class="inline-code">getTime()</code>&nbsp;or other getter test example</h2><a handle="edit-section" class="post-viewer-edit-section-1596457116" href="javascript: void 0">Edit</a><a handle="section-link" class="post-viewer-section-link-1596457116" href="javascript: void 0">  <i handle="section-link" class="post-viewer-section-icon-1596457116 fas fa-link"></i></a></div>
+
+<p>This approach bases on fact: incorrect date returns <code class="inline-code">NaN</code> values from getters. So we can&nbsp;make simple test for example with <code class="inline-code">getTime()</code> method.</p>
+
+<div class="code-runner"><div class="code-runner-options" data-nosnippet="">  <button class="code-runner-copy">Copy</button></div><div class="code-runner-code"><div class="CodeMirror cm-s-default"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 10px; left: 45px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="bottom: 0px;"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 30px; margin-bottom: -12px; border-right-width: 18px; min-height: 270px; min-width: 470.638px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure" data-nosnippet=""><pre class="CodeMirror-line-like"><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 15px; top: 0px; height: 19.2px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">function</span> <span class="cm-def">isCorrectDate</span>(<span class="cm-def">date</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-keyword">return</span> <span class="cm-variable-2">date</span> <span class="cm-keyword">instanceof</span> <span class="cm-variable">Date</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">isFinite</span>(<span class="cm-variable-2">date</span>.<span class="cm-property">getTime</span>());</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-comment">// return date instanceof Date &amp;&amp; !isNaN(date.getTime());</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// Usage example:</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">var</span> <span class="cm-def">correctDate</span>   <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-number">2020</span>, <span class="cm-number">10</span>, <span class="cm-number">15</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">var</span> <span class="cm-def">incorrectDate</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-atom">NaN</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">console</span>.<span class="cm-property">log</span>( <span class="cm-variable">isCorrectDate</span>( <span class="cm-variable">correctDate</span>   ) ); <span class="cm-comment">// true</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">console</span>.<span class="cm-property">log</span>( <span class="cm-variable">isCorrectDate</span>( <span class="cm-variable">incorrectDate</span> ) ); <span class="cm-comment">// false</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 18px; width: 1px; border-bottom: 0px solid transparent; top: 270px;"></div><div class="CodeMirror-gutters" style="height: 288px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div></div><div class="code-runner-output" data-nosnippet="">  <div class="code-runner-navigator">    <button class="code-runner-run btn btn-success">Run</button>    <div class="code-runner-item custom-control custom-checkbox">      <input type="checkbox" class="code-runner-auto custom-control-input" id="custom-checkbox-0.8022928444772559">      <label class="code-runner-auto custom-control-label" for="custom-checkbox-0.8022928444772559">Auto running</label>    </div>    <div class="code-runner-spacer"></div>    <button class="code-runner-reset btn btn-link">Reset</button>  </div>  <div class="code-runner-preview code-runner-hidden"></div>  <div class="code-runner-console code-runner-hidden"><div class="code-runner-content"></div></div></div></div>
+
+<div class="post-viewer-section-header-1596457116"><h2>3. <code class="inline-code">toString()</code> method test example</h2><a handle="edit-section" class="post-viewer-edit-section-1596457116" href="javascript: void 0">Edit</a><a handle="section-link" class="post-viewer-section-link-1596457116" href="javascript: void 0">  <i handle="section-link" class="post-viewer-section-icon-1596457116 fas fa-link"></i></a></div>
+
+<p>This approach is based on fact: incorrect date object returns "<code class="inline-code">Invalid Date</code>" string for <code class="inline-code">toString()</code> method call. It is good to call to string method with <code class="inline-code">protoype</code> API that prevents for methods overriding.</p>
+
+<div class="code-runner"><div class="code-runner-options" data-nosnippet="">  <button class="code-runner-copy">Copy</button></div><div class="code-runner-code"><div class="CodeMirror cm-s-default"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 10px; left: 45px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="bottom: 0px;"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 30px; margin-bottom: -12px; border-right-width: 18px; min-height: 308px; min-width: 426.15px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure" data-nosnippet=""><pre class="CodeMirror-line-like"><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 15px; top: 0px; height: 19.2px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">function</span> <span class="cm-def">isCorrectDate</span>(<span class="cm-def">date</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-keyword">if</span> (<span class="cm-variable-2">date</span> <span class="cm-keyword">instanceof</span> <span class="cm-variable">Date</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-keyword">var</span> <span class="cm-def">text</span> <span class="cm-operator">=</span> <span class="cm-variable">Date</span>.<span class="cm-property">prototype</span>.<span class="cm-property">toString</span>.<span class="cm-property">call</span>(<span class="cm-variable-2">date</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-keyword">return</span> <span class="cm-variable-2">text</span> <span class="cm-operator">!==</span> <span class="cm-string">'Invalid Date'</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-keyword">return</span> <span class="cm-atom">false</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// Usage example:</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">var</span> <span class="cm-def">correctDate</span>   <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-number">2020</span>, <span class="cm-number">10</span>, <span class="cm-number">15</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">var</span> <span class="cm-def">incorrectDate</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-atom">NaN</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">console</span>.<span class="cm-property">log</span>( <span class="cm-variable">isCorrectDate</span>( <span class="cm-variable">correctDate</span>   ) ); <span class="cm-comment">// true</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">console</span>.<span class="cm-property">log</span>( <span class="cm-variable">isCorrectDate</span>( <span class="cm-variable">incorrectDate</span> ) ); <span class="cm-comment">// false</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 18px; width: 1px; border-bottom: 0px solid transparent; top: 308px;"></div><div class="CodeMirror-gutters" style="height: 326px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div></div><div class="code-runner-output" data-nosnippet="">  <div class="code-runner-navigator">    <button class="code-runner-run btn btn-success">Run</button>    <div class="code-runner-item custom-control custom-checkbox">      <input type="checkbox" class="code-runner-auto custom-control-input" id="custom-checkbox-0.9084125759791137">      <label class="code-runner-auto custom-control-label" for="custom-checkbox-0.9084125759791137">Auto running</label>    </div>    <div class="code-runner-spacer"></div>    <button class="code-runner-reset btn btn-link">Reset</button>  </div>  <div class="code-runner-preview code-runner-hidden"></div>  <div class="code-runner-console code-runner-hidden"><div class="code-runner-content"></div></div></div></div>
+
+<div class="post-viewer-section-header-1596457116"><h2>4. Detecting correct date string or date object example</h2><a handle="edit-section" class="post-viewer-edit-section-1596457116" href="javascript: void 0">Edit</a><a handle="section-link" class="post-viewer-section-link-1596457116" href="javascript: void 0">  <i handle="section-link" class="post-viewer-section-icon-1596457116 fas fa-link"></i></a></div>
+
+<p>Example presented in this section allows to check correctness of date provided as string or object. String date should be formatetd according to one of the standards:</p>
+
+<ul><li>IETF-compliant RFC 2822 timestamps,</li><li>ISO 8601.</li></ul>
+
+<p>Run following code to see effect:</p>
+
+<div class="code-runner"><div class="code-runner-options" data-nosnippet="">  <button class="code-runner-copy">Copy</button></div><div class="code-runner-code"><div class="CodeMirror cm-s-default"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 10px; left: 45px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="bottom: 0px;"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 30px; margin-bottom: -12px; border-right-width: 18px; min-height: 423px; min-width: 544.85px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure" data-nosnippet=""><pre class="CodeMirror-line-like"><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 15px; top: 0px; height: 19.2px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">function</span> <span class="cm-def">isCorrectDate</span>(<span class="cm-def">date</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-keyword">return</span> <span class="cm-variable">isFinite</span>(<span class="cm-variable-2">date</span> <span class="cm-keyword">instanceof</span> <span class="cm-variable">Date</span> <span class="cm-operator">?</span> <span class="cm-variable-2">date</span> : <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">date</span>));</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-comment">// return isFinite(date instanceof Date ? date : Date.parse(date));</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-comment">// return !isNaN(date instanceof Date ? date : new Date(date));</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-comment">// return !isNaN(date instanceof Date ? date : Date.parse(date));</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// Usage example:</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">var</span> <span class="cm-def">date1</span> <span class="cm-operator">=</span> <span class="cm-string">'2020-10-15'</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">var</span> <span class="cm-def">date2</span> <span class="cm-operator">=</span> <span class="cm-string">'2020-10-x5'</span>; <span class="cm-comment">// &lt;-------- incorrect date</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">var</span> <span class="cm-def">date3</span> <span class="cm-operator">=</span> <span class="cm-string">'This is not date'</span>; <span class="cm-comment">// &lt;-- incorrect date</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">var</span> <span class="cm-def">date4</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-number">2020</span>, <span class="cm-number">10</span>, <span class="cm-number">15</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">var</span> <span class="cm-def">date5</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-atom">NaN</span>); <span class="cm-comment">// &lt;------- incorrect date</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">console</span>.<span class="cm-property">log</span>( <span class="cm-variable">isCorrectDate</span>( <span class="cm-variable">date1</span> ) ); <span class="cm-comment">// true</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">console</span>.<span class="cm-property">log</span>( <span class="cm-variable">isCorrectDate</span>( <span class="cm-variable">date2</span> ) ); <span class="cm-comment">// false</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">console</span>.<span class="cm-property">log</span>( <span class="cm-variable">isCorrectDate</span>( <span class="cm-variable">date3</span> ) ); <span class="cm-comment">// false</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">console</span>.<span class="cm-property">log</span>( <span class="cm-variable">isCorrectDate</span>( <span class="cm-variable">date4</span> ) ); <span class="cm-comment">// true</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;" data-nosnippet="">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">console</span>.<span class="cm-property">log</span>( <span class="cm-variable">isCorrectDate</span>( <span class="cm-variable">date5</span> ) ); <span class="cm-comment">// false</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 18px; width: 1px; border-bottom: 0px solid transparent; top: 423px;"></div><div class="CodeMirror-gutters" style="height: 441px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div></div><div class="code-runner-output" data-nosnippet="">  <div class="code-runner-navigator">    <button class="code-runner-run btn btn-success">Run</button>    <div class="code-runner-item custom-control custom-checkbox">      <input type="checkbox" class="code-runner-auto custom-control-input" id="custom-checkbox-0.23127032762966349">      <label class="code-runner-auto custom-control-label" for="custom-checkbox-0.23127032762966349">Auto running</label>    </div>    <div class="code-runner-spacer"></div>    <button class="code-runner-reset btn btn-link">Reset</button>  </div>  <div class="code-runner-preview code-runner-hidden"></div>  <div class="code-runner-console code-runner-hidden"><div class="code-runner-content"></div></div></div></div>
+
+<p>&nbsp;</p>
+</section>      <div handle="post-extension" class="post-viewer-extension post-question-viewer-extension"></div>    </div>  </div>  <div class="post-viewer-side-1596137742">    <div class="post-spacer-1596137742"></div>    <div class="wiki-line-contributors-component-1595978833"><div handle="contributors-header" class="wiki-line-contributors-header-1595978833" title="1 contributors">  <i class="wiki-line-contributors-icon-1595978833 fas fa-users"></i>  <span handle="contributors-count" class="wiki-line-contributors-count-1595978833">1</span></div><div class="wiki-line-contributors-list-component-1595978833"><div class="wiki-line-contributors-list-item-1595978833"><img handle="contributor-avatar" class="wiki-line-contributor-1595978833" src="./JavaScript - detecting invalid date_files/1629130172536__xaOmA0__w40px_h40px.jpg" title="Lily"></div></div><div handle="contributors-navigator" class="wiki-line-contributors-navigator-1595978833" style="display: none">  <a handle="show-more" class="show-more-1595978833" href="javascript: void 0" title="Show all contributors."></a></div></div>    <div class="wiki-line-discussions-component-1596149535"><div handle="discussions-header" class="wiki-line-discussions-header-1596149535" title="0 discussions">  <i class="wiki-line-discussions-icon-1596149535 far fa-comment"></i>  <span handle="discussions-count" class="wiki-line-discussions-count-1596149535">0</span></div><div class="wiki-line-discussions-navigator-1596149535">  <a handle="show-more" class="show-more-1596149535" href="javascript: void 0" title="Show all discussions.">    Show discussions ...  </a></div></div>  </div></div></div></div></article></div>
+    
+    
+    
+
+
+
+
+    
+    
+    
+    
+    <script>
+
+        var releaseVersion = 20;
+
+        var hPageContent = document.documentElement;
+        var hPageHeader = document.querySelector('#web_page_main_header');
+        var hCoverImage = document.querySelector('[handle="cover-image"]');
+
+        var loggedUserHashId = '';
+        var isUserAdmin = false;
+
+        if (hCoverImage != null) {
+            hCoverImage.src = '/static/bucket/blog_posts/' + postData.postImageFilename;
+        }
+
+        //console.log('a');
+
+        // if (postData.postImageFilename) {
+        //     hCoverImage.src = '/static/bucket/blog_posts/' + postData.postImageFilename;
+        // } else {
+        //     hCoverImage.parentNode.parentNode.removeChild(hCoverImage.parentNode);
+        // }
+
+        window.isPostEditable = function(authorHashId)
+        {
+            if(isUserAdmin || loggedUserHashId === authorHashId)
+                return true;
+
+            return false;
+        };
+
+        function callAuthenticated(callback)
+        {
+            if(loggedUserHashId)
+                callback();
+
+            else
+            {
+                Swal.fire({
+                    type: 'info',
+                    html: 'You need to be logged in.'
+                });
+            }
+        }
+
+
+        // ----------------------------------------------
+        // AJAX
+        // ----------------------------------------------
+
+        var contributionBackend = new PostBackend({
+            label: 'contribution'
+        });
+
+        // ----------------------------------------------
+        // COMMON
+        // ----------------------------------------------
+
+        // var loadingTimeout = null;
+
+
+
+        function renderAvatarUrl(userAvatarFilename)
+        {
+            return '/static/bucket/users/' + encodeURIComponent(userAvatarFilename) + '?v=' + encodeURIComponent(releaseVersion);
+        }
+
+        function renderUserLink(userHashId)
+        {
+            return '/users/' + encodeURIComponent(userHashId);
+        }
+
+        // ----------------------------------------------
+        // ANSWER MANAGERS
+        // ----------------------------------------------
+
+        function scrollPage(hElement, offset)
+        {
+            var scroller = new ElementScroller(hPageContent, hElement);
+
+            scroller.scroll(hPageHeader.offsetHeight + offset);
+        }
+
+
+
+        var hComposition = document.querySelector('#post-composition');
+
+        var compositionConfig = {
+            markedHashtagPatterns: WIKI_MARKED_HASHTAGS_PATTERNS[postData.postLanguage],
+            onEditorOpen: function(hViewer, hEditor)
+            {
+                if(hEditor.sticker)
+                    hEditor.sticker.destroy();
+
+                hEditor.sticker = new CKEditorGlobalSticker(hPageContent, hPageHeader, hEditor);
+
+                openLoading();
+            },
+            onEditorClose: function(hEditor, hViewer)
+            {
+                if(hEditor.sticker)
+                {
+                    hEditor.sticker.destroy();
+
+                    delete hEditor.sticker;
+                }
+            },
+            onEditorReady: function(hEditor)
+            {
+                if(hEditor.sticker)
+                    hEditor.sticker.enable();
+
+                closeLoading();
+            },
+            onPostBookmark: function()
+            {
+                window.fireComingSoonInfo();
+            },
+            onPostLike: function(postHashId, commit)
+            {
+                callAuthenticated(function()
+                {
+                    sendRequest({
+                        url: '/posts/' + encodeURIComponent(postHashId) + '/reactions/toggle?type=like',
+                        loader: true,
+                        error: 'Like post operation error.',
+                        onsuccess: function(data)
+                        {
+                            commit(data.reaction);
+                        }
+                    });
+                });
+            },
+            onPostLove: function(postHashId, commit)
+            {
+                callAuthenticated(function()
+                {
+                    sendRequest({
+                        url: '/posts/' + encodeURIComponent(postHashId) + '/reactions/toggle?type=love',
+                        loader: true,
+                        error: 'Love post operation error.',
+                        onsuccess: function(data)
+                        {
+                            commit(data.reaction);
+                        }
+                    });
+                });
+            },
+            onModeChange: function(mode, hEntity)
+            {
+                if(hEntity)
+                {
+                    if(mode == 'CREATE_ANSWER')
+                        return;
+
+                    scrollPage(hEntity, 7);
+                }
+            },
+            onPostEdit: function(hPlaceholder, postHashId)
+            {
+                location.assign('/post/edit/' + encodeURIComponent(postHashId));
+            },
+            checkPermissions: function(name, entityHashId, confirm)
+            {
+                callAuthenticated(confirm);
+            },
+            renderPostLink: function(postHashId)
+            {
+                return '/posts/' + encodeURIComponent(postHashId);
+            },
+            renderHashtagLink: function(hashtag)
+            {
+                return '/posts?hashtags=' + encodeURIComponent(hashtag);
+            },
+            renderAvatarUrl: renderAvatarUrl,
+            renderUserLink: renderUserLink
+        };
+
+
+
+        var transactionalRendering = true;
+
+        if(transactionalRendering)
+        {
+            var hMediator = document.createElement('div');
+            var composition = new WikiPostCompositionComponent(hMediator, null, compositionConfig);
+
+            composition.bindData(postData, false);
+
+            replaceElement(hComposition, hMediator);
+            window.Waiter.fire();
+        }
+        else
+        {
+            var composition = new WikiPostCompositionComponent(null, hComposition, compositionConfig);
+            composition.bindData(postData, true);
+        }
+    </script>
+
+
+
+    
+    
+    
+
+    
+
+    
+    
+    
+
+
+
+    
+    
+    
+    
+
+
+
+    
+
+</div>
+ 
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    .main-layout-right-column-spacer {
+        width: 130px;
+    }
+
+    
+
+    .qa_list_recommendations_container
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .qa_list_recommendations_spacer
+    {
+        flex: 1;
+    }
+
+    .qa_list_recommendations_internal
+    {
+        position: -webkit-sticky;
+        position: sticky;
+        bottom: 0;
+        flex: none;
+        min-height: 100vh;
+        padding-bottom: 25px;
+    }
+
+    @media (max-width: 1500px)
+    {
+        .main-layout-right-column-spacer {
+            width: 70px;
+        }
+    }
+
+    @media (max-width: 1380px)
+    {
+        .main-layout-right-column-spacer {
+            width: 30px;
+        }
+    }
+
+</style>
+
+<div class="main-layout-right-column-spacer" style=""></div>
+
+<!-- data-nosnippet for google search engine -->
+<div class="qa_list_recommendations qa_list_recommendations_container" style="overflow-wrap: break-word;" data-nosnippet="">
+    <div class="qa_list_recommendations_spacer"></div>
+    <div class="qa_list_recommendations_internal">
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+    .posts_list_header {
+        padding: 10px;
+        margin-bottom: 0px;
+        font-size: 16px;
+    }
+
+    .posts_list_header_underline {
+        border-top: 2px solid #3f7bc3;
+        width: 200px;
+        margin-left: 8px;
+    }
+
+    .posts_list_container {
+        font-size: 14px;
+    }
+
+    .posts_list_entity {
+        padding-top: 9px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+    a.posts_list_link  {
+        color: #2e2e2f;
+        font-size: 16px;
+        display: flex;
+        padding-right: 6px;
+    }
+
+    .post-list-entity-icon {
+        font-size: 6px;
+        padding-top: 10px;
+        margin-left: 4px;
+    }
+
+    .post-list-entity-name {
+        margin-left: 7px;
+        font-size: 15px;
+    }
+
+    div.post-list-entity-marked {
+        background: #dcf0fd;
+    }
+
+    div.post-list-entity-marked span {
+        font-weight: 500;
+        font-size: 15px;
+        color: #3085d6;
+    }
+
+</style>
+
+
+
+
+        
+
+
+
+
+<style>
+
+    a.da_main_page_right_column_job_item
+    {
+        text-decoration: none;
+    }
+
+    div.da_main_page_right_column_job_item
+    {
+        margin: 18px 0 0 0;
+        display: flex;
+    }
+
+    div.da_main_page_right_column_company_logo
+    {
+        flex: 0 35px;
+        flex-direction: column;
+        justify-content: center;
+        display: flex;
+    }
+
+    img.da_main_page_right_column_company_logo
+    {
+        flex: 0;
+        width: 35px;
+        display: block;
+    }
+
+    div.da_main_page_right_column_offer_details
+    {
+        flex: 1;
+        min-width: 0;
+    }
+
+    div.da_main_page_right_column_offer_title
+    {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        height: 19px;
+        padding: 0 0 0 15px;
+        max-height: 40px;
+        font-size: 12.5px;
+        font-weight: 500;
+        color: #0579d0;
+    }
+
+    div.da_main_page_right_column_offer_details_row {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        height: 20px;
+    }
+
+    a.da_main_page_right_column_job_item:hover div.da_main_page_right_column_offer_title
+    {
+        text-decoration: underline;
+    }
+
+    div.da_main_page_right_column_company_name
+    {
+        padding: 0 0 0 15px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 12px;
+        color: #838683;
+        overflow: hidden;
+    }
+
+    div.da_main_page_right_column_offer_salary
+    {
+        padding: 0 0 0 15px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: 500;
+        font-size: 12px;
+        color: #5d5d5d;
+        overflow: hidden;
+    }
+
+    div.da_main_page_right_column_line
+    {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 11px;
+        color: #838683;
+        overflow: hidden;
+        display: flex;
+        height: 20px;
+    }
+
+    div.da_main_page_right_column_office_city
+    {
+        padding: 0 0 0 15px;
+        vertical-align: center;
+        font-size: 12px;
+        display: inline;
+    }
+
+    .recommended_jobs_icon
+    {
+        margin: auto;
+        height: 1em;
+        max-width: 1em;
+        vertical-align: center;
+        font-size: 11px;
+        color: #cecece;
+        margin-bottom: 3px;
+    }
+
+    .recommended_jobs_outer {
+        margin-bottom: 20px;
+        margin-right: 5px;
+        margin-top: 30px;
+        padding: 20px 20px 26px 20px;
+        border-radius: 7px;
+        border: 1px solid #e0dede;
+    }
+
+    div.da_main_page_right_column_employment_type
+    {
+        padding: 0 0 0 15px;
+        display: inline;
+    }
+
+</style>
+
+<div class="da_main_page_right_column_border recommended_jobs_outer" style=""><div style="font-weight: 500; margin-bottom: 8px; font-size: 14px;">  <span style="">Jobs you may like</span></div><div handle="items"><a class="da_main_page_right_column_job_item" href="https://dev-task.com/?offer=MX1ZzY" title="Senior Scala Developer"><div class="da_main_page_right_column_job_item">  <div class="da_main_page_right_column_company_logo">    <img handle="company-logo" class="da_main_page_right_column_company_logo" src="./JavaScript - detecting invalid date_files/1627411317951_company_logo_MX1ZzY_w35px_h35px.jpg" alt="Mendix logo.">  </div>  <div class="da_main_page_right_column_offer_details">    <div handle="offer-title" class="da_main_page_right_column_offer_title" title="Senior Scala Developer">Senior Scala Developer</div>      <div handle="offer-salary" class="da_main_page_right_column_offer_salary" title="Undisclosed salary">Undisclosed salary</div>    <div class="da_main_page_right_column_line">      <div handle="company-name" class="da_main_page_right_column_company_name" title="Mendix">Mendix</div>      <div handle="office-info" class="da_main_page_right_column_office_city">        <svg class="da_main_page_right_column_office_city recommended_jobs_icon fas fa-map-marker-alt">          <use href="#fas.fa-map-marker-alt"></use>        </svg>        <span handle="office-city" class="da_main_page_right_column_office_city" title="Rotterdam">Rotterdam, NL</span>      </div>    </div>  </div></div></a><a class="da_main_page_right_column_job_item" href="https://dev-task.com/?offer=GVQJGj" title="Software Engineer - Java"><div class="da_main_page_right_column_job_item">  <div class="da_main_page_right_column_company_logo">    <img handle="company-logo" class="da_main_page_right_column_company_logo" src="./JavaScript - detecting invalid date_files/1627409212968_company_logo_GVQJGj_w35px_h35px.jpg" alt="Klarna logo.">  </div>  <div class="da_main_page_right_column_offer_details">    <div handle="offer-title" class="da_main_page_right_column_offer_title" title="Software Engineer - Java">Software Engineer - Java</div>      <div handle="offer-salary" class="da_main_page_right_column_offer_salary" title="Undisclosed salary">Undisclosed salary</div>    <div class="da_main_page_right_column_line">      <div handle="company-name" class="da_main_page_right_column_company_name" title="Klarna">Klarna</div>      <div handle="office-info" class="da_main_page_right_column_office_city">        <svg class="da_main_page_right_column_office_city recommended_jobs_icon fas fa-map-marker-alt">          <use href="#fas.fa-map-marker-alt"></use>        </svg>        <span handle="office-city" class="da_main_page_right_column_office_city" title="Milan">Milan, IT</span>      </div>    </div>  </div></div></a><a class="da_main_page_right_column_job_item" href="https://dev-task.com/?offer=gV8yRj" title="Senior Game Server Engineer (Java)"><div class="da_main_page_right_column_job_item">  <div class="da_main_page_right_column_company_logo">    <img handle="company-logo" class="da_main_page_right_column_company_logo" src="./JavaScript - detecting invalid date_files/1624829046991_company_logo_gV8yRj_w35px_h35px.jpg" alt="8Bit logo.">  </div>  <div class="da_main_page_right_column_offer_details">    <div handle="offer-title" class="da_main_page_right_column_offer_title" title="Senior Game Server Engineer (Java)">Senior Game Server Engineer (Java)</div>      <div handle="offer-salary" class="da_main_page_right_column_offer_salary" title="Undisclosed salary">Undisclosed salary</div>    <div class="da_main_page_right_column_line">      <div handle="company-name" class="da_main_page_right_column_company_name" title="8Bit">8Bit</div>      <div handle="office-info" class="da_main_page_right_column_office_city">        <svg class="da_main_page_right_column_office_city recommended_jobs_icon fas fa-map-marker-alt">          <use href="#fas.fa-map-marker-alt"></use>        </svg>        <span handle="office-city" class="da_main_page_right_column_office_city" title="Warsaw">Warsaw, PL</span>      </div>    </div>  </div></div></a><a class="da_main_page_right_column_job_item" href="https://dev-task.com/?offer=AY4Zyj" title="Insurance Broking - HTML/CSS Developer - SE/SSE"><div class="da_main_page_right_column_job_item">  <div class="da_main_page_right_column_company_logo">    <img handle="company-logo" class="da_main_page_right_column_company_logo" src="./JavaScript - detecting invalid date_files/1627411863767_company_logo_AY4Zyj_w35px_h35px.jpg" alt="Paytm logo.">  </div>  <div class="da_main_page_right_column_offer_details">    <div handle="offer-title" class="da_main_page_right_column_offer_title" title="Insurance Broking - HTML/CSS Developer - SE/SSE">Insurance Broking - HTML/CSS Developer - SE/SSE</div>      <div handle="offer-salary" class="da_main_page_right_column_offer_salary" title="Undisclosed salary">Undisclosed salary</div>    <div class="da_main_page_right_column_line">      <div handle="company-name" class="da_main_page_right_column_company_name" title="Paytm">Paytm</div>      <div handle="office-info" class="da_main_page_right_column_office_city">        <svg class="da_main_page_right_column_office_city recommended_jobs_icon fas fa-map-marker-alt">          <use href="#fas.fa-map-marker-alt"></use>        </svg>        <span handle="office-city" class="da_main_page_right_column_office_city" title="Mumbai">Mumbai, IN</span>      </div>    </div>  </div></div></a></div><div style="margin-top: 7px; text-align: right;"><a style="color: #0579d0; font-size: 15px;" href="https://dev-task.com/">More job offers</a></div></div><script>
+
+    function handleResourcesReady(callback) {
+        if (document.readyState === 'complete') {
+            setTimeout(callback);
+        } else {
+            var proxy = callback.$$__PROXY__$$ = function(e) {
+                if (document.readyState === 'complete') {
+                    cancelResourcesReady(callback);
+                    callback();
+                }
+            };
+            document.addEventListener('readystatechange', proxy);
+        }
+    }
+
+    function cancelResourcesReady(callback) {
+        var proxy = callback.$$__PROXY__$$;
+        if (proxy && delete callback.$$__PROXY__$$) {
+            document.removeEventListener('readystatechange', proxy);
+        }
+    }
+
+    (function()
+    {
+        var hPlaceholder = document.currentScript;
+        var hParent = hPlaceholder.parentNode;
+
+        var SALARY_WORTHS = {
+            'net': 'net',
+            'gross': 'gross'
+        };
+
+        var SALARY_CURRENCIES_SHORTCUTS = {
+            'pln': 'PLN',
+            'eur': 'EUR',
+            'usd': '$',
+            'gbp': 'GBP',
+            'chf': 'CHF'
+        };
+
+        var SALARY_RATES_UNITS_2 = {
+            'hourly': 'hour',
+            'daily': 'day',
+            'weekly': 'week',
+            'monthly': 'month',
+            'annually': 'year'
+        };
+
+        var EMPLOYMENT_TYPES = {
+            '1': 'Permanent',
+            // '2': 'Contract',
+            '3': 'B2B'
+        };
+
+        var EMPLOYMENT_TYPES_LOOKUP = {
+            'permanent': 'Permanent',
+            // '2': 'Contract',
+            'b2b': 'B2B'
+        };
+
+        var S_LOOKUP = {
+            'permanent': 'Permanent',
+            // '2': 'Contract',
+            'b2b': 'B2B'
+        };
+
+        function renderSalaryRange(job) {
+
+            var salaryInformation = job.salaryInformation;
+
+            if (salaryInformation === 'negotiable') {
+                return 'Negotiable salary';
+            } else if (salaryInformation === 'undisclosed') {
+                return 'Undisclosed salary';
+            } else if (salaryInformation === 'range') {
+                if (job.salaryCurrency) {
+                    var result = '';
+
+                    if (job.salaryMax) {
+                        if (job.salaryMin) {
+                            result += job.salaryMin + ' - ';
+                        }
+                        else {
+                            result += ' up to ';
+                        }
+
+                        result += job.salaryMax + ' ';
+                    }
+                    else {
+                        if (job.salaryMin)
+                            result += 'from ' + job.salaryMin + ' ';
+                    }
+
+                    result += SALARY_CURRENCIES_SHORTCUTS[job.salaryCurrency]
+                        + ' ' + SALARY_WORTHS[job.salaryWorth] + ' / ' + SALARY_RATES_UNITS_2[job.salaryRate];
+
+                    return result;
+                }
+            } else {
+                console.error('ERROR with salary range.');
+                return '';
+            }
+        }
+
+        function randomizeInteger(min, max) {
+            if(max == null) {
+                max = (min == null ? Number.MAX_SAFE_INTEGER : min);
+                min = 0;
+            }
+
+            min = Math.ceil(min);  // inclusive min
+            max = Math.floor(max); // exclusive max
+
+            if(min > max - 1) {
+                throw new Error("Incorrect arguments.");
+            }
+
+            return min + Math.floor((max - min + 1) * Math.random());
+        }
+
+        function prepareRecommendedJobs(data)
+        {
+            if(data.length)
+            {
+                var limit = Math.min(4, data.length);
+
+                var hElement = document.createElement('div');
+
+                hElement.className = 'da_main_page_right_column_border recommended_jobs_outer';
+                hElement.style.cssText = '';
+                hElement.innerHTML = '' +
+                    '<div style="font-weight: 500; margin-bottom: 8px; font-size: 14px;">' +
+                    //'  <span style="">Recommended Jobs</span>' +
+                    '  <span style="">Jobs you may like</span>' +
+                    '</div>' +
+                    '<div handle="items"></div>' +
+                    '<div style="margin-top: 7px; text-align: right;"><a style="color: #0579d0; font-size: 15px;" href="https://dev-task.com/">More job offers</a></div>';
+
+                var hItems = hElement.querySelector('[handle="items"]');
+
+
+                function appendItem(item)
+                {
+                    var hItem = document.createElement('a');
+
+                    hItem.className = 'da_main_page_right_column_job_item';
+
+                    // https://dev-task.com/?offer=AY4dY7
+                    hItem.setAttribute('href', 'https://dev-task.com/?offer=' + item.offerHashId);
+                    hItem.setAttribute('title', item.offerTitle);
+
+                    hItem.innerHTML = '' +
+                        '<div class="da_main_page_right_column_job_item">' +
+                        '  <div class="da_main_page_right_column_company_logo">' +
+                        '    <img handle="company-logo" class="da_main_page_right_column_company_logo" src="" />' +
+                        '  </div>' +
+                        '  <div class="da_main_page_right_column_offer_details">' +
+                        '    <div handle="offer-title" class="da_main_page_right_column_offer_title"></div>' +
+                        '      <div handle="offer-salary" class="da_main_page_right_column_offer_salary"></div>' +
+                        '    <div class="da_main_page_right_column_line">' +
+                        '      <div handle="company-name" class="da_main_page_right_column_company_name"></div>' +
+                        '      <div handle="office-info" class="da_main_page_right_column_office_city">' +
+                        '        <svg class="da_main_page_right_column_office_city recommended_jobs_icon fas fa-map-marker-alt">' +
+                        '          <use href="#fas.fa-map-marker-alt" />' +
+                        '        </svg>' +
+                        '        <span handle="office-city" class="da_main_page_right_column_office_city" title=""></span>' +
+                        '      </div>' +
+                        '    </div>' +
+                        '  </div>' +
+                        '</div>';
+
+                    var hCompanyLogo = hItem.querySelector('[handle="company-logo"]');
+                    var hOfferTitle = hItem.querySelector('[handle="offer-title"]');
+                    var hCompanyName = hItem.querySelector('[handle="company-name"]');
+                    var hOfferSalary = hItem.querySelector('[handle="offer-salary"]');
+                    var hOfficeInfo = hItem.querySelector('[handle="office-info"]');
+                    var hOfficeCity = hItem.querySelector('[handle="office-city"]');
+
+
+                    handleResourcesReady(function()
+                    {
+                        hCompanyLogo.src = 'https://dev-task.com/static/bucket/jobs/' + item.companyThumbnailLogoFilename + '?v=' + window.RELEASE_VERSON;
+                        hCompanyLogo.alt = item.companyName + ' logo.';
+                    });
+
+
+
+                    hOfferTitle.innerText = item.offerTitle;
+
+                    var salaryRange = renderSalaryRange(item);
+                    hOfferSalary.innerText = salaryRange;
+
+                    var country = ", " + item.officeCountryCode.toUpperCase();
+
+
+                    if (item.remotePart === 'full') {
+                        hOfficeCity.innerText = "Remote";
+                    } else {
+                        hOfficeCity.innerText = item.officeCity + country;
+                    }
+
+                    hCompanyName.innerText = item.companyName;
+
+                    hOfferTitle.setAttribute('title', item.offerTitle);
+                    hCompanyName.setAttribute('title', item.companyName);
+                    hOfferSalary.setAttribute('title', salaryRange);
+                    hOfficeCity.setAttribute('title', item.officeCity);
+
+                    hItems.appendChild(hItem);
+                }
+
+                for(var i = 0; i < limit; ++i)
+                {
+                    var item = data[ i ];
+
+                    appendItem(item);
+                }
+
+                hParent.insertBefore(hElement, hPlaceholder);
+            }
+        }
+
+        AjaxUtils.request({
+            method: 'GET',
+            url: 'https://dev-task.com/api/recommended-jobs?amount=4',
+            onsuccess: function(responseText)
+            {
+                var responseData = JSON.parse(responseText);
+
+                if (responseData.result)
+                    prepareRecommendedJobs(responseData.offers);
+            }
+        });
+    })();
+
+</script>
+
+
+        
+
+
+<style>
+
+    .recommendation_box_native {
+        background: white;
+        color: #030913;
+        border: 1px solid #e0dede;
+        height: auto;
+        text-align: center;
+        line-height: 24px;
+        z-index: 100000;
+        font-size: 16px;
+        padding: 25px 24px 23px;
+        border-radius: 7px;
+        margin-top: 60px;
+        margin-right: 5px;
+    }
+
+    .recommendation_box_native h5 {
+        font-size: 22px;
+        color: #0579d0
+    }
+
+    .recommendation_box_native_div {
+        padding-top: 9px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 19px;
+    }
+
+    .recommendation_box_native_join {
+        margin: 15px;
+        padding: 7px 34px;
+        border-radius: 3px;
+        background: #02b148;
+        text-decoration: none;
+        color: #fff;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+</style>
+
+<div class="recommendation_box_native">
+    <h5 style="">Native Advertising</h5>
+    
+    <h5 style="">🚀</h5>
+    <div class="recommendation_box_native_div">Get your tech brand or product in front of software developers.</div>
+    <div class="recommendation_box_native_div">For more information <a href="https://dirask.com/about">Contact us</a></div>
+</div>
+
+
+        
+
+
+
+<style>
+
+    div.recommended-posts-component-1621966216
+    {
+        padding: 10px;
+    }
+
+    a.recommended-posts-link-1621966216
+    {
+        text-decoration: none;
+    }
+
+    a.recommended-posts-link-1621966216:hover
+    {
+        text-decoration: underline;
+    }
+
+    div.recommended-posts-title-1621966216
+    {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    ul.recommended-posts-content-1621966216
+    {
+        margin: 18px 0 0 0;
+        padding: 0 0 0 20px;
+    }
+
+    li.recommended-posts-item-1621966216
+    {
+        margin: 5px 0 0 0;
+        font-size: 14px;
+    }
+
+    li.recommended-posts-item-1621966216 a.recommended-posts-link-1621966216
+    {
+        color: #2e2e2f;
+    }
+
+    div.recommended-posts-footer-1621966216
+    {
+        margin: 15px 0 0 0;
+        text-align: right;
+        font-size: 15px;
+    }
+
+    div.recommended-posts-footer-1621966216 a.recommended-posts-link-1621966216
+    {
+        color: #0579d0;
+    }
+
+</style>
+
+<div id="recommended-posts" style="font-size: 14px; margin-top: 70px;"><div class="recommended-posts-component-1621966216"><div class="recommended-posts-title-1621966216">Posts you may like</div><ul handle="content" class="recommended-posts-content-1621966216"><li class="recommended-posts-item-1621966216"><a handle="link" class="recommended-posts-link-1621966216" href="https://dirask.com/posts/D9aodD">Python - split string by new line character</a></li><li class="recommended-posts-item-1621966216"><a handle="link" class="recommended-posts-link-1621966216" href="https://dirask.com/posts/joynkD">React - how to pass props to react components</a></li><li class="recommended-posts-item-1621966216"><a handle="link" class="recommended-posts-link-1621966216" href="https://dirask.com/posts/paoo31">Python - math.sin() method example</a></li><li class="recommended-posts-item-1621966216"><a handle="link" class="recommended-posts-link-1621966216" href="https://dirask.com/posts/1Xr8gp">Python - boolean values</a></li><li class="recommended-posts-item-1621966216"><a handle="link" class="recommended-posts-link-1621966216" href="https://dirask.com/posts/y1x3gj">JavaScript - how to make drag and drop div with handle?</a></li><li class="recommended-posts-item-1621966216"><a handle="link" class="recommended-posts-link-1621966216" href="https://dirask.com/posts/jMw4kD">Dirask - automatic content translation  </a></li></ul><div class="recommended-posts-footer-1621966216">  <a class="recommended-posts-link-1621966216" href="https://dirask.com/posts">Show more</a></div></div></div>
+<script>
+
+    function appendRecommendedPost(hParent, data)
+    {
+        var hPost = document.createElement('li');
+
+        hPost.className = 'recommended-posts-item-1621966216';
+        hPost.innerHTML = '<a handle="link" class="recommended-posts-link-1621966216"></a>';
+
+        hPost.addEventListener('[COMPONENT]', appendRecommendedPost);
+
+        var hLink = hPost.querySelector('[handle="link"]');
+
+        hLink.innerText = data.postTitle;
+        hLink.href = '/posts/' + encodeURIComponent(data.postHashId);
+
+        hParent.appendChild(hPost);
+    }
+
+    function appendRecommendedPosts(hParent, data)
+    {
+        if (data.length == 0)
+            return;
+
+        var hPosts = document.createElement('div');
+
+        hPosts.className = 'recommended-posts-component-1621966216';
+        hPosts.innerHTML = '' +
+            '<div class="recommended-posts-title-1621966216">Posts you may like</div>' +
+            '<ul handle="content" class="recommended-posts-content-1621966216"></ul>' +
+            '<div class="recommended-posts-footer-1621966216"></ul>' +
+            '  <a class="recommended-posts-link-1621966216" href="/posts">Show more</a>' +
+            '</div>';
+
+        hPosts.addEventListener('[COMPONENT]', appendRecommendedPosts);
+
+        var hContent = hPosts.querySelector('[handle="content"]');
+
+        for (var i = 0; i < data.length; ++i)
+            appendRecommendedPost(hContent, data[i]);
+
+        hParent.appendChild(hPosts);
+    }
+
+    var recommendedPostsCount = 6;
+
+    AjaxUtils.request({
+        method: 'GET',
+        url: '/api/posts?pageSize=' + recommendedPostsCount + '&postsOrder=random',
+        onsuccess: function(responseText)
+        {
+            var responseData = JSON.parse(responseText);
+
+            if (responseData.result)
+            {
+                var hRecommendedPosts = document.querySelector('#recommended-posts');
+
+                appendRecommendedPosts(hRecommendedPosts, responseData.posts);
+            }
+        }
+    });
+
+</script>
+
+
+
+
+
+        
+
+
+
+<style>
+
+    .recommendation_box
+    {
+        background: white;
+        color: #0579d0;
+
+        border: 1px solid #e0dede;
+
+        height: auto;
+        text-align: center;
+        line-height: 24px;
+        z-index: 100000;
+        font-size: 16px;
+        padding: 25px 13px 18px;
+        border-radius: 7px;
+        margin-top: 60px;
+        margin-right: 5px;
+    }
+
+    .recommendation_box h5 {
+        font-size: 19px;
+    }
+
+    .recommendation_box_join {
+        margin: 15px;
+        padding: 5px 34px;
+        border-radius: 3px;
+        background: #02b148;
+        text-decoration: none;
+        color: #fff;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .recommendation_box_join:hover {
+        text-decoration: none;
+        color: #fff;
+        background: #02b148;
+        cursor: pointer;
+    }
+
+</style>
+
+<div class="recommendation_box">
+    
+    <h5>Dirask - we help you to</h5>
+    <h5>solve coding problems.</h5>
+    <a href="https://dirask.com/questions">
+        <h5>Ask question.</h5>
+    </a>
+    <h4 style="padding-top: 8px;">❤️💻 🙂</h4>
+    <a href="https://dirask.com/users/sign-up" class="recommendation_box_join">Join</a>
+</div>
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<style>
+    @media (max-width: 1580px) {
+        div.main-footer-mobile-media {
+            margin-left: 130px;
+        }
+    }
+    @media (max-width: 900px) {
+        div.main-footer-mobile-media {
+            margin-left: unset;
+        }
+    }
+</style>
+
+<footer class="main-footer-outer" style=";">
+
+    <div class="main-footer-mobile-media">
+        <div class="main-footer">
+            <div class="main-footer-column">
+                <div class="main-footer-column-header">Features</div>
+                <div class="main-footer-item"><a href="https://dirask.com/">Home</a></div>
+                <div class="main-footer-item"><a href="https://dirask.com/posts">Wiki</a></div>
+                <div class="main-footer-item"><a href="https://dirask.com/questions">Q &amp; A</a></div>
+                <div class="main-footer-item"><a href="https://dirask.com/findings">Findings &amp; News</a></div>
+                <div class="main-footer-item"><a href="https://dev-task.com/">Jobs</a></div>
+
+                
+                
+
+            </div>
+
+            <div class="main-footer-column">
+                <div class="main-footer-column-header">About</div>
+                <div class="main-footer-item"><a href="https://dirask.com/about">About &amp; Contact</a></div>
+                <div class="main-footer-item"><a href="https://dirask.com/legal/terms-of-service">Terms</a></div>
+                <div class="main-footer-item"><a href="https://dirask.com/legal/cookies-policy">Cookie Policy</a></div>
+                <div class="main-footer-item"><a href="https://dirask.com/legal/privacy-policy">Privacy</a></div>
+                <div class="main-footer-item"><a href="https://dirask.com/legal/gdpr-privacy-policy">GDPR Privacy Policy</a></div>
+                <div class="main-footer-item"><a href="https://dirask.com/legal">Policies</a></div>
+            </div>
+
+            <div class="main-footer-column">
+                <div class="main-footer-column-header">Other</div>
+                <div class="main-footer-item"><a href="https://dirask.com/f/all-formatters-8GZNgL">Formatters</a></div>
+                <div class="main-footer-item"><a href="https://dirask.com/f/all-funny-generators-6N2vr6">Funny generators</a></div>
+                <div class="main-footer-item"><a href="https://dirask.com/posts-lists">Post lists</a></div>
+                <div class="main-footer-item"><a href="https://dirask.com/about/social-links">Links</a></div>
+                <div class="main-footer-item"><a href="https://dirask.com/sitemap.txt">Site map</a></div>
+
+                
+            </div>
+
+        </div>
+
+        <div style="" class="main-footer-copyright-info-outer">
+
+            <div class="main-footer-column">
+                <div class="main-footer-item main-footer-copyright-info">© 2021 dirask - created with passion</div>
+                
+                
+                
+                
+                
+            </div>
+            <div class="main-footer-column"></div>
+            <div class="main-footer-column"></div>
+
+        </div>
+    </div>
+
+</footer>
+
+
+    
+
+</main>
+
+
+
+
+
+<div id="main_page_cookie_bar" class="main_page_cookie_bar" style="">
+    Welcome. By using dirask, you confirm that you have read and understood
+    <a href="https://dirask.com/legal" class="main_page_cookie_bar_link">Terms, Privacy &amp; Cookie policy</a>
+    <a id="main_page_cookie_bar_agreement" class="main_page_cookie_bar_agreement">Ok, I understand</a>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var cookieAndPolicyAccepted = Cookies.get("cookie_and_policy_accepted");
+        console.log("cookieAndPolicyAccepted: " + cookieAndPolicyAccepted);
+        if (cookieAndPolicyAccepted) {
+            return;
+        }
+
+        $('#main_page_cookie_bar_agreement').on('click', function () {
+            Cookies.set("cookie_and_policy_accepted", 'true', {expires: 365});
+            $('#main_page_cookie_bar').hide();
+        });
+
+        $('#main_page_cookie_bar').show();
+    });
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-143789764-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script async="" src="./JavaScript - detecting invalid date_files/analytics.js.download"></script>
+<!-- End Google Analytics -->
+
+
+
+
+<script>
+
+    var sendTimings = function()
+    {
+        if (!window.performance.getEntries) {
+            return;
+        }
+
+        var entries = window.performance.getEntries();
+
+        if (entries.length === 0) {
+            return;
+        }
+
+        var entry = entries[0];
+
+        var connectingDuration = entry.connectEnd - entry.connectStart;
+        var redirectionDuration = entry.redirectEnd - entry.redirectStart;
+        var requestDuration = entry.responseStart - entry.requestStart;
+        var responseDuration = entry.responseEnd - entry.responseStart;
+
+        // request + time to first byte + response time (downloading)
+        var fetchingDuration = entry.responseEnd - entry.requestStart;
+
+        // red line in chrome, example: Load: 1.19 s
+        var totalDuration = entry.responseEnd - (entry.redirectStart || entry.connectStart);
+
+        // blue line in chrome, example: DOMContentLoaded: 1.02 s
+        var browserBlueLine__domInteractive = entry.domInteractive;
+
+        // Load - chrome - red line
+        var browserRedLineLoad__domComplete = entry.domComplete;
+        var browser__duration = entry.duration;
+        var browser__redirectCount = entry.redirectCount;
+
+        console.log(
+            'connectingDuration=' + connectingDuration + 'ms\n' +
+            'redirectionDuration=' + redirectionDuration + 'ms\n' +
+            'requestDuration=' + requestDuration + 'ms\n' +
+            'responseDuration=' + responseDuration + 'ms\n' +
+            'fetchingDuration=' + fetchingDuration + 'ms\n' +
+            'totalDuration=' + totalDuration + 'ms\n' +
+            'browserBlueLine__domInteractive=' + browserBlueLine__domInteractive + 'ms\n' +
+            'browserRedLineLoad__domComplete=' + browserRedLineLoad__domComplete + 'ms\n' +
+            'browser__duration=' + browser__duration + 'ms\n' +
+            'browser__redirectCount=' + browser__redirectCount
+        );
+
+        var requestData = {
+            relativeUrl: location.pathname + location.search + location.hash,
+            connectingDuration: connectingDuration,
+            redirectionDuration: redirectionDuration,
+            requestDuration: requestDuration,
+            responseDuration: responseDuration,
+            fetchingDuration: fetchingDuration,
+            totalDuration: totalDuration,
+            browserBlueLine__domInteractive: browserBlueLine__domInteractive,
+            browserRedLineLoad__domComplete: browserRedLineLoad__domComplete,
+            browser__duration: browser__duration,
+            browser__redirectCount: browser__redirectCount,
+        };
+        var requestJson = JSON.stringify(requestData);
+
+        $.ajax({
+            type: "POST",
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            data: requestJson,
+            url: '/s/t',
+            success: function (response) {
+                //console.log(response);
+            },
+            error: function (response) {
+                console.error(response);
+            }
+        });
+    };
+
+    window.addEventListener('load', sendTimings);
+
+
+
+
+
+
+
+
+
+
+// storage logic
+
+function readArray(name) {
+    var json = localStorage.getItem(name);
+    if (json) {
+        return JSON.parse(json);
+    }
+    return null;
+}
+
+function saveArray(name, array) {
+    var json = JSON.stringify(array);
+    localStorage.setItem(name, json);
+}
+
+// performance logic
+
+function checkPerformance() {
+    if (performance.getEntries) {
+        var entries = performance.getEntries();
+        if (entries.length > 0) {
+            return entries[0];
+        }
+    }
+    return null;
+}
+
+function getTimes() {
+    var performance = checkPerformance();
+    if (performance) {
+        return {
+            connectingDuration: performance.connectEnd - performance.connectStart,
+            redirectionDuration: performance.redirectEnd - performance.redirectStart,
+            requestDuration: performance.responseStart - performance.requestStart,
+            responseDuration: performance.responseEnd - performance.responseStart,
+            fetchingDuration: performance.responseEnd - performance.requestStart,  // request time + TTFB + response time (downloading)
+            totalDuration: performance.responseEnd - (performance.redirectStart || performance.connectStart)
+        };
+    }
+    return null;
+}
+
+// arrays logic
+
+function createArray(count) {
+    var array = Array(count);
+    for (var i = 0; i < count; ++i) {
+        array[i] = 0;
+    }
+    return array;
+}
+
+function resizeArray(array, size) {
+    var changeSize = size - array.length;
+    if (changeSize > 0) {
+        return array.concat(createArray(changeSize));
+    } else {
+        return array.slice(0, size);
+    }
+}
+
+// math logic
+
+function isLesser(result, value) {
+    return result < value;
+}
+
+function isBigger(result, value) {
+    return result > value;
+}
+
+function roundNumber(value, precision) {
+    var power = Math.pow(10, precision);
+    return Math.round(value * power) / power;
+}
+
+function calculateSum(array) {
+    var sum = 0;
+    for (var i = 0; i < array.length; ++i) {
+        sum += array[i];
+    }
+    return sum;
+}
+
+function calculateMean(array) {
+    var sum = calculateSum(array);
+    return sum / array.length;
+}
+
+function findValue(array, compare) {
+    if (array.length > 0) {
+        var result = array[0];
+        for (var i = 1; i < array.length; ++i) {
+            var value = array[i];
+            if (compare(value, result)) {
+                result = value;
+            }
+        }
+        return result;
+    }
+    return NaN;
+}
+
+// processing logic
+
+function updateValues(historySize, parameterName, parameterValue) {
+    var storedValues = readArray(parameterName + 's');
+
+    if (storedValues == null) {
+        storedValues = createArray(historySize);
+    } else {
+        if (storedValues.length != historySize) {
+            storedValues = resizeArray(storedValues, historySize);
+        }
+    }
+
+    storedValues.shift();
+    storedValues.push(parameterValue);
+
+    saveArray(parameterName + 's', storedValues);
+
+    return storedValues;
+}
+
+// Usage example:
+
+var historySize = 10;
+
+window.addEventListener('load', function() {
+    var currentTimes = getTimes();
+    if (currentTimes) {
+        var gatheredTimes = {};
+
+        for (var parameterName in currentTimes) {
+            var storedValues = updateValues(historySize, parameterName, currentTimes[parameterName])
+
+            var minTime = findValue(storedValues, isLesser);
+            var maxTime = findValue(storedValues, isBigger);
+            var meanTime = calculateMean(storedValues);
+
+            var parameterTimes = {
+                'min time [ms]': roundNumber(minTime, 3),
+                'max time [ms]': roundNumber(maxTime, 3),
+                'mean time [ms]': roundNumber(meanTime, 3),
+                '': '' // used as separator
+            };
+
+            for (var i = 0; i < historySize; ++i) {
+                parameterTimes['last ' + (i + 1) + ' [ms]'] = roundNumber(storedValues[historySize - i - 1], 3);
+            }
+
+            gatheredTimes[parameterName.substring(0, parameterName.length - 8)] = parameterTimes;
+        }
+
+        console.table(gatheredTimes);
+        console.log('https://dirask.com/posts/JavaScript-track-last-10-site-loading-times-and-print-statistics-pOra5D');
+        console.log('https://dirask.com/posts/JavaScript-measure-page-loading-times-connection-redirection-fetching-request-response-total-j8gyyp');
+    }
+});
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+<script>
+
+    // function AsyncImage(url, style)
+    // {
+    //     var hContainer = document.createElement('div');
+    //     var hImage = document.createElement('img');
+    //
+    //     hContainer.className = 'async-' + style + '-image-component';
+    //     hImage.className = 'async-' + style + '-image-canvas';
+    //
+    //     function onImageLoad()
+    //     {
+    //         hImage.removeEventListener('load', onImageLoad);
+    //
+    //         hContainer.appendChild(hImage);
+    //     }
+    //
+    //     function onWindowLoad()
+    //     {
+    //         window.removeEventListener('load', onWindowLoad);
+    //         hImage.addEventListener('load', onImageLoad);
+    //
+    //         hImage.src = url;
+    //     }
+    //
+    //     window.addEventListener('load', onWindowLoad);
+    //
+    //     this.mount = function(hParent, hPlaceholder)
+    //     {
+    //         mountElement(hParent, hPlaceholder, hContainer);
+    //     };
+    // }
+    //
+    // var image = new AsyncImage('https://dirask.com/static/bucket/1607261556273-BZOQx9GY3p--image.png', 'test');
+    // image.mount(document.body);
+
+</script>
+
+
+
+
+
+
+
+
+<textarea style="border: none;width: 0px; height: 0px; display: none"></textarea><textarea style="border: none; width: 0px; height: 0px; display: none"></textarea></body></html>

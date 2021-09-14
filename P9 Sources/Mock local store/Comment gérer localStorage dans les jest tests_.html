@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)https://qastack.fr/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="./Comment gérer localStorage dans les jest tests__files/js"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-133560070-16');
+  </script>
+  
+
+  <!-- Required meta tags -->
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="./Comment gérer localStorage dans les jest tests__files/dac39baf67b9.css" type="text/css">
+
+  <title>Comment gérer localStorage dans les jest tests?</title>
+  
+  <link rel="canonical" href="https://qastack.fr/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests">
+  <meta name="description" content="[Solution trouvée!] Excellente solution de @chiedo Cependant, nous utilisons la syntaxe ES2015 et j&#39;ai trouvé que c&#39;était un…">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://qastack.fr/static/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://qastack.fr/static/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://qastack.fr/static/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://qastack.fr/static/favicon/site.webmanifest">
+
+  <script>var useGDPR = true;</script><style>@media print {#ghostery-tracker-tally {display:none !important}}</style>
+
+  
+  <script async="" src="./Comment gérer localStorage dans les jest tests__files/f.txt"></script>
+  <script>
+    if(useGDPR) {
+        (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;
+        
+    }
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-0985488874840506",
+        enable_page_level_ads: true
+    });
+  </script>
+</head>
+<body class="" style="" cz-shortcut-listen="true">
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="https://qastack.fr/"><img src="./Comment gérer localStorage dans les jest tests__files/logo.png" height="30" alt="QA Stack"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://qastack.fr/programming/">La programmation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://qastack.fr/programming/tags/">Étiquettes</a>
+          </li>
+        
+      </ul>
+      
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          
+            <a class="nav-link dropdown-toggle" href="https://qastack.fr/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests#" id="authDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Account
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="authDropdown">
+              <a class="dropdown-item" href="https://qastack.fr/accounts/login/?next=/">Connexion</a>
+              <a class="dropdown-item" href="https://qastack.fr/accounts/signup/?next=/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests">Inscription</a>
+            </div>
+          
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section class="container mt-4">
+  
+  
+  <div class="row">
+    <div class="col-md-9">
+
+      <h1 data-id="5f214207043da78f72e55145">Comment gérer localStorage dans les jest tests?</h1>
+      <hr>
+
+      <article class="media">
+        <div class="text-center pr-3">
+          <div class="mb-3">
+            <div class="votes-count border rounded" title="votes">
+              144 <br>
+              <span class="icon-thumbs-up"></span>
+            </div>
+          </div>
+          <a data-trans-code="question" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue"><span class="icon-translate"></span></a>
+        </div>
+        <div class="media-body">
+          <div class="stack-block" data-trans-dest="question">
+            <p>Je continue à obtenir "localStorage n'est pas défini" dans les tests Jest, ce qui a du sens, mais quelles sont mes options? Frapper les murs de briques.</p>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              
+                <span class="tags">
+                  
+                    <a href="https://qastack.fr/programming/tagged/jestjs/" class="badge badge-warning">jestjs</a>&nbsp;
+                  
+                </span>
+              
+            </div>
+            <div class="col-md-6 text-right">
+              
+                <small class="text-muted font-weight-lighter">
+                  —
+                  <a href="https://stackoverflow.comhttps//stackoverflow.com/users/2015685/chiedo" rel="nofollow noopener noreferrer" target="_blank">
+                    Chiedo
+                  </a>
+                   <br>
+                  <a href="https://stackoverflow.com/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests" rel="nofollow noopener noreferrer" target="_blank">
+                    <span class="icon-new-window"></span> source
+                  </a>
+                </small>
+              
+            </div>
+          </div>
+
+          <script async="" src="./Comment gérer localStorage dans les jest tests__files/f.txt"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-0985488874840506" data-ad-slot="6265911322"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+          
+        </div>
+      </article>
+
+      
+        <p class="h3 mt-4">Réponses:</p>
+        
+          <hr>
+          <article class="media">
+            <div class="text-center pr-3">
+              <div class="mb-3">
+                <div class="votes-count border rounded" title="votes">
+                  141 <br>
+                  <span class="icon-thumbs-up"></span>
+                </div>
+              </div>
+              <a data-trans-code="answer-41434763" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue"><span class="icon-translate"></span></a>
+            </div>
+            <div class="media-body">
+              <div data-trans-dest="answer-41434763" class="stack-block">
+                <p>Excellente solution de <a rel="nofollow noreferrer" target="_blank" href="https://stackoverflow.com/users/2015685/chiedo">@chiedo</a></p>
+
+<p>Cependant, nous utilisons la syntaxe ES2015 et j'ai trouvé que c'était un peu plus propre de l'écrire de cette façon.</p>
+
+<pre class="lang-js prettyprint prettyprinted" style="width: 739px;"><code><span class="kwd">class</span><span class="pln"> </span><span class="typ">LocalStorageMock</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">constructor</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">store </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{};</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+
+  clear</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">store </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{};</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+
+  getItem</span><span class="pun">(</span><span class="pln">key</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">store</span><span class="pun">[</span><span class="pln">key</span><span class="pun">]</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+
+  setItem</span><span class="pun">(</span><span class="pln">key</span><span class="pun">,</span><span class="pln"> value</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">store</span><span class="pun">[</span><span class="pln">key</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> value</span><span class="pun">.</span><span class="pln">toString</span><span class="pun">();</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+
+  removeItem</span><span class="pun">(</span><span class="pln">key</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">delete</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">store</span><span class="pun">[</span><span class="pln">key</span><span class="pun">];</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">};</span><span class="pln">
+
+global</span><span class="pun">.</span><span class="pln">localStorage </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">LocalStorageMock</span><span class="pun">;</span></code></pre>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  
+                </div>
+                <div class="col-md-6 text-right">
+                  
+                    <small class="text-muted font-weight-lighter">
+                      —
+                      <a href="https://stackoverflow.com/users/4061979/nickcan" rel="nofollow noopener noreferrer" target="_blank">Nickcan</a>
+                      <br>
+                      <a href="https://stackoverflow.com/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests/41434763#41434763" rel="nofollow noopener noreferrer" target="_blank">
+                        <span class="icon-new-window"></span> source
+                      </a>
+                    </small>
+                  
+                </div>
+              </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    8<br>
+                    
+                    <a data-trans-code="comment-79281005" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-79281005">
+                      Devrait probablement faire <code>value + ''</code>dans le setter pour gérer correctement les valeurs nulles et non définies
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/2456938/menehune23" rel="nofollow noopener noreferrer" target="_blank">menehune23 </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    <a data-trans-code="comment-91402930" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-91402930">
+                      Je pense que cette dernière plaisanterie consistait simplement à utiliser cela, <code>|| null</code>c'est pourquoi mon test a échoué, car dans mon test, j'utilisais <code>not.toBeDefined()</code>. Solution @Chiedo le faire fonctionner à nouveau
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/387194/jcubic" rel="nofollow noopener noreferrer" target="_blank">jcubic </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    <a data-trans-code="comment-95310890" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-95310890">
+                      Je pense que c'est techniquement un stub :) voir ici pour la version <a rel="nofollow noreferrer" target="_blank" href="https://qastack.fr/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests/54239779#answer-54239779" title="comment gérer le stockage local dans les tests de plaisanterie"></a>
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/6838357/tigerbear" rel="nofollow noopener noreferrer" target="_blank">simulée </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+            </div>
+          </article>
+        
+          <hr>
+          <article class="media">
+            <div class="text-center pr-3">
+              <div class="mb-3">
+                <div class="votes-count border rounded" title="votes">
+                  100 <br>
+                  <span class="icon-thumbs-up"></span>
+                </div>
+              </div>
+              <a data-trans-code="answer-32911774" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue"><span class="icon-translate"></span></a>
+            </div>
+            <div class="media-body">
+              <div data-trans-dest="answer-32911774" class="stack-block">
+                <p>Je l'ai compris avec l'aide de ceci: <a rel="nofollow noreferrer" target="_blank" href="https://groups.google.com/forum/#!topic/jestjs/9EPhuNWVYTg">https://groups.google.com/forum/#!topic/jestjs/9EPhuNWVYTg</a></p>
+
+<p>Configurez un fichier avec le contenu suivant:</p>
+
+<pre class="lang-js prettyprint prettyprinted" style="width: 739px;"><code><span class="kwd">var</span><span class="pln"> localStorageMock </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">var</span><span class="pln"> store </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{};</span><span class="pln">
+  </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    getItem</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">key</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="kwd">return</span><span class="pln"> store</span><span class="pun">[</span><span class="pln">key</span><span class="pun">];</span><span class="pln">
+    </span><span class="pun">},</span><span class="pln">
+    setItem</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">key</span><span class="pun">,</span><span class="pln"> value</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      store</span><span class="pun">[</span><span class="pln">key</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> value</span><span class="pun">.</span><span class="pln">toString</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">},</span><span class="pln">
+    clear</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      store </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{};</span><span class="pln">
+    </span><span class="pun">},</span><span class="pln">
+    removeItem</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">key</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="kwd">delete</span><span class="pln"> store</span><span class="pun">[</span><span class="pln">key</span><span class="pun">];</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">};</span><span class="pln">
+</span><span class="pun">})();</span><span class="pln">
+</span><span class="typ">Object</span><span class="pun">.</span><span class="pln">defineProperty</span><span class="pun">(</span><span class="pln">window</span><span class="pun">,</span><span class="pln"> </span><span class="str">'localStorage'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> value</span><span class="pun">:</span><span class="pln"> localStorageMock </span><span class="pun">});</span></code></pre>
+
+<p>Ensuite, vous ajoutez la ligne suivante à votre package.json sous vos configs Jest</p>
+
+<p><code>"setupTestFrameworkScriptFile":"PATH_TO_YOUR_FILE",</code></p>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  
+                </div>
+                <div class="col-md-6 text-right">
+                  
+                    <small class="text-muted font-weight-lighter">
+                      —
+                      <a href="https://stackoverflow.com/users/2015685/chiedo" rel="nofollow noopener noreferrer" target="_blank">Chiedo</a>
+                      <br>
+                      <a href="https://stackoverflow.com/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests/32911774#32911774" rel="nofollow noopener noreferrer" target="_blank">
+                        <span class="icon-new-window"></span> source
+                      </a>
+                    </small>
+                  
+                </div>
+              </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    6<br>
+                    
+                    <a data-trans-code="comment-69326594" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-69326594">
+                      Apparemment, avec l'une des mises à jour, le nom de ce paramètre a changé et maintenant il s'appelle "setupTestFrameworkScriptFile"
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/1359848/grzegorz-pawlik" rel="nofollow noopener noreferrer" target="_blank">Grzegorz Pawlik </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    2<br>
+                    
+                    <a data-trans-code="comment-73065586" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-73065586">
+                      <code>"setupFiles": [...]</code>fonctionne aussi bien. Avec l'option array, permet de séparer les simulacres en fichiers séparés. Ex:<code>"setupFiles": ["&lt;rootDir&gt;/__mocks__/localStorageMock.js"]</code>
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/89594/stiggler" rel="nofollow noopener noreferrer" target="_blank">Stiggler </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    3<br>
+                    
+                    <a data-trans-code="comment-73332653" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-73332653">
+                      La valeur de retour de <code>getItem</code>diffère légèrement de ce qui serait renvoyé par un navigateur si aucune donnée n'est définie sur une clé spécifique. appeler <code>getItem("foo")</code>quand il n'est pas défini retournera par exemple <code>null</code>dans un navigateur, mais <code>undefined</code>par ce simulacre - cela provoquait l'échec d'un de mes tests. La solution simple pour moi était de revenir <code>store[key] || null</code>dans la <code>getItem</code>fonction
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/1995388/ben-broadley" rel="nofollow noopener noreferrer" target="_blank">Ben Broadley </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    <a data-trans-code="comment-80831199" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-80831199">
+                      cela ne fonctionne pas si vous faites quelque chose comme<code>localStorage['test'] = '123'; localStorage.getItem('test')</code>
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/373655/rob" rel="nofollow noopener noreferrer" target="_blank">rob </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    3<br>
+                    
+                    <a data-trans-code="comment-94274794" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-94274794">
+                      J'obtiens l'erreur suivante - la valeur jest.fn () doit être une fonction simulée ou un espion. Des idées?
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/4425849/paul-fitzgerald" rel="nofollow noopener noreferrer" target="_blank">Paul Fitzgerald </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+            </div>
+          </article>
+        
+          <hr>
+          <article class="media">
+            <div class="text-center pr-3">
+              <div class="mb-3">
+                <div class="votes-count border rounded" title="votes">
+                  55 <br>
+                  <span class="icon-thumbs-up"></span>
+                </div>
+              </div>
+              <a data-trans-code="answer-47897345" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue"><span class="icon-translate"></span></a>
+            </div>
+            <div class="media-body">
+              <div data-trans-dest="answer-47897345" class="stack-block">
+                <p>Si vous utilisez create-react-app, il existe une solution plus simple et directe expliquée dans la <a rel="nofollow noreferrer" target="_blank" href="https://github.com/facebook/create-react-app/blob/master/docusaurus/docs/running-tests.md#srcsetuptestsjs-1">documentation</a> .</p>
+
+<p>Créez <code>src/setupTests.js</code>et mettez-y ceci:</p>
+
+<pre style="width: 739px;"><code>const localStorageMock = {
+  getItem: jest.fn(),
+  setItem: jest.fn(),
+  clear: jest.fn()
+};
+global.localStorage = localStorageMock;
+</code></pre>
+
+<p><em>Contribution de Tom Mertz dans un commentaire ci-dessous:</em></p>
+
+<p>Vous pouvez ensuite tester que les fonctions de votre localStorageMock sont utilisées en faisant quelque chose comme</p>
+
+<pre style="width: 739px;"><code>expect(localStorage.getItem).toBeCalledWith('token')
+// or
+expect(localStorage.getItem.mock.calls.length).toBe(1)
+</code></pre>
+
+<p>à l'intérieur de vos tests si vous vouliez vous assurer qu'il a été appelé. Découvrez <a rel="nofollow noreferrer" target="_blank" href="https://facebook.github.io/jest/docs/en/mock-functions.html">https://facebook.github.io/jest/docs/en/mock-functions.html</a></p>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  
+                </div>
+                <div class="col-md-6 text-right">
+                  
+                    <small class="text-muted font-weight-lighter">
+                      —
+                      <a href="https://stackoverflow.com/users/1259118/c4k" rel="nofollow noopener noreferrer" target="_blank">c4k</a>
+                      <br>
+                      <a href="https://stackoverflow.com/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests/47897345#47897345" rel="nofollow noopener noreferrer" target="_blank">
+                        <span class="icon-new-window"></span> source
+                      </a>
+                    </small>
+                  
+                </div>
+              </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    <a data-trans-code="comment-82948541" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-82948541">
+                      Salut c4k! Pourriez-vous s'il vous plaît donner un exemple comment vous utiliseriez cela dans vos tests?
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/5428205/dimo" rel="nofollow noopener noreferrer" target="_blank">Dimo </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    <a data-trans-code="comment-82980618" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-82980618">
+                      Que voulez-vous dire ? Vous n'avez rien à initialiser dans vos tests, cela se moque automatiquement de ce que <code>localStorage</code>vous utilisez dans votre code. (si vous utilisez <code>create-react-app</code>et tous les scripts automatiques qu'il fournit naturellement)
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/1259118/c4k" rel="nofollow noopener noreferrer" target="_blank">c4k </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    <a data-trans-code="comment-88460922" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-88460922">
+                      Vous pouvez ensuite tester que les fonctions de votre localStorageMock sont utilisées en faisant quelque chose comme <code>expect(localStorage.getItem).toBeCalledWith('token')</code>ou à l' <code>expect(localStorage.getItem.mock.calls.length).toBe(1)</code>intérieur de vos tests si vous vouliez vous assurer qu'il a été appelé. Découvrez <a rel="nofollow noreferrer" target="_blank" href="https://facebook.github.io/jest/docs/en/mock-functions.html">facebook.github.io/jest/docs/en/mock-functions.html</a>
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/6727740/tom-mertz" rel="nofollow noopener noreferrer" target="_blank">Tom Mertz </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    10<br>
+                    
+                    <a data-trans-code="comment-94274771" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-94274771">
+                      pour cela, j'obtiens une erreur - la valeur jest.fn () doit être une fonction simulée ou un espion. Des idées?
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/4425849/paul-fitzgerald" rel="nofollow noopener noreferrer" target="_blank">Paul Fitzgerald </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    3<br>
+                    
+                    <a data-trans-code="comment-95662852" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-95662852">
+                      Cela ne causera-t-il pas des problèmes si vous avez plusieurs tests qui utilisent <code>localStorage</code>? Ne voudriez-vous pas réinitialiser les espions après chaque test pour éviter un «débordement» dans d'autres tests?
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/2125379/brandon-sturgeon" rel="nofollow noopener noreferrer" target="_blank">Brandon Sturgeon </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+            </div>
+          </article>
+        
+          <hr>
+          <article class="media">
+            <div class="text-center pr-3">
+              <div class="mb-3">
+                <div class="votes-count border rounded" title="votes">
+                  43 <br>
+                  <span class="icon-thumbs-up"></span>
+                </div>
+              </div>
+              <a data-trans-code="answer-54157998" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue"><span class="icon-translate"></span></a>
+            </div>
+            <div class="media-body">
+              <div data-trans-dest="answer-54157998" class="stack-block">
+                <p>Actuellement (octobre 19) localStorage ne peut pas être ridiculisé ou espionné par plaisanterie comme vous le feriez habituellement, et comme indiqué dans la documentation de create-react-app. Cela est dû aux modifications apportées à jsdom. Vous pouvez en savoir plus dans le<a rel="nofollow noreferrer" target="_blank" href="https://github.com/facebook/jest/issues/6798"></a> trackers de problèmes <a rel="nofollow noreferrer" target="_blank" href="https://github.com/facebook/jest/issues/6798">jest</a> et <a rel="nofollow noreferrer" target="_blank" href="https://github.com/jsdom/jsdom/issues/2318">jsdom</a> .</p>
+
+<p>Pour contourner le problème, vous pouvez à la place espionner le prototype:</p>
+
+<pre class="lang-js prettyprint prettyprinted" style="width: 739px;"><code><span class="com">// does not work:</span><span class="pln">
+jest</span><span class="pun">.</span><span class="pln">spyOn</span><span class="pun">(</span><span class="pln">localStorage</span><span class="pun">,</span><span class="pln"> </span><span class="str">"setItem"</span><span class="pun">);</span><span class="pln">
+localStorage</span><span class="pun">.</span><span class="pln">setItem </span><span class="pun">=</span><span class="pln"> jest</span><span class="pun">.</span><span class="pln">fn</span><span class="pun">();</span><span class="pln">
+
+</span><span class="com">// works:</span><span class="pln">
+jest</span><span class="pun">.</span><span class="pln">spyOn</span><span class="pun">(</span><span class="pln">window</span><span class="pun">.</span><span class="pln">localStorage</span><span class="pun">.</span><span class="pln">__proto__</span><span class="pun">,</span><span class="pln"> </span><span class="str">'setItem'</span><span class="pun">);</span><span class="pln">
+window</span><span class="pun">.</span><span class="pln">localStorage</span><span class="pun">.</span><span class="pln">__proto__</span><span class="pun">.</span><span class="pln">setItem </span><span class="pun">=</span><span class="pln"> jest</span><span class="pun">.</span><span class="pln">fn</span><span class="pun">();</span><span class="pln">
+
+</span><span class="com">// assertions as usual:</span><span class="pln">
+expect</span><span class="pun">(</span><span class="pln">localStorage</span><span class="pun">.</span><span class="pln">setItem</span><span class="pun">).</span><span class="pln">toHaveBeenCalled</span><span class="pun">();</span></code></pre>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  
+                </div>
+                <div class="col-md-6 text-right">
+                  
+                    <small class="text-muted font-weight-lighter">
+                      —
+                      <a href="https://stackoverflow.com/users/4043295/bastian-stein" rel="nofollow noopener noreferrer" target="_blank">Bastian Stein</a>
+                      <br>
+                      <a href="https://stackoverflow.com/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests/54157998#54157998" rel="nofollow noopener noreferrer" target="_blank">
+                        <span class="icon-new-window"></span> source
+                      </a>
+                    </small>
+                  
+                </div>
+              </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    <a data-trans-code="comment-107492116" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-107492116">
+                      En fait, cela fonctionne pour moi juste avec spyOn, pas besoin de remplacer la fonction setItem<code>jest.spyOn(window.localStorage.__proto__, 'setItem');</code>
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/6380895/yohan-dahmani" rel="nofollow noopener noreferrer" target="_blank">Yohan Dahmani </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    <a data-trans-code="comment-107524779" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-107524779">
+                      Oui, j'ai énuméré les deux comme alternatives, pas besoin de faire les deux.
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/4043295/bastian-stein" rel="nofollow noopener noreferrer" target="_blank">Bastian Stein </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    <a data-trans-code="comment-107524810" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-107524810">
+                      Je voulais dire sans le remplacement du setItem aussi 😉
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/6380895/yohan-dahmani" rel="nofollow noopener noreferrer" target="_blank">Yohan Dahmani </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    <a data-trans-code="comment-107621832" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-107621832">
+                      Je ne pense pas comprendre. Pouvez-vous clarifier s'il vous plaît?
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/4043295/bastian-stein" rel="nofollow noopener noreferrer" target="_blank">Bastian Stein </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    1<br>
+                    
+                    <a data-trans-code="comment-107621998" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-107621998">
+                      Ah oui. Je disais que vous pouvez utiliser soit la première ligne, soit la deuxième ligne. Ce sont des alternatives qui font la même chose. Quelle que soit votre préférence personnelle :) Désolé pour la confusion.
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/4043295/bastian-stein" rel="nofollow noopener noreferrer" target="_blank">Bastian Stein </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+            </div>
+          </article>
+        
+          <hr>
+          <article class="media">
+            <div class="text-center pr-3">
+              <div class="mb-3">
+                <div class="votes-count border rounded" title="votes">
+                  14 <br>
+                  <span class="icon-thumbs-up"></span>
+                </div>
+              </div>
+              <a data-trans-code="answer-46931891" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue"><span class="icon-translate"></span></a>
+            </div>
+            <div class="media-body">
+              <div data-trans-dest="answer-46931891" class="stack-block">
+                <p>ou vous prenez simplement un faux paquet comme celui-ci:</p>
+
+<p><a rel="nofollow noreferrer" target="_blank" href="https://www.npmjs.com/package/jest-localstorage-mock">https://www.npmjs.com/package/jest-localstorage-mock</a></p>
+
+<p>il gère non seulement la fonctionnalité de stockage, mais vous permet également de tester si le magasin a été réellement appelé.</p>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  
+                </div>
+                <div class="col-md-6 text-right">
+                  
+                    <small class="text-muted font-weight-lighter">
+                      —
+                      <a href="https://stackoverflow.com/users/6044831/aligertor" rel="nofollow noopener noreferrer" target="_blank">Aligertor</a>
+                      <br>
+                      <a href="https://stackoverflow.com/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests/46931891#46931891" rel="nofollow noopener noreferrer" target="_blank">
+                        <span class="icon-new-window"></span> source
+                      </a>
+                    </small>
+                  
+                </div>
+              </div>
+              
+            </div>
+          </article>
+        
+          <hr>
+          <article class="media">
+            <div class="text-center pr-3">
+              <div class="mb-3">
+                <div class="votes-count border rounded" title="votes">
+                  13 <br>
+                  <span class="icon-thumbs-up"></span>
+                </div>
+              </div>
+              <a data-trans-code="answer-43716474" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue"><span class="icon-translate"></span></a>
+            </div>
+            <div class="media-body">
+              <div data-trans-dest="answer-43716474" class="stack-block">
+                <p>Une meilleure alternative qui gère les <code>undefined</code>valeurs (elle n'a pas <code>toString()</code>) et retourne <code>null</code>si la valeur n'existe pas. Testé ceci avec la <code>react</code>v15, <code>redux</code>et<code>redux-auth-wrapper</code> </p>
+
+<pre style="width: 739px;"><code>class LocalStorageMock {
+  constructor() {
+    this.store = {}
+  }
+
+  clear() {
+    this.store = {}
+  }
+
+  getItem(key) {
+    return this.store[key] || null
+  }
+
+  setItem(key, value) {
+    this.store[key] = value
+  }
+
+  removeItem(key) {
+    delete this.store[key]
+  }
+}
+
+global.localStorage = new LocalStorageMock
+</code></pre>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  
+                </div>
+                <div class="col-md-6 text-right">
+                  
+                    <small class="text-muted font-weight-lighter">
+                      —
+                      <a href="https://stackoverflow.com/users/541961/dmitriy" rel="nofollow noopener noreferrer" target="_blank">Dmitriy</a>
+                      <br>
+                      <a href="https://stackoverflow.com/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests/43716474#43716474" rel="nofollow noopener noreferrer" target="_blank">
+                        <span class="icon-new-window"></span> source
+                      </a>
+                    </small>
+                  
+                </div>
+              </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    <a data-trans-code="comment-75383310" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-75383310">
+                      Merci à Alexis Tyler pour l'idée d'ajouter <code>removeItem</code>: <a rel="nofollow noreferrer" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Storage/removeItem">developer.mozilla.org/en-US/docs/Web/API/Storage/removeItem</a>
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/541961/dmitriy" rel="nofollow noopener noreferrer" target="_blank">Dmitriy </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    <a data-trans-code="comment-79281069" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-79281069">
+                      Croyez que nul et indéfini doivent aboutir à "null" et "undefined" (chaînes littérales)
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/2456938/menehune23" rel="nofollow noopener noreferrer" target="_blank">menehune23 </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+            </div>
+          </article>
+        
+          <hr>
+          <article class="media">
+            <div class="text-center pr-3">
+              <div class="mb-3">
+                <div class="votes-count border rounded" title="votes">
+                  6 <br>
+                  <span class="icon-thumbs-up"></span>
+                </div>
+              </div>
+              <a data-trans-code="answer-54239779" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue"><span class="icon-translate"></span></a>
+            </div>
+            <div class="media-body">
+              <div data-trans-dest="answer-54239779" class="stack-block">
+                <p>Si vous recherchez une maquette et non un talon, voici la solution que j'utilise:</p>
+
+<pre style="width: 739px;"><code>export const localStorageMock = {
+   getItem: jest.fn().mockImplementation(key =&gt; localStorageItems[key]),
+   setItem: jest.fn().mockImplementation((key, value) =&gt; {
+       localStorageItems[key] = value;
+   }),
+   clear: jest.fn().mockImplementation(() =&gt; {
+       localStorageItems = {};
+   }),
+   removeItem: jest.fn().mockImplementation((key) =&gt; {
+       localStorageItems[key] = undefined;
+   }),
+};
+
+export let localStorageItems = {}; // eslint-disable-line import/no-mutable-exports
+</code></pre>
+
+<p>J'exporte les éléments de stockage pour une initialisation facile. IE je peux facilement le définir sur un objet</p>
+
+<p>Dans les nouvelles versions de Jest + JSDom, il n'est pas possible de définir cela, mais le stockage local est déjà disponible et vous pouvez l'espionner comme ceci:</p>
+
+<pre style="width: 739px;"><code>const setItemSpy = jest.spyOn(Object.getPrototypeOf(window.localStorage), 'setItem');
+</code></pre>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  
+                </div>
+                <div class="col-md-6 text-right">
+                  
+                    <small class="text-muted font-weight-lighter">
+                      —
+                      <a href="https://stackoverflow.com/users/6838357/tigerbear" rel="nofollow noopener noreferrer" target="_blank">TigerBear</a>
+                      <br>
+                      <a href="https://stackoverflow.com/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests/54239779#54239779" rel="nofollow noopener noreferrer" target="_blank">
+                        <span class="icon-new-window"></span> source
+                      </a>
+                    </small>
+                  
+                </div>
+              </div>
+              
+            </div>
+          </article>
+        
+          <hr>
+          <article class="media">
+            <div class="text-center pr-3">
+              <div class="mb-3">
+                <div class="votes-count border rounded" title="votes">
+                  5 <br>
+                  <span class="icon-thumbs-up"></span>
+                </div>
+              </div>
+              <a data-trans-code="answer-57437141" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue"><span class="icon-translate"></span></a>
+            </div>
+            <div class="media-body">
+              <div data-trans-dest="answer-57437141" class="stack-block">
+                <p>J'ai trouvé cette solution de <a rel="nofollow noreferrer" target="_blank" href="https://github.com/facebook/jest/issues/2098#issuecomment-260733457">github</a></p>
+
+<pre style="width: 739px;"><code>var localStorageMock = (function() {
+  var store = {};
+
+  return {
+    getItem: function(key) {
+        return store[key] || null;
+    },
+    setItem: function(key, value) {
+        store[key] = value.toString();
+    },
+    clear: function() {
+        store = {};
+    }
+  }; 
+})();
+
+Object.defineProperty(window, 'localStorage', {
+ value: localStorageMock
+});
+</code></pre>
+
+<p>Vous pouvez insérer ce code dans vos setupTests et cela devrait fonctionner correctement. </p>
+
+<p>Je l'ai testé dans un projet avec typesctipt.</p>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  
+                </div>
+                <div class="col-md-6 text-right">
+                  
+                    <small class="text-muted font-weight-lighter">
+                      —
+                      <a href="https://stackoverflow.com/users/2642346/carlos-huamani" rel="nofollow noopener noreferrer" target="_blank">Carlos Huamani</a>
+                      <br>
+                      <a href="https://stackoverflow.com/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests/57437141#57437141" rel="nofollow noopener noreferrer" target="_blank">
+                        <span class="icon-new-window"></span> source
+                      </a>
+                    </small>
+                  
+                </div>
+              </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    <a data-trans-code="comment-104683517" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-104683517">
+                      pour moi Object.defineProperty a fait l'affaire. L'affectation directe d'objet n'a pas fonctionné. Merci!
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/3821929/vicens-fayos" rel="nofollow noopener noreferrer" target="_blank">Vicens Fayos </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+            </div>
+          </article>
+        
+          <hr>
+          <article class="media">
+            <div class="text-center pr-3">
+              <div class="mb-3">
+                <div class="votes-count border rounded" title="votes">
+                  4 <br>
+                  <span class="icon-thumbs-up"></span>
+                </div>
+              </div>
+              <a data-trans-code="answer-61739703" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue"><span class="icon-translate"></span></a>
+            </div>
+            <div class="media-body">
+              <div data-trans-dest="answer-61739703" class="stack-block">
+                <p>Malheureusement, les solutions que j'ai trouvées ici n'ont pas fonctionné pour moi.</p>
+
+<p>Donc, je regardais les problèmes de Jest GitHub et j'ai trouvé ce <a rel="nofollow noreferrer" target="_blank" href="https://github.com/facebook/jest/issues/6858">fil</a></p>
+
+<p>Les solutions les plus appréciées étaient celles-ci:</p>
+
+<pre class="lang-js prettyprint prettyprinted" style="width: 739px;"><code><span class="kwd">const</span><span class="pln"> spy </span><span class="pun">=</span><span class="pln"> jest</span><span class="pun">.</span><span class="pln">spyOn</span><span class="pun">(</span><span class="typ">Storage</span><span class="pun">.</span><span class="pln">prototype</span><span class="pun">,</span><span class="pln"> </span><span class="str">'setItem'</span><span class="pun">);</span><span class="pln">
+
+</span><span class="com">// or</span><span class="pln">
+
+</span><span class="typ">Storage</span><span class="pun">.</span><span class="pln">prototype</span><span class="pun">.</span><span class="pln">getItem </span><span class="pun">=</span><span class="pln"> jest</span><span class="pun">.</span><span class="pln">fn</span><span class="pun">(()</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'bla'</span><span class="pun">);</span></code></pre>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  
+                </div>
+                <div class="col-md-6 text-right">
+                  
+                    <small class="text-muted font-weight-lighter">
+                      —
+                      <a href="https://stackoverflow.com/users/3916145/christian-saiki" rel="nofollow noopener noreferrer" target="_blank">Christian Saiki</a>
+                      <br>
+                      <a href="https://stackoverflow.com/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests/61739703#61739703" rel="nofollow noopener noreferrer" target="_blank">
+                        <span class="icon-new-window"></span> source
+                      </a>
+                    </small>
+                  
+                </div>
+              </div>
+              
+                <hr>
+                <div class="is-comment media">
+                  <div class="text-center pr-2">
+                    
+                    <a data-trans-code="comment-109525741" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue">
+                      <span class="icon-translate"></span>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div data-trans-dest="comment-109525741">
+                      Mes tests n'ont <code>window</code>ni <code>Storage</code>défini ni défini. C'est peut-être l'ancienne version de Jest que j'utilise.
+                    </div>
+                    
+                      <small class="text-muted font-weight-lighter">
+                        —
+                        <a href="https://stackoverflow.comhttps//stackoverflow.com/users/2005759/antrikshy" rel="nofollow noopener noreferrer" target="_blank">Antrikshy </a>
+                        
+                      </small>
+                    
+                  </div>
+                </div>
+              
+            </div>
+          </article>
+        
+          <hr>
+          <article class="media">
+            <div class="text-center pr-3">
+              <div class="mb-3">
+                <div class="votes-count border rounded" title="votes">
+                  3 <br>
+                  <span class="icon-thumbs-up"></span>
+                </div>
+              </div>
+              <a data-trans-code="answer-50381843" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue"><span class="icon-translate"></span></a>
+            </div>
+            <div class="media-body">
+              <div data-trans-dest="answer-50381843" class="stack-block">
+                <p>Comme @ ck4 l'a suggéré, la <a rel="nofollow noreferrer" target="_blank" href="https://github.com/facebook/create-react-app/blob/ed5c48c81b2139b4414810e1efe917e04c96ee8d/packages/react-scripts/template/README.md#initializing-test-environment">documentation</a> a une explication claire de l'utilisation <code>localStorage</code>dans jest. Cependant, les fonctions simulées ne parvenaient à exécuter aucune des <code>localStorage</code>méthodes.</p>
+
+<p>Vous trouverez ci-dessous l'exemple détaillé de mon composant react qui utilise des méthodes abstraites pour écrire et lire des données,</p>
+
+<pre style="width: 739px;"><code>//file: storage.js
+const key = 'ABC';
+export function readFromStore (){
+    return JSON.parse(localStorage.getItem(key));
+}
+export function saveToStore (value) {
+    localStorage.setItem(key, JSON.stringify(value));
+}
+
+export default { readFromStore, saveToStore };
+</code></pre>
+
+<p><em>Erreur:</em></p>
+
+<pre style="width: 739px;"><code>TypeError: _setupLocalStorage2.default.setItem is not a function
+</code></pre>
+
+<p><strong>Correction:</strong><br> 
+Ajouter ci - dessous pour fonction simulée plaisanterie (chemin: <code>.jest/mocks/setUpStore.js</code>)</p>
+
+<pre style="width: 739px;"><code>let mockStorage = {};
+
+module.exports = window.localStorage = {
+  setItem: (key, val) =&gt; Object.assign(mockStorage, {[key]: val}),
+  getItem: (key) =&gt; mockStorage[key],
+  clear: () =&gt; mockStorage = {}
+};
+</code></pre>
+
+<p>L'extrait est référencé à partir d' <a rel="nofollow noreferrer" target="_blank" href="https://gist.github.com/sanusart/c1558845350cc8d8cafbe3c903d46afc">ici</a></p>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  
+                </div>
+                <div class="col-md-6 text-right">
+                  
+                    <small class="text-muted font-weight-lighter">
+                      —
+                      <a href="https://stackoverflow.com/users/932919/mad-d" rel="nofollow noopener noreferrer" target="_blank">Mad-D</a>
+                      <br>
+                      <a href="https://stackoverflow.com/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests/50381843#50381843" rel="nofollow noopener noreferrer" target="_blank">
+                        <span class="icon-new-window"></span> source
+                      </a>
+                    </small>
+                  
+                </div>
+              </div>
+              
+            </div>
+          </article>
+        
+          <hr>
+          <article class="media">
+            <div class="text-center pr-3">
+              <div class="mb-3">
+                <div class="votes-count border rounded" title="votes">
+                  3 <br>
+                  <span class="icon-thumbs-up"></span>
+                </div>
+              </div>
+              <a data-trans-code="answer-59524679" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue"><span class="icon-translate"></span></a>
+            </div>
+            <div class="media-body">
+              <div data-trans-dest="answer-59524679" class="stack-block">
+                <p>Vous pouvez utiliser cette approche pour éviter de vous moquer. </p>
+
+<pre style="width: 739px;"><code>Storage.prototype.getItem = jest.fn(() =&gt; expectedPayload);
+</code></pre>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  
+                </div>
+                <div class="col-md-6 text-right">
+                  
+                    <small class="text-muted font-weight-lighter">
+                      —
+                      <a href="https://stackoverflow.com/users/916365/sanath" rel="nofollow noopener noreferrer" target="_blank">Sanath</a>
+                      <br>
+                      <a href="https://stackoverflow.com/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests/59524679#59524679" rel="nofollow noopener noreferrer" target="_blank">
+                        <span class="icon-new-window"></span> source
+                      </a>
+                    </small>
+                  
+                </div>
+              </div>
+              
+            </div>
+          </article>
+        
+          <hr>
+          <article class="media">
+            <div class="text-center pr-3">
+              <div class="mb-3">
+                <div class="votes-count border rounded" title="votes">
+                  2 <br>
+                  <span class="icon-thumbs-up"></span>
+                </div>
+              </div>
+              <a data-trans-code="answer-47641203" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue"><span class="icon-translate"></span></a>
+            </div>
+            <div class="media-body">
+              <div data-trans-dest="answer-47641203" class="stack-block">
+                <p>Riffé quelques autres réponses ici pour le résoudre pour un projet avec Typescript. J'ai créé un LocalStorageMock comme ceci:</p>
+
+<pre style="width: 739px;"><code>export class LocalStorageMock {
+
+    private store = {}
+
+    clear() {
+        this.store = {}
+    }
+
+    getItem(key: string) {
+        return this.store[key] || null
+    }
+
+    setItem(key: string, value: string) {
+        this.store[key] = value
+    }
+
+    removeItem(key: string) {
+        delete this.store[key]
+    }
+}
+</code></pre>
+
+<p>Ensuite, j'ai créé une classe LocalStorageWrapper que j'utilise pour tous les accès au stockage local dans l'application au lieu d'accéder directement à la variable de stockage local globale. Facilité de mise en place de la maquette dans l'emballage pour les tests.</p>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  
+                </div>
+                <div class="col-md-6 text-right">
+                  
+                    <small class="text-muted font-weight-lighter">
+                      —
+                      <a href="https://stackoverflow.com/users/1313268/coraythan" rel="nofollow noopener noreferrer" target="_blank">CorayThan</a>
+                      <br>
+                      <a href="https://stackoverflow.com/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests/47641203#47641203" rel="nofollow noopener noreferrer" target="_blank">
+                        <span class="icon-new-window"></span> source
+                      </a>
+                    </small>
+                  
+                </div>
+              </div>
+              
+            </div>
+          </article>
+        
+          <hr>
+          <article class="media">
+            <div class="text-center pr-3">
+              <div class="mb-3">
+                <div class="votes-count border rounded" title="votes">
+                  2 <br>
+                  <span class="icon-thumbs-up"></span>
+                </div>
+              </div>
+              <a data-trans-code="answer-56950827" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue"><span class="icon-translate"></span></a>
+            </div>
+            <div class="media-body">
+              <div data-trans-dest="answer-56950827" class="stack-block">
+                <pre style="width: 739px;"><code>    describe('getToken', () =&gt; {
+    const Auth = new AuthService();
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1yIEpvc2VwaCIsImlkIjoiNWQwYjk1Mzg2NTVhOTQ0ZjA0NjE5ZTA5IiwiZW1haWwiOiJ0cmV2X2pvc0Bob3RtYWlsLmNvbSIsInByb2ZpbGVVc2VybmFtZSI6Ii9tcmpvc2VwaCIsInByb2ZpbGVJbWFnZSI6Ii9Eb3Nlbi10LUdpci1sb29rLWN1dGUtbnVrZWNhdDMxNnMtMzExNzAwNDYtMTI4MC04MDAuanBnIiwiaWF0IjoxNTYyMzE4NDA0LCJleHAiOjE1OTM4NzYwMDR9.YwU15SqHMh1nO51eSa0YsOK-YLlaCx6ijceOKhZfQZc';
+    beforeEach(() =&gt; {
+        global.localStorage = jest.fn().mockImplementation(() =&gt; {
+            return {
+                getItem: jest.fn().mockReturnValue(token)
+            }
+        });
+    });
+    it('should get the token from localStorage', () =&gt; {
+
+        const result  = Auth.getToken();
+        expect(result).toEqual(token);
+
+    });
+});
+</code></pre>
+
+<p>Créez une maquette et ajoutez-la à l' <code>global</code>objet</p>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  
+                </div>
+                <div class="col-md-6 text-right">
+                  
+                    <small class="text-muted font-weight-lighter">
+                      —
+                      <a href="https://stackoverflow.com/users/3507259/trevor-joseph" rel="nofollow noopener noreferrer" target="_blank">Trevor Joseph</a>
+                      <br>
+                      <a href="https://stackoverflow.com/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests/56950827#56950827" rel="nofollow noopener noreferrer" target="_blank">
+                        <span class="icon-new-window"></span> source
+                      </a>
+                    </small>
+                  
+                </div>
+              </div>
+              
+            </div>
+          </article>
+        
+          <hr>
+          <article class="media">
+            <div class="text-center pr-3">
+              <div class="mb-3">
+                <div class="votes-count border rounded" title="votes">
+                  2 <br>
+                  <span class="icon-thumbs-up"></span>
+                </div>
+              </div>
+              <a data-trans-code="answer-60602792" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue"><span class="icon-translate"></span></a>
+            </div>
+            <div class="media-body">
+              <div data-trans-dest="answer-60602792" class="stack-block">
+                <p>Vous devez simuler le stockage local avec ces extraits </p>
+
+<p>// localStorage.js</p>
+
+<pre style="width: 739px;"><code>var localStorageMock = (function() {
+    var store = {};
+
+    return {
+        getItem: function(key) {
+            return store[key] || null;
+        },
+        setItem: function(key, value) {
+            store[key] = value.toString();
+        },
+        clear: function() {
+            store = {};
+        }
+    };
+
+})();
+
+Object.defineProperty(window, 'localStorage', {
+     value: localStorageMock
+});
+</code></pre>
+
+<p>Et dans la configuration de plaisanterie:</p>
+
+<pre style="width: 739px;"><code>"setupFiles":["localStorage.js"]
+</code></pre>
+
+<p>N'hésitez pas à demander quoi que ce soit.</p>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  
+                </div>
+                <div class="col-md-6 text-right">
+                  
+                    <small class="text-muted font-weight-lighter">
+                      —
+                      <a href="https://stackoverflow.com/users/11727445/slim-coder" rel="nofollow noopener noreferrer" target="_blank">Codeur mince</a>
+                      <br>
+                      <a href="https://stackoverflow.com/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests/60602792#60602792" rel="nofollow noopener noreferrer" target="_blank">
+                        <span class="icon-new-window"></span> source
+                      </a>
+                    </small>
+                  
+                </div>
+              </div>
+              
+            </div>
+          </article>
+        
+          <hr>
+          <article class="media">
+            <div class="text-center pr-3">
+              <div class="mb-3">
+                <div class="votes-count border rounded" title="votes">
+                  1 <br>
+                  <span class="icon-thumbs-up"></span>
+                </div>
+              </div>
+              <a data-trans-code="answer-54773493" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue"><span class="icon-translate"></span></a>
+            </div>
+            <div class="media-body">
+              <div data-trans-dest="answer-54773493" class="stack-block">
+                <p>La solution suivante est compatible pour les tests avec une configuration TypeScript, ESLint, TSLint et Prettier plus stricte <code>{ "proseWrap": "always", "semi": false, "singleQuote": true, "trailingComma": "es5" }</code>:</p>
+
+<pre style="width: 739px;"><code>class LocalStorageMock {
+  public store: {
+    [key: string]: string
+  }
+  constructor() {
+    this.store = {}
+  }
+
+  public clear() {
+    this.store = {}
+  }
+
+  public getItem(key: string) {
+    return this.store[key] || undefined
+  }
+
+  public setItem(key: string, value: string) {
+    this.store[key] = value.toString()
+  }
+
+  public removeItem(key: string) {
+    delete this.store[key]
+  }
+}
+/* tslint:disable-next-line:no-any */
+;(global as any).localStorage = new LocalStorageMock()
+</code></pre>
+
+<p>HT / <a rel="nofollow noreferrer" target="_blank" href="https://stackoverflow.com/a/51583401/101290">https://stackoverflow.com/a/51583401/101290</a> pour savoir comment mettre à jour global.localStorage</p>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  
+                </div>
+                <div class="col-md-6 text-right">
+                  
+                    <small class="text-muted font-weight-lighter">
+                      —
+                      <a href="https://stackoverflow.com/users/101290/beau-smith" rel="nofollow noopener noreferrer" target="_blank">Beau Smith</a>
+                      <br>
+                      <a href="https://stackoverflow.com/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests/54773493#54773493" rel="nofollow noopener noreferrer" target="_blank">
+                        <span class="icon-new-window"></span> source
+                      </a>
+                    </small>
+                  
+                </div>
+              </div>
+              
+            </div>
+          </article>
+        
+          <hr>
+          <article class="media">
+            <div class="text-center pr-3">
+              <div class="mb-3">
+                <div class="votes-count border rounded" title="votes">
+                  1 <br>
+                  <span class="icon-thumbs-up"></span>
+                </div>
+              </div>
+              <a data-trans-code="answer-59477253" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue"><span class="icon-translate"></span></a>
+            </div>
+            <div class="media-body">
+              <div data-trans-dest="answer-59477253" class="stack-block">
+                <p>Pour faire la même chose dans le TypeScript, procédez comme suit:</p>
+
+<p>Configurez un fichier avec le contenu suivant:</p>
+
+<pre style="width: 739px;"><code>let localStorageMock = (function() {
+  let store = new Map()
+  return {
+
+    getItem(key: string):string {
+      return store.get(key);
+    },
+
+    setItem: function(key: string, value: string) {
+      store.set(key, value);
+    },
+
+    clear: function() {
+      store = new Map();
+    },
+
+    removeItem: function(key: string) {
+        store.delete(key)
+    }
+  };
+})();
+Object.defineProperty(window, 'localStorage', { value: localStorageMock });
+</code></pre>
+
+<p>Ensuite, vous ajoutez la ligne suivante à votre package.json sous vos configs Jest</p>
+
+<p><code>"setupTestFrameworkScriptFile":"PATH_TO_YOUR_FILE",</code></p>
+
+<p>Ou vous importez ce fichier dans votre scénario de test où vous souhaitez simuler le stockage local.</p>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  
+                </div>
+                <div class="col-md-6 text-right">
+                  
+                    <small class="text-muted font-weight-lighter">
+                      —
+                      <a href="https://stackoverflow.com/users/2549581/vs-lala" rel="nofollow noopener noreferrer" target="_blank">vs_lala</a>
+                      <br>
+                      <a href="https://stackoverflow.com/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests/59477253#59477253" rel="nofollow noopener noreferrer" target="_blank">
+                        <span class="icon-new-window"></span> source
+                      </a>
+                    </small>
+                  
+                </div>
+              </div>
+              
+            </div>
+          </article>
+        
+          <hr>
+          <article class="media">
+            <div class="text-center pr-3">
+              <div class="mb-3">
+                <div class="votes-count border rounded" title="votes">
+                  0 <br>
+                  <span class="icon-thumbs-up"></span>
+                </div>
+              </div>
+              <a data-trans-code="answer-62601861" class="translate-control btn btn-outline btn-light btn-lg" title="Changer de langue"><span class="icon-translate"></span></a>
+            </div>
+            <div class="media-body">
+              <div data-trans-dest="answer-62601861" class="stack-block">
+                <p>Cela a fonctionné pour moi,</p>
+<pre style="width: 739px;"><code>delete global.localStorage;
+global.localStorage = {
+getItem: () =&gt; 
+ }
+</code></pre>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  
+                </div>
+                <div class="col-md-6 text-right">
+                  
+                    <small class="text-muted font-weight-lighter">
+                      —
+                      <a href="https://stackoverflow.com/users/3479982/prathic" rel="nofollow noopener noreferrer" target="_blank">prathique</a>
+                      <br>
+                      <a href="https://stackoverflow.com/programming/32911630/how-do-i-deal-with-localstorage-in-jest-tests/62601861#62601861" rel="nofollow noopener noreferrer" target="_blank">
+                        <span class="icon-new-window"></span> source
+                      </a>
+                    </small>
+                  
+                </div>
+              </div>
+              
+            </div>
+          </article>
+        
+      
+
+    </div>
+    <div class="col-md-3">
+      <div id="similar-questions" data-id="5f214207043da78f72e55145">
+
+  <h5>Questions similaires:</h5>
+  <div>
+  <ul class="list-group list-group-flush">
+  
+    <li class="list-group-item">
+      <a href="https://qastack.fr/programming/28725955/how-do-i-test-a-single-file-using-jest">Comment tester un seul fichier à l'aide de Jest?</a>
+      <span class="icon-thumbs-up"></span>&nbsp;361
+    </li>
+  
+    <li class="list-group-item">
+      <a href="https://qastack.fr/programming/42827054/how-do-i-run-a-single-test-using-jest">Comment exécuter un seul test à l'aide de Jest?</a>
+      <span class="icon-thumbs-up"></span>&nbsp;356
+    </li>
+  
+    <li class="list-group-item">
+      <a href="https://qastack.fr/programming/45778192/what-is-the-difference-between-it-and-test-in-jest">Quelle est la différence entre 'it' et 'test' en plaisantant?</a>
+      <span class="icon-thumbs-up"></span>&nbsp;282
+    </li>
+  
+    <li class="list-group-item">
+      <a href="https://qastack.fr/programming/40465047/how-can-i-mock-an-es6-module-import-using-jest">Comment puis-je simuler une importation de module ES6 à l'aide de Jest?</a>
+      <span class="icon-thumbs-up"></span>&nbsp;281
+    </li>
+  
+    <li class="list-group-item">
+      <a href="https://qastack.fr/programming/31629389/how-to-use-eslint-with-jest">Comment utiliser ESLint avec Jest</a>
+      <span class="icon-thumbs-up"></span>&nbsp;254
+    </li>
+  
+  </ul>
+  </div>
+</div>
+      <script async="" src="./Comment gérer localStorage dans les jest tests__files/f.txt"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-0985488874840506" data-ad-slot="2153477748" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+  </div>
+
+</section>
+
+
+<div class="modal fade" id="cookies-consent" data-backdrop="static" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">We use cookies</h5>
+      </div>
+      <div class="modal-body">
+        <p class="small">
+          
+          
+            We use cookies and other tracking technologies to improve your browsing experience on our website,
+            to show you personalized content and targeted ads, to analyze our website traffic,
+            and to understand where our visitors are coming from.
+          
+        </p>
+        <p class="small">
+          
+          
+            By continuing, you consent to our use of cookies and other tracking technologies and
+            affirm you're at least 16 years old or have consent from a parent or guardian.
+          
+        </p>
+        <p class="small">
+          
+          
+            You can read details in our
+            <a href="https://qastack.fr/legal/cookies-policy.html" target="_blank" rel="nofollow">Cookie policy</a> and
+            <a href="https://qastack.fr/legal/privacy-policy.html" target="_blank" rel="nofollow">Privacy policy</a>.
+          
+        </p>
+        <div class="text-center ">
+          <button type="button" class="btn btn-success btn-lg" id="cookies-accept">OK, enter website!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section class="bg-light py-3 mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-muted font-weight-lighter">
+        <small>
+          
+          
+            En utilisant notre site, vous reconnaissez avoir lu et compris notre <a href="https://qastack.fr/legal/cookies-policy.html" target="_blank" rel="nofollow">politique liée aux cookies</a> et notre <a href="https://qastack.fr/legal/privacy-policy.html" target="_blank" rel="nofollow">politique de confidentialité</a>.
+          
+        </small>
+      </div>
+      <div class="col-md-6 text-muted text-right font-weight-lighter">
+        <small>
+          Licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank">cc by-sa 3.0</a>
+          with attribution required.
+          
+        </small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript" src="./Comment gérer localStorage dans les jest tests__files/0718fd69c824.js.download"></script>
+
+
+<style></style></body></html>

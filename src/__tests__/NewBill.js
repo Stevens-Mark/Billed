@@ -5,7 +5,7 @@ import BillsUI from "../views/BillsUI"
 import { localStorageMock } from '../__mocks__/localStorage.js'
 import { ROUTES } from '../constants/routes'
 import firebase from "../__mocks__/firebase"
-import userEvent from '@testing-library/user-event'
+// import userEvent from '@testing-library/user-event'
 
 describe("Given I am connected as an employee", () => {
     describe("When I am on NewBill Page", () => {
@@ -193,20 +193,18 @@ describe("Given I am a user connected as Employee", () => {
         }
         // SpyOn/watch "post" method in mock firebase module
        const postSpy = jest.spyOn(firebase, "post")
-       // Get bills and the new bill (returned after firebase called)
+       // Get/await bills and the new bill (values returned in promise after firebase called)
        const bills = await firebase.post(billItem)
        // check firebase post called
        expect(postSpy).toHaveBeenCalledTimes(1)
-       // new bill item added to previous 4 bills in mock thus now equals 5
-      //  expect(bills.data.length).toBe(5)
-      expect(bills.data.length).toBe(1)
+       expect(bills.data.length).toBe(1)
     })
     test("it sends a bill to an API and fails with 404 message error", async () => {
        // make firebase mock return promise with error 404 (once)
       firebase.post.mockImplementationOnce(() =>
         Promise.reject(new Error("Erreur 404"))
       )
-      // pass error param to BillsUI 404 not found
+      // pass error param to BillsUI 404 - not found
       const html = BillsUI({ error: "Erreur 404" })
       document.body.innerHTML = html
       // check error displayed on page
@@ -218,7 +216,7 @@ describe("Given I am a user connected as Employee", () => {
       firebase.post.mockImplementationOnce(() =>
         Promise.reject(new Error("Erreur 500"))
       )
-      // pass error param to BillsUI 500 internal server error
+      // pass error param to BillsUI 500 - internal server error
       const html = BillsUI({ error: "Erreur 500" })
       document.body.innerHTML = html
       // check error displayed on page
