@@ -41,7 +41,7 @@ export default class {
           .map(doc => {
             try {
               return {
-                ...doc.data(),          // part of BUG FIX: (see BillsUI.js lines. 13 & 26-33 for rest): 
+                ...doc.data(),          // part of BUG FIX: (see BillsUI.js lines. 13 & 26 for the rest): 
                 date: doc.data().date,  // removed  formatDate(doc.data().date), so date not changed to french format before sorting
                 status: formatStatus(doc.data().status)
               }

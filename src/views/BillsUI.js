@@ -22,13 +22,9 @@ const row = (bill) => {
 
 const rows = (data) => {
   // part of BUG FIX: code ADDED to sort the bills into order by date
-  // note: whilst not in french format can sort array easily (see Bills.js line.45 previously)
-  let sortDataByDate = [];
-  if (data) {
-     sortDataByDate = data.sort((a,b) =>  new Date(b.date) - new Date(a.date))
-  }
  
-  return (data && data.length) ? sortDataByDate.map(bill => row(bill)).join("") : ""
+  return (data && data.length) ? data.sort((a,b) =>  new Date(b.date) - new Date(a.date))
+  .map(bill => row(bill)).join("") : ""
 }
 
 export default ({ data: bills, loading, error }) => {

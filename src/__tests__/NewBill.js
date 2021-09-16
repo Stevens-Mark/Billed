@@ -5,7 +5,7 @@ import BillsUI from "../views/BillsUI"
 import { localStorageMock } from '../__mocks__/localStorage.js'
 import { ROUTES } from '../constants/routes'
 import firebase from "../__mocks__/firebase"
-// import userEvent from '@testing-library/user-event'
+import userEvent from '@testing-library/user-event'
 
 describe("Given I am connected as an employee", () => {
     describe("When I am on NewBill Page", () => {
@@ -193,7 +193,7 @@ describe("Given I am a user connected as Employee", () => {
         }
         // SpyOn/watch "post" method in mock firebase module
        const postSpy = jest.spyOn(firebase, "post")
-       // Get/await bills and the new bill (values returned in promise after firebase called)
+       // Get/await the new bill (values returned in promise after firebase called)
        const bills = await firebase.post(billItem)
        // check firebase post called
        expect(postSpy).toHaveBeenCalledTimes(1)

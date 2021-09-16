@@ -67,7 +67,7 @@ describe("Given I am connected as an employee", () => {
 
        // declare firestore
         const firestore = null
-        // define billitem
+        // define bills
         const billItem = new Bills({
           document, onNavigate, firestore, localStorage: window.localStorage
         })
@@ -105,7 +105,7 @@ describe("Given I am connected as an employee", () => {
         document.body.innerHTML = html
         // declare firestore
         const firestore = null
-        // define billitem
+        // define bills
         const billItem = new Bills({
           document, onNavigate, firestore, localStorage: window.localStorage
         })
