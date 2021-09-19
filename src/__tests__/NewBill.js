@@ -117,43 +117,43 @@ describe("Given I am connected as an employee", () => {
           document, onNavigate, firestore, localStorage: window.localStorage
         })
         // add values to inputs
-        // const inputType = screen.getByTestId("expense-type")  // required
-        // fireEvent.change(inputType, { target: { value: "Transports" } })
-        // expect(inputType.value).toBe("Transports")
+        const inputType = screen.getByTestId("expense-type")  // required
+        fireEvent.change(inputType, { target: { value: "Transports" } })
+        expect(inputType.value).toBe("Transports")
 
-        // const inputName = screen.getByTestId("expense-name")
-        // fireEvent.change(inputName, { target: { value: "covoiturage" } })
-        // expect(inputName.value).toBe("covoiturage")
+        const inputName = screen.getByTestId("expense-name")
+        fireEvent.change(inputName, { target: { value: "covoiturage" } })
+        expect(inputName.value).toBe("covoiturage")
 
-        // const inputAmount = screen.getByTestId("amount") //required
-        // fireEvent.change(inputAmount, { target: { value: "348" } })
-        // expect(inputAmount.value).toBe("348")
+        const inputAmount = screen.getByTestId("amount") //required
+        fireEvent.change(inputAmount, { target: { value: "348" } })
+        expect(inputAmount.value).toBe("348")
 
-        // const inputDate = screen.getByTestId("datepicker")  // required
-        // fireEvent.change(inputDate, { target: { value: "2001-01-01" } })
-        // expect(inputDate.value).toBe("2001-01-01")
+        const inputDate = screen.getByTestId("datepicker")  // required
+        fireEvent.change(inputDate, { target: { value: "2001-01-01" } })
+        expect(inputDate.value).toBe("2001-01-01")
 
-        // const inputVat = screen.getByTestId("vat")
-        // fireEvent.change(inputVat, { target: { value: "80" } })
-        // expect(inputVat.value).toBe("80")
+        const inputVat = screen.getByTestId("vat")
+        fireEvent.change(inputVat, { target: { value: "80" } })
+        expect(inputVat.value).toBe("80")
 
-        // const inputPct = screen.getByTestId("pct") //required
-        // fireEvent.change(inputPct, { target: { value: "20" } })
-        // expect(inputPct.value).toBe("20")
+        const inputPct = screen.getByTestId("pct") //required
+        fireEvent.change(inputPct, { target: { value: "20" } })
+        expect(inputPct.value).toBe("20")
 
-        // const inputCommentary = screen.getByTestId("commentary")
-        // fireEvent.change(inputCommentary, { target: { value: "expenses" } })
-        // expect(inputCommentary.value).toBe("expenses")
+        const inputCommentary = screen.getByTestId("commentary")
+        fireEvent.change(inputCommentary, { target: { value: "expenses" } })
+        expect(inputCommentary.value).toBe("expenses")
 
-        // // see file userEvent.upload.pdf in P9 sources
-        // // mimic file upload
-        // const inputfile = screen.getByTestId("file")  //required
-        // const fileName = [new File(['invoice.bmp'], 'invoice.bmp', {type: 'image/bmp'})]
-        // userEvent.upload(inputfile, fileName)
-        // // check upload ok
-        // expect(inputfile.files[0]).toStrictEqual(fileName)
-        // expect(inputfile.files.item(0)).toStrictEqual(fileName)
-        // expect(inputfile.files).toHaveLength(1)
+        // see file userEvent.upload.pdf in P9 sources
+        // mimic file upload
+        const inputfile = screen.getByTestId("file")  //required
+        const fileName = [new File(['invoice.bmp'], 'invoice.bmp', {type: 'image/bmp'})]
+        userEvent.upload(inputfile, fileName)
+        // check upload ok
+        expect(inputfile.files[0]).toStrictEqual(fileName)
+        expect(inputfile.files.item(0)).toStrictEqual(fileName)
+        expect(inputfile.files).toHaveLength(1)
 
         const form = screen.getByTestId("form-new-bill")
         // mock handleSubmit methode
@@ -193,7 +193,7 @@ describe("Given I am a user connected as Employee", () => {
         }
         // SpyOn/watch "post" method in mock firebase module
        const postSpy = jest.spyOn(firebase, "post")
-       // Get/await the new bill (values returned in promise after firebase called)
+       // await the new bill (value returned in promise after firebase called)
        const bills = await firebase.post(billItem)
        // check firebase post called
        expect(postSpy).toHaveBeenCalledTimes(1)
