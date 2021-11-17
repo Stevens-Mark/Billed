@@ -18,32 +18,39 @@ At Billed, a company that produces Saas solutions for human resources teams.
 
 **How to launch the application locally** :
 
-- Clone the project:
+Clone the project:
+```
+$ git clone https://github.com/OpenClassrooms-Student-Center/Billed-app-FR.git
+```
 
-`git clone https://github.com/Stevens-Mark/StevensMark_P9_09082021.git`
+Go to the cloned repo:
+```
+$ cd Billed-app-FR
+```
 
+Install the npm packages (described in `package.json`):
+```
+$ npm install
+```
 
-- Go to the cloned repo:
+Install live-server to run a local server:
+```
+$ npm install -g live-server
+```
 
-`P9_stevens_mark`
-
-- Install the npm packages : 
-
-
-`$ npm install`
-
-
-- Launch the application :
-
-`$ live-server`
-
+Launch the application:
+```
+$ live-server
+```
 
 Then go to: `http://127.0.0.1:8080/`
 
 
 **How to run all tests locally with Jest:**
 
-`$ npm run test`
+```
+$ npm run test
+```
 
 **How to run a single test:**
 
@@ -78,47 +85,53 @@ Chez Billed, une entreprise qui produit des solutions Saas destinées aux équip
 
 
 
-**Comment lancer l'application localement** :
+**Comment lancer l'application en local** :
 
-- Clonez le projet :
+Clonez le projet :
+```
+$ git clone https://github.com/OpenClassrooms-Student-Center/Billed-app-FR.git
+```
 
-`git clone https://github.com/Stevens-Mark/StevensMark_P9_09082021.git`
+Allez au repo cloné :
+```
+$ cd Billed-app-FR
+```
+
+Installez les packages npm (décrits dans `package.json`) :
+```
+$ npm install
+```
+
+Installez live-server pour lancer un serveur local :
+```
+$ npm install -g live-server
+```
+
+Lancez l'application :
+```
+$ live-server
+```
+
+Puis allez à l'adresse : `http://127.0.0.1:8080/`
 
 
-- Allez dans le repo cloné :
+**Comment lancer tous les tests en local avec Jest :**
 
-`P9_stevens_mark`
+```
+$ npm run test
+```
 
-- Installez les paquets npm : 
-
-
-`$ npm install`
-
-
-- Lancez l'application :
-
-`$ live-server`
-
-
-Allez ensuite sur : `http://127.0.0.1:8080/`
-
-
-**Comment exécuter tous les tests en local avec Jest:**
-
-`$ npm run test`
-
-**Comment exécuter un seul test :**
+**Comment lancer un seul test :**
 
 Installez jest-cli :
 
 ```
 $npm i -g jest-cli
-$jest src/__tests__/votre_fichier_test.js
+$jest src/__tests__/your_test_file.js
 ```
 
-**Comment voir la couverture des tests:**
+**Comment voir la couverture de test :**
 
 `http://127.0.0.1:8080/coverage/lcov-report/`
-
 
 
