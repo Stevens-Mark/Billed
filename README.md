@@ -6,6 +6,7 @@
 
 At Billed, a company that produces Saas solutions for human resources teams.
 
+- Further information can be found in  the folder `Project Briefs`
 
 ## Skills
 
@@ -68,6 +69,7 @@ $jest src/__tests__/your_test_file.js
 
 Chez Billed, une entreprise qui produit des solutions Saas destinées aux équipes de ressources humaines.
 
+- Vous trouverez plus d'informations dans le dossier `Project Briefs`.
 
 ## Skills
 
