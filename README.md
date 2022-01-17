@@ -4,6 +4,8 @@
 
 # OPENCLASSROOMS PROJECT 9 *(English)*
 
+Open website at [Billed](https://billed.netlify.app/)
+
 ## Debug and test an HR SaaS
 
 At Billed, a company that produces Saas solutions for human resources teams.
@@ -81,6 +83,8 @@ $jest src/__tests__/your_test_file.js
 
 
 # OPENCLASSROOMS PROJECT 9 *(Francais)*
+
+Ouvrir le site web à [Billed](https://billed.netlify.app/)
 
 ## Débuggez et testez un SaaS RH
 
