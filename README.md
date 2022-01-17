@@ -1,5 +1,7 @@
 ![Billed](/src/assets/images/Billed.jpg)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b1f7b14e-fecb-44d6-abb6-352f66b693b5/deploy-status)](https://app.netlify.com/sites/billed/deploys)
+
 # OPENCLASSROOMS PROJECT 9 *(English)*
 
 ## Debug and test an HR SaaS
