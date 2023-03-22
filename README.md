@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b1f7b14e-fecb-44d6-abb6-352f66b693b5/deploy-status)](https://app.netlify.com/sites/billed/deploys)
 
-# OPENCLASSROOMS PROJECT 9 *(English)*
+## Billed
 
 Open website at [Billed](https://billed.netlify.app/)
 
@@ -41,7 +41,7 @@ Feature description - There are two user paths on this feature: on the HR admini
 
 - Clone the project:
 
-`git clone https://github.com/Stevens-Mark/StevensMark_P9_09082021.git`
+`git clone https://github.com/Stevens-Mark/Billed.git`
 
 
 - Go to the cloned repo:
@@ -82,7 +82,7 @@ $jest src/__tests__/your_test_file.js
 
 
 
-# OPENCLASSROOMS PROJECT 9 *(Francais)*
+## Billed
 
 Ouvrir le site web à [Billed](https://billed.netlify.app/)
 
@@ -119,7 +119,7 @@ Description de la fonctionnalité - Il y a deux chemins d'accès à cette foncti
 
 - Clonez le projet :
 
-`git clone https://github.com/Stevens-Mark/StevensMark_P9_09082021.git`
+`git clone https://github.com/Stevens-Mark/Billed.git`
 
 
 - Allez dans le repo cloné :
